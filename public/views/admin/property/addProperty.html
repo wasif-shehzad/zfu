@@ -1,0 +1,965 @@
+<style>/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+    height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#infowindow-content .title {
+    font-weight: bold;
+}
+
+#infowindow-content {
+    display: none;
+}
+
+#map #infowindow-content {
+    display: inline;
+}
+
+.pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto;
+}
+
+#pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+}
+
+.pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+}
+
+.pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+
+#title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px;
+}
+
+#propertyModal {
+    padding-right: 0px !important;
+}
+</style>
+
+<div class="container clear_both padding_fix">
+    <!--\\\\\\\ container  start \\\\\\-->
+    <div class="row ">
+        <div class="col-lg-6">
+            <section class="panel default blue_title h2">
+                <div class="panel-heading">Property type and location</div>
+                <div class="panel-body center">
+                    <div class="porlets-content">
+                        <div class="basic-wizard" id="progressWizard">
+                            <ul class="nav nav-pills nav-justified">
+                                <p>Select Property purpose</p>
+                                <hr>
+                                <li>
+                                    <button ng-click="selectPropertyPurose('sale')" class="btn btn-default"
+                                            href="#ptab1">For sale
+                                    </button>
+                                </li>
+                                <li>
+                                    <button ng-click="selectPropertyPurose('rent')" class="btn btn-default"
+                                            href="#ptab2">Rent
+                                    </button>
+                                </li>
+                                <li>
+                                    <button ng-click="selectPropertyPurose('wanted')" class="btn btn-default"
+                                            href="#ptab3">Wanted
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="ptab1" class="tab-pane">
+                                </div>
+                                <div id="ptab2" class="tab-pane">
+                                </div>
+                                <div id="ptab3" class="tab-pane">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li>
+                                            <button class="btn btn-default" ng-show="property.purpose"
+                                                    data-toggle="tab">Buy
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-default" ng-show="property.purpose"
+                                                    data-toggle="tab">Rent
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- /tab-content -->
+                            <ul class="nav nav-pills nav-justified">
+                                <p>Select Property type</p>
+                                <hr>
+                                <li>
+                                    <button ng-click="selectPropertyType('home')" id="admin-home"
+                                            class="btn btn-default" data-toggle="tab" href="#ptab12">Homes
+                                    </button>
+                                </li>
+                                <li>
+                                    <button ng-click="selectPropertyType('plot')" id="admin-plot"
+                                            class="btn btn-default" data-toggle="tab" href="#ptab13">Plots
+                                    </button>
+                                </li>
+                                <li>
+                                    <button ng-click="selectPropertyType('commercial')" id="admin-commercial"
+                                            class="btn btn-default" data-toggle="tab" href="#ptab14">Commercial
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="ptab12" class="tab-pane">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('house')" class="btn btn-default"
+                                                    data-toggle="tab">House
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('flat')" class="btn btn-default"
+                                                    data-toggle="tab">Flat
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('upper portion')"
+                                                    class="btn btn-default" data-toggle="tab">Upper portion
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('lower protion')"
+                                                    class="btn btn-default" data-toggle="tab">Lower portion
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('farm house')"
+                                                    class="btn btn-default" data-toggle="tab">Farm house
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('room')" class="btn btn-default"
+                                                    data-toggle="tab">Room
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('pent house')"
+                                                    class="btn btn-default" data-toggle="tab">Penthouse
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="ptab13" class="tab-pane">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('residential plot')"
+                                                    class="btn btn-default" data-toggle="tab">Residential plot
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('commercial plot')"
+                                                    class="btn btn-default" data-toggle="tab">Commercial plot
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('aggricultural land')"
+                                                    class="btn btn-default" data-toggle="tab">Aggricultural land
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('industrial land')"
+                                                    class="btn btn-default" data-toggle="tab">Industrial land
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('plot file')"
+                                                    class="btn btn-default" data-toggle="tab">Plot file
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('plot from')"
+                                                    class="btn btn-default" data-toggle="tab">Plot form
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="ptab14" class="tab-pane">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('office')" class="btn btn-default"
+                                                    data-toggle="tab">Office
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('shop')" class="btn btn-default"
+                                                    data-toggle="tab">Shop
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('ware house')"
+                                                    class="btn btn-default" data-toggle="tab">Ware house
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('factory')" class="btn btn-default"
+                                                    data-toggle="tab">Factory
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('building')" class="btn btn-default"
+                                                    data-toggle="tab">Building
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button ng-click="selectPropertySubtype('other')" class="btn btn-default"
+                                                    data-toggle="tab">Other
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><!--/progressWizard-->
+                    </div>
+                    <div class="row">
+                        <p>Select city and location</p>
+                        <hr>
+                        <div class="col-md-6">
+                            <!--google map-->
+                            <div class="pac-card" id="pac-card">
+                                <div>
+                                    <div id="title">
+                                        Autocomplete search
+                                    </div>
+                                    <div id="type-selector" class="pac-controls">
+                                        <input type="radio" name="type" id="changetype-all" checked="checked">
+                                        <label for="changetype-all">All</label>
+
+                                        <input type="radio" name="type" id="changetype-establishment">
+                                        <label for="changetype-establishment">Establishments</label>
+
+                                        <input type="radio" name="type" id="changetype-address">
+                                        <label for="changetype-address">Addresses</label>
+
+                                        <input type="radio" name="type" id="changetype-geocode">
+                                        <label for="changetype-geocode">Geocodes</label>
+                                    </div>
+                                    <div id="strict-bounds-selector" class="pac-controls">
+                                        <input type="checkbox" id="use-strict-bounds" value="">
+                                        <label for="use-strict-bounds">Strict Bounds</label>
+                                    </div>
+                                </div>
+                                <div id="pac-container">
+                                    <input id="pac-input" type="text"
+                                           placeholder="Enter a location">
+                                </div>
+                            </div>
+                            <!--google map-->
+
+
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-control" ng-model="property.town">
+                                <option value="Model Town"> Model Town</option>
+                                <option value="Garden Town"> Garden Town</option>
+                                <option value="Johar Town"> Johar Town</option>
+
+
+                            </select>
+                        </div>
+                        <div class="col-sm-12 m-t-20">
+                            <input type="text" class="form-control" placeholder="Enter address here"
+                                   id="searchTextField" ng-model="property.address">
+                        </div>
+                        <!--                  <div>insert map here</div>-->
+
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6">
+            <section class="panel default blue_title h2">
+                <div class="panel-heading">Property details</div>
+                <div class="panel-body">
+                    <div>
+                        <p class="m-b-0">Property Title</p>
+                        <hr>
+                        <input type="text" class="form-control" placeholder="Enter title here"
+                               ng-model="property.title">
+                    </div>
+                    <div class="m-t-20">
+                        <p class="m-b-0">Property Description</p>
+                        <hr>
+                        <textarea class="form-control" ng-model="property.description"></textarea>
+                    </div>
+                    <div class="row m-t-20">
+                        <div class="col-xs-12">
+                            <p class="m-b-0">Enclusive price and land area</p>
+                            <hr>
+                            <div class="col-md-6"><input type="number" class="form-control" placeholder="Enter price"
+                                                         ng-model="property.price"></div>
+                            <hr>
+                            <div class="col-md-3"><input type="number" class="form-control"
+                                                         placeholder="Enter land area" ng-model="property.area"></div>
+                            <div class="col-md-3">
+                                <lable>Unit</lable>
+                            </div>
+                            <div class="col-md-3"><select class="form-control" ng-model="property.unit">
+                                <option value="square feet"> Square Feet</option>
+                                <option value="square yards"> Square Yards</option>
+                                <option value="square meter"> Square Meter</option>
+                                <option value="marla"> Marla</option>
+                                <option value="kanal"> Kanal</option>
+
+
+                            </select></div>
+
+                            <hr>
+                            <div class="col-md-6" ng-if="property.type.type !== 'plot'">
+                                <input type="text" class="form-control" placeholder="Expires After Months"
+                                       ng-model="property.expiresAfter"></div>
+                        </div>
+                        <div class="col-xs-12 m-t-20">
+
+
+                        </div>
+                    </div>
+                    <div class="m-t-20">
+                        <p class="m-b-0">Add image</p>
+                        <hr>
+                        <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(event)"
+                               multiple/>
+                        <div ng-repeat="step in property.images">
+                            <img class="thumb" ng-src="{{step}}"/>
+                        </div>
+                    </div>
+                    <div class="m-t-20">
+                        <p class="m-b-0">Features</p>
+                        <hr>
+                        <button ng-click="selectFeatures()" class="btn btn-info btn-lg">Add Features</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="propertyModal" style="padding-right: 0px!important;">
+                            <div class="modal-dialog modal-lg m-b-0" style="width: calc(100vw - 40px);">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Property Features</h4>
+                                    </div>
+                                    <div class="modal-body" style="height: calc(100vh - 120px);overflow: auto;">
+                                        <div class="row">
+                                            <div class="col-md-12"><p class="m-b-0">Main features</p>
+                                                <hr>
+                                                <div class="col-md-4"><span>Built in year</span> <input type="text"
+                                                                                                        ng-model="property.features.builtYear"
+                                                                                                        class="form-control">
+                                                </div>
+                                                <div class="col-md-4"><span>View</span> <input type="text"
+                                                                                               ng-model="property.features.view"
+                                                                                               class="form-control">
+                                                </div>
+                                                <div class="col-md-4"><span>Parking spaces</span> <input type="text"
+                                                                                                         ng-model="property.features.parkingSpaces"
+                                                                                                         class="form-control">
+                                                </div>
+                                                <div class="col-md-4 m-t-10"><span>Total number of floors</span> <input
+                                                        type="text" ng-model="property.features.floors"
+                                                        class="form-control"></div>
+
+                                                <div class="col-md-4 m-t-10"><span>Other Main features</span> <input
+                                                        ng-model="property.features.others.main1" type="text"
+                                                        class="form-control"></div>
+                                                <div class="col-md-4 m-t-10"><span>Flooring</span>
+
+                                                    <select class="form-control"
+                                                            ng-model="property.features.flooring">
+
+                                                        <option value="Tiles"> Tiles</option>
+                                                        <option value="Marble"> Marble</option>
+                                                        <option value="Wooden"> Wooden</option>
+                                                        <option value="Cement"> Cement</option>
+                                                        <option value="Chip"> Chip</option>
+                                                        <option value="Others"> Others</option>
+                                                    </select></div>
+                                                <div class="col-md-4"><span>Electricity Backup</span> <select
+                                                        class="form-control" id="source"
+                                                        ng-model="property.features.elecricityBackup">
+
+                                                    <option value="UPS"> UPS</option>
+                                                    <option value="generator"> Generator</option>
+                                                    <option value="solar"> Solar</option>
+                                                    <option value="other"> Other</option>
+                                                    <option value="none"> None</option>
+
+                                                </select></div>
+
+                                                <div class="col-md-4">
+                                                    <div><input type="checkbox"
+                                                                ng-model="property.features.doubleGlazedWindows"><label>Double
+                                                        Glazed Windows</label>
+                                                    </div>
+                                                    <div><input type="checkbox"
+                                                                ng-model="property.features.centralAirConditioning"><label>Central
+                                                        Air Conditioning</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox"
+                                                               ng-model="property.features.centralHeating"><label>Central
+                                                        Heating</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div><input type="checkbox"
+                                                                ng-model="property.features.wasteDisposal"><label>Waste
+                                                        Disposal</label>
+                                                    </div>
+                                                    <div><input type="checkbox"
+                                                                ng-model="property.features.furnished"><label>Furnished</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-12"><p class="m-b-0">Rooms</p>
+                                                <hr>
+                                                <div class="col-md-4"><span>Number of Bedrooms</span> <input type="text"
+                                                                                                             ng-model="property.features.rooms"
+                                                                                                             class="form-control">
+                                                </div>
+                                                <div class="col-md-4"><span>Number of Bathrooms</span> <input
+                                                        type="text" ng-model="property.features.bathrooms"
+                                                        class="form-control"></div>
+                                                <div class="col-md-4"><span>Number of Servant Quarters</span> <input
+                                                        ng-model="property.features.serventQuarters" type="text"
+                                                        class="form-control"></div>
+                                                <div class="col-md-4 m-t-10"><span> Number of Kitchens</span> <input
+                                                        ng-model="property.features.kitchens" type="text"
+                                                        class="form-control"></div>
+
+                                                <div class="col-md-4 m-t-10"><span>Number of Store Room</span> <input
+                                                        ng-model="property.features.storeRooms" type="text"
+                                                        class="form-control"></div>
+
+                                                <div class="col-md-4 m-t-10"><span>Other Rooms</span> <input
+                                                        ng-model="property.features.otherRooms" type="text"
+                                                        class="form-control"></div>
+                                                <div class="col-md-12 col-xs-12 m-t-20">
+                                                    <div class="col-md-4">
+                                                        <div><input type="checkbox"
+                                                                    ng-model="property.features.drawingRoom">
+                                                            <label>Drawing Room</label>
+                                                        </div>
+                                                        <div><input type="checkbox"
+                                                                    ng-model="property.features.diningRoom">
+                                                            <label>Dining Room</label>
+                                                        </div>
+                                                        <div>
+                                                            <input type="checkbox"
+                                                                   ng-model="property.features.studyRoom">
+                                                            <label>Study Room</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div>
+                                                            <input type="checkbox"
+                                                                   ng-model="property.features.prayerRoom">
+                                                            <label>Prayer Room</label>
+                                                        </div>
+                                                        <div><input type="checkbox"
+                                                                    ng-model="property.features.gymRoom">
+                                                            <label>Gym Room</label>
+                                                        </div>
+                                                        <div><input type="checkbox"
+                                                                    ng-model="property.features.steamingRoom">
+                                                            <label>Steaming Room</label>
+                                                        </div>
+                                                        <div><input type="checkbox"
+                                                                    ng-model="property.features.laundaryRoom">
+                                                            <label>Laundry Room</label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-12 col-xs-12 m-t-20">
+                                                <div class="col-md-6">
+                                                    <p class="m-b-0">Business and Communication
+                                                    </p>
+                                                    <hr>
+                                                    <div class="col-md-6">
+                                                        <div><input type="checkbox"
+                                                                    ng-model="property.features.satellite">
+                                                            <label>Satellite or Cable TV Ready</label>
+                                                        </div>
+                                                        <div>
+                                                            <input type="checkbox" ng-model="property.features.other">
+                                                            <label>Other Business And Communication Facilities</label>
+                                                        </div>
+                                                        <div><input type="checkbox"
+                                                                    ng-model="property.features.internet">
+                                                            <label>Broadband Internet Access</label>
+                                                        </div>
+                                                        <div><input type="checkbox"
+                                                                    ng-model="property.features.intercom">
+                                                            <label>Intercom</label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <p class="m-b-0">Healthcare Recreational
+                                                    </p>
+
+                                                    <div><input type="checkbox" ng-model="property.features.lawn">
+                                                        <label>Lawn or Garden</label>
+                                                    </div>
+                                                    <div><input type="checkbox"
+                                                                ng-model="property.features.swimingPool">
+                                                        <label>Swimming Pool</label>
+                                                    </div>
+                                                    <div><input type="checkbox" ng-model="property.features.sauna">
+                                                        <label>Sauna</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span>Other Healthcare and Recreation Facilities</span> <input
+                                                        type="text" class="form-control"
+                                                        ng-model="property.features.other"
+                                                        placeholder="Enter address here">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-xs-12 m-t-20">
+                                            <div class="col-md-6">
+                                                <p class="m-b-0">Nearby Locations and Other Facilities
+
+                                                </p>
+                                                <hr>
+                                                <div class="col-md-6">
+                                                    <span>Near by Schools</span> <input type="text" class="form-control"
+                                                                                        ng-model="property.features.nearBy.schools">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span>Near by Hospitals</span> <input type="text"
+                                                                                          class="form-control"
+                                                                                          ng-model="property.features.nearBy.hospitals">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span>Near by Shopping Malls</span> <input type="text"
+                                                                                               class="form-control"
+                                                                                               ng-model="property.features.nearBy.shoppingMalls">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span>Near by Restaurants</span> <input type="text"
+                                                                                            class="form-control"
+                                                                                            ng-model="property.features.nearBy.restaurants">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span>Distance From Airport (kms)</span> <input type="text"
+                                                                                                    class="form-control"
+                                                                                                    ng-model="property.features.nearBy.airport">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span>Near by Public Transport Service</span> <input type="text"
+                                                                                                         class="form-control"
+                                                                                                         ng-model="property.features.nearBy.transport">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span> Other Nearby Places</span> <input type="text"
+                                                                                             class="form-control"
+                                                                                             ng-model="property.features.nearBy.other">
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-info col-xs-3 pull-none"
+                                                    data-toggle="modal" ng-click="saveFeatures()">Save
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="plotModal" role="dialog">
+                        <div class="modal-dialog modal-lg">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Property Features</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-12"><p class="m-b-0">Plot Features
+                                        </p>
+                                            <hr>
+                                            <div class="col-md-4 m-t-10"><span>Total number of floors</span>
+                                                <input type="text" class="form-control" placeholder="Enter address here"
+                                                       ng-model="property.features.plot.floor"></div>
+                                            <div class="col-md-4">
+                                                <div>
+                                                    <input type="checkbox"
+                                                           ng-model="property.features.plot.doubleGlazedWindow">
+                                                    <label>Possesion</label>
+                                                </div>
+                                                <div><input type="checkbox">
+                                                    <label>Corner</label>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox">
+                                                    <label>Park Facing</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div><input type="checkbox">
+                                                    <label>Disputed</label>
+                                                </div>
+                                                <div><input type="checkbox">
+                                                    <label>File</label>
+                                                </div>
+                                                <div><input type="checkbox">
+                                                    <label>Balloted</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 m-t-20">
+                                                <div><input type="checkbox">
+                                                    <label>Sewerage</label>
+                                                </div>
+                                                <div><input type="checkbox"><label>Electricity</label>
+                                                </div>
+                                                <div><input type="checkbox"><label>Sui Gas</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 m-t-20">
+                                                <div><input type="checkbox"><label>Boundary Wall</label>
+                                                </div>
+                                                <div><input type="text"><label>Other Plot Features</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-12 m-t-20"><p class="m-b-0">Nearby Locations and Other
+                                            Facilities
+                                        </p>
+                                            <hr>
+                                            <div class="col-md-4"><span>Near By Schools</span> <input type="text"
+                                                                                                      class="form-control"
+                                                                                                      ed></div>
+                                            <div class="col-md-4"><span>Near By Hospital</span> <input type="text"
+                                                                                                       class="form-control">
+                                            </div>
+                                            <div class="col-md-4"><span>Near By Shopping Malls</span> <input type="text"
+                                                                                                             class="form-control">
+                                            </div>
+                                            <div class="col-md-4 m-t-10"><span>Near By Restaurants</span> <input
+                                                    type="text" class="form-control"></div>
+
+                                            <div class="col-md-4 m-t-10"><span>Distance from Airport (kms)</span> <input
+                                                    type="text" class="form-control"></div>
+
+                                            <div class="col-md-4 m-t-10"><span>Near By Public Transport Service</span>
+                                                <input type="text" class="form-control"></div>
+
+                                            <div class="col-md-4 m-t-10"><span>Other Nearby Places</span> <input
+                                                    type="text" class="form-control"></div>
+                                        </div>
+                                    </div>
+                                    <div>Other Facilities</div>
+                                    <div class="col-md-4 m-t-10"><span>Security Staff</span> <input type="checkbox"
+                                                                                                    class="form-control"
+                                                                                                    placeholder="Enter address here">
+                                    </div>
+                                    <div class="col-md-4 m-t-10">
+                                        <div><input type="text"><label>Other Facilities</label>
+                                        </div>
+                                        <div class="col-md-12 m-t-20">
+                                            <div class="text-center">
+                                                <button type="button" class="btn btn-info col-xs-3 pull-none"
+                                                        data-toggle="modal" data-target="#myModal">Save
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        </section>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel default blue_title h2">
+            <div class="panel-heading">
+                <button type="button" class="btn btn-info btn-block" ng-click="submitProperty()">Submit Property
+                </button>
+            </div>
+        </section>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div id="map"></div>
+        <div id="infowindow-content">
+            <img src="" width="16" height="16" id="place-icon">
+
+        </div>
+        <div ng-init="initMap()"></div>
+    </div>
+</div>
+</div>
+</div><!--\\\\\\\ container  end \\\\\\-->
+</div>
+
+<!--\\\\\\\ content panel end \\\\\\-->
+</div>
+<!--\\\\\\\ inner end\\\\\\-->
+</div>
+<!--\\\\\\\ wrapper end\\\\\\-->
+<!-- Modal -->
+<!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+<!--<div class="modal-dialog">-->
+<!--<div class="modal-content">-->
+<!--<div class="modal-header">-->
+<!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+<!--<h4 class="modal-title" id="myModalLabel">Compose New Task</h4>-->
+<!--</div>-->
+<!--<div class="modal-body"> content </div>-->
+<!--<div class="modal-footer">-->
+<!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!-- sidebar chats -->
+<nav class="atm-spmenu atm-spmenu-vertical atm-spmenu-right side-chat">
+    <div class="header">
+        <input type="text" class="form-control chat-search" placeholder=" Search">
+    </div>
+    <div href="#" class="sub-header">
+        <div class="icon"><i class="fa fa-user"></i></div>
+        <p>Online (4)</p>
+    </div>
+    <div class="content">
+        <p class="title">Family</p>
+        <ul class="nav nav-pills nav-stacked contacts">
+            <li class="online"><a href="#"><i class="fa fa-circle-o"></i> Steven Smith</a></li>
+            <li class="online"><a href="#"><i class="fa fa-circle-o"></i> John Doe</a></li>
+            <li class="online"><a href="#"><i class="fa fa-circle-o"></i> Michael Smith</a></li>
+            <li class="busy"><a href="#"><i class="fa fa-circle-o"></i> Chris Rogers</a></li>
+        </ul>
+
+        <p class="title">Friends</p>
+        <ul class="nav nav-pills nav-stacked contacts">
+            <li class="online"><a href="#"><i class="fa fa-circle-o"></i> Vernon Philander</a></li>
+            <li class="outside"><a href="#"><i class="fa fa-circle-o"></i> Kyle Abbott</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Dean Elgar</a></li>
+        </ul>
+
+        <p class="title">Work</p>
+        <ul class="nav nav-pills nav-stacked contacts">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Dale Steyn</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Morne Morkel</a></li>
+        </ul>
+
+    </div>
+    <div id="chat-box">
+        <div class="header">
+            <span>Richard Avedon</span>
+            <a class="close"><i class="fa fa-times"></i></a></div>
+        <div class="messages nano nscroller has-scrollbar">
+            <div class="content" tabindex="0" style="right: -17px;">
+                <ul class="conversation">
+                    <li class="odd">
+                        <p>Hi John, how are you?</p>
+                    </li>
+                    <li class="text-right">
+                        <p>Hello I am also fine</p>
+                    </li>
+                    <li class="odd">
+                        <p>Tell me what about you?</p>
+                    </li>
+                    <li class="text-right">
+                        <p>Sorry, I'm late... see you</p>
+                    </li>
+                    <li class="odd unread">
+                        <p>OK, call me later...</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="pane" style="display: none;">
+                <div class="slider" style="height: 20px; top: 0px;"></div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <div class="input-group">
+                <input type="text" placeholder="Enter a message..." class="form-control">
+                <span class="input-group-btn">
+        <button class="btn btn-danger" type="button">Send</button>
+        </span></div>
+        </div>
+    </div>
+</nav>
+<!-- /sidebar chats -->
+<!--<script>-->
+<!--var defaultBounds = new google.maps.LatLngBounds(-->
+<!--new google.maps.LatLng(-33.8902, 151.1759),-->
+<!--new google.maps.LatLng(-33.8474, 151.2631));-->
+
+<!--var input = document.getElementById('searchTextField');-->
+<!--var options = {-->
+<!--types: ['geocode'],-->
+<!--componentRestrictions: {country: 'pk'}-->
+<!--};-->
+
+<!--autocomplete = new google.maps.places.Autocomplete(input, options);-->
+
+
+<!--</script>-->
+
+
+<!--google map api-->
+<!--<script>-->
+<!--// This example requires the Places library. Include the libraries=places-->
+<!--// parameter when you first load the API. For example:-->
+<!--// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">-->
+
+<!--function initMap() {-->
+<!--var map = new google.maps.Map(document.getElementById('map'), {-->
+<!--center: {lat:31.582045, lng: 74.329376},-->
+<!--zoom: 13-->
+<!--});-->
+<!--var input = document.getElementById('pac-input');-->
+
+<!--var autocomplete = new google.maps.places.Autocomplete(input);-->
+
+<!--// Bind the map's bounds (viewport) property to the autocomplete object,-->
+<!--// so that the autocomplete requests use the current map bounds for the-->
+<!--// bounds option in the request.-->
+<!--autocomplete.bindTo('bounds', map);-->
+
+<!--var infowindow = new google.maps.InfoWindow();-->
+<!--var infowindowContent = document.getElementById('infowindow-content');-->
+<!--infowindow.setContent(infowindowContent);-->
+<!--var marker = new google.maps.Marker({-->
+<!--map: map,-->
+<!--anchorPoint: new google.maps.Point(0, -29)-->
+<!--});-->
+
+<!--autocomplete.addListener('place_changed', function() {-->
+<!--infowindow.close();-->
+<!--marker.setVisible(false);-->
+<!--var place = autocomplete.getPlace();-->
+<!--if (!place.geometry) {-->
+<!--// User entered the name of a Place that was not suggested and-->
+<!--// pressed the Enter key, or the Place Details request failed.-->
+<!--window.alert("No details available for input: '" + place.name + "'");-->
+<!--return;-->
+<!--}-->
+
+<!--// If the place has a geometry, then present it on a map.-->
+<!--if (place.geometry.viewport) {-->
+<!--map.fitBounds(place.geometry.viewport);-->
+<!--} else {-->
+<!--map.setCenter(place.geometry.location);-->
+<!--map.setZoom(17);  // Why 17? Because it looks good.-->
+<!--}-->
+<!--marker.setPosition(place.geometry.location);-->
+<!--marker.setVisible(true);-->
+
+<!--var address = '';-->
+<!--if (place.address_components) {-->
+<!--address = [-->
+<!--(place.address_components[0] && place.address_components[0].short_name || ''),-->
+<!--(place.address_components[1] && place.address_components[1].short_name || ''),-->
+<!--(place.address_components[2] && place.address_components[2].short_name || '')-->
+<!--].join(' ');-->
+<!--}-->
+
+<!--infowindowContent.children['place-icon'].src = place.icon;-->
+<!--infowindowContent.children['place-name'].textContent = place.name;-->
+<!--infowindowContent.children['place-address'].textContent = address;-->
+<!--infowindow.open(map, marker);-->
+<!--});-->
+
+<!--// Sets a listener on a radio button to change the filter type on Places-->
+<!--// Autocomplete.-->
+<!--function setupClickListener(id, types) {-->
+<!--var radioButton = document.getElementById(id);-->
+<!--radioButton.addEventListener('click', function() {-->
+<!--autocomplete.setTypes(types);-->
+<!--});-->
+<!--}-->
+
+<!--setupClickListener('changetype-all', []);-->
+<!--setupClickListener('changetype-address', ['address']);-->
+<!--setupClickListener('changetype-establishment', ['establishment']);-->
+<!--setupClickListener('changetype-geocode', ['geocode']);-->
+
+<!--document.getElementById('use-strict-bounds')-->
+<!--.addEventListener('click', function() {-->
+<!--console.log('Checkbox clicked! New state=' + this.checked);-->
+<!--autocomplete.setOptions({strictBounds: this.checked});-->
+<!--});-->
+<!--}-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+

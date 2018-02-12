@@ -1,0 +1,1106 @@
+<style>
+    .nav-justified > li {
+        width: auto;
+        display: inline-block;
+    }
+
+    .nav-justified {
+        text-align: center;
+    }
+
+    hr {
+        border-color: #7FDBFF;
+        border-width: 2px;
+    }
+
+    label input[type="radio"] ~ i.fa.fa-square-o {
+        color: #fff;
+        display: inline;
+    }
+
+    label input[type="radio"] ~ i.fa.fa-check-square-o {
+        display: none;
+    }
+
+    label input[type="radio"]:checked ~ i.fa.fa-square-o {
+        display: none;
+    }
+
+    label input[type="radio"]:checked ~ i.fa.fa-check-square-o {
+        color: #fff;
+        display: inline;
+    }
+
+    label:hover input[type="radio"] ~ i.fa {
+        color: #7AA3CC;
+    }
+
+    div[data-toggle="buttons"] label.active {
+        color: #7AA3CC;
+        /*    background: #337ab7;*/
+    }
+
+    div[data-toggle="buttons"] label {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 2em;
+        text-align: left;
+        white-space: nowrap;
+        vertical-align: top;
+        cursor: pointer;
+        background-color: none;
+        border: 0px solid #c8c8c8;
+        border-radius: 3px;
+        color: #c8c8c8;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+
+    div[data-toggle="buttons"] label:hover {
+        color: #7AA3CC;
+    }
+
+    div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .nav > li > a:focus, .nav > li > a:hover {
+        background: transparent;
+    }
+
+    .btn-group, .btn-group-vertical {
+        background: #7fdbff;
+    }
+
+    .btn-group, .btn-group-vertical span {
+        color: #fff;
+        vertical-align: inherit;
+    }
+
+    .nav-pills > li.active > a .btn-group-vertical, .nav-pills > li.active > a .btn-group-vertical:focus, .nav-pills > li.active > a .btn-group-vertical:hover {
+        background: #337ab7;
+        box-shadow: 1px 4px 6px #6c6c6c;
+    }
+
+    .nav > li > a {
+        padding: 0px;
+    }
+
+    .btn-group-vertical label {
+        padding-bottom: 0px !important;
+        padding-right: 18px !important;
+        padding-left: 18px !important;
+    }
+</style>
+<!-- My Properties  -->
+<section id="property" class="padding listing1">
+    <div class="container" style="width:1250px">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="f-p-links margin_bottom">
+                    <li><a ng-click="clickToView('profile')"><i class="icon-icons230"></i>Profile</a></li>
+                    <li><a ng-click="clickToView('myProperties')"><i class="icon-icons215"></i> My Properties</a></li>
+                    <li><a ng-click="clickToView('submitProperty')" class="active"><i class="icon-icons215"></i> Submit
+                        Property</a></li>
+                    <li><a ng-click="clickToView('saveProperty')"><i class="icon-icons43"></i> Save Properties</a></li>
+                    <li><a ng-click="clickToView('logout')"><i class="icon-lock-open3"></i>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="text-uppercase text-center m-t-0">Add Your Property</h2>
+            <p>Select Property Type and Purpose</p>
+            <hr class="m-t-0">
+            <ul class="nav nav-pills nav-justified">
+                <li><a data-toggle="tab" href=".ptab1">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="email1"><i class="fa fa-square-o fa-2x"></i><i
+                                ng-click="propertyPurpose('sale')" class="fa fa-check-square-o fa-2x"></i> <span> For Sale</span>
+                        </label></div>
+                </a></li>
+                <li><a data-toggle="tab" href=".ptab2">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="email1"><i class="fa fa-square-o fa-2x"></i><i
+                                ng-click="propertyPurpose('rent')" class="fa fa-check-square-o fa-2x"></i>
+                            <span> Rent</span>
+                        </label></div>
+                </a></li>
+                <li><a data-toggle="tab" href=".ptab3">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="email1"><i class="fa fa-square-o fa-2x"></i><i
+                                ng-click="propertyPurpose('wanted')" class="fa fa-check-square-o fa-2x"></i> <span>Wanted</span>
+                        </label></div>
+                </a></li>
+            </ul>
+            <div class="tab-content m-t-10 m-b-10">
+                <div class="tab-pane ptab1">
+                </div>
+                <div class="tab-pane ptab2">
+                </div>
+                <div class="tab-pane ptab3">
+                    <ul class="nav nav-pills nav-justified">
+                        <li><a data-toggle="tab" href=".ptab3">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="radio-content"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span>Buy</span>
+                                </label></div>
+                        </a></li>
+                        <li><a data-toggle="tab" href=".ptab3">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="radio-content"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span>Rent</span>
+                                </label></div>
+                        </a></li>
+                    </ul>
+                </div>
+            </div><!-- /tab-content -->
+            <ul class="nav nav-pills nav-justified">
+                <li><a id="admin-home" data-toggle="tab" href=".ptab12">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="email1-tab2"><i class="fa fa-square-o fa-2x"></i><i
+                                class="fa fa-check-square-o fa-2x"></i> <span
+                                ng-click="propertyType('home')"> Homes</span>
+                        </label></div>
+                </a></li>
+                <li><a id="admin-plot" data-toggle="tab" href=".ptab13">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="email1-tab2"><i class="fa fa-square-o fa-2x"></i><i
+                                class="fa fa-check-square-o fa-2x"></i>
+                            <span ng-click="propertyType('plot')"> Plots</span>
+                        </label></div>
+                </a></li>
+                <li><a id="admin-commercial" data-toggle="tab" href=".ptab14">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="email1-tab2"><i class="fa fa-square-o fa-2x"></i><i
+                                class="fa fa-check-square-o fa-2x"></i> <span ng-click="propertyType('commercial')"> Commercial</span>
+                        </label></div>
+                </a></li>
+            </ul>
+            <div class="tab-content m-t-10">
+                <div class="tab-pane ptab12">
+                    <ul class="nav nav-pills nav-justified">
+                        <li ng-click="propertySubType('home')"><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span>House</span>
+                                </label></div>
+                        </a></li>
+                        <li ng-click="propertySubType('flat')"><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i>
+                                    <span>Flat</span>
+                                </label></div>
+                        </a></li>
+                        <li ng-click="propertySubType('upper portion')"><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i>
+                                    <span>Upper Portion</span>
+                                </label></div>
+                        </a></li>
+                        <li ng-click="propertySubType('lower portion')"><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i>
+                                    <span>Lower Portion</span>
+                                </label></div>
+                        </a></li>
+                        <li ng-click="propertySubType('farm house')"><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i>
+                                    <span>Farm House</span>
+                                </label></div>
+                        </a></li>
+                        <li ng-click="propertySubType('room')"><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i>
+                                    <span>Room</span>
+                                </label></div>
+                        </a></li>
+                        <li ng-click="propertySubType('penthouse')"><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i>
+                                    <span>Penthouse</span>
+                                </label></div>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="tab-pane ptab13">
+                    <ul class="nav nav-pills nav-justified">
+                        <li><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab4"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="propertySubType('residential plot')">Residentail Plot</span>
+                                </label></div>
+                        </a></li>
+                        <li><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab4"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="propertySubType('commercial plot')">Commercial Plot</span>
+                                </label></div>
+                        </a></li>
+                        <li><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab4"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="propertySubType('aggriculture land')">Aggriculture Land</span>
+                                </label></div>
+                        </a></li>
+                        <li><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab4"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="propertySubType('industrial land')">Industrial Land</span>
+                                </label></div>
+                        </a></li>
+                        <li><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab4"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="propertySubType('plot file')">Plot File</span>
+                                </label></div>
+                        </a></li>
+                        <li><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab4"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="propertySubType('plot from')">Plot Form</span>
+                                </label></div>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="tab-pane ptab14">
+                    <ul class="nav nav-pills nav-justified">
+                        <li><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab5"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="propertySubType('office')">Office</span>
+                                </label></div>
+                        </a></li>
+                        <li><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="propertySubType('shop')">Shop</span>
+                                </label></div>
+                        </a></li>
+                        <li><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab5"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="propertySubType('ware house')">Ware House</span>
+                                </label></div>
+                        </a></li>
+                        <li><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab5"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="propertySubType('factory')">Factory</span>
+                                </label></div>
+                        </a></li>
+                        <li><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab5"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="propertySubType('building')">Building</span>
+                                </label></div>
+                        </a></li>
+                        <li><a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab5"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="propertySubType('other')">Other</span>
+                                </label></div>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-6 col-xs-12">
+                    <p>Select city and location</p>
+                    <hr class="m-t-0">
+                    <form class="callus clearfix border_radius submit_property">
+                        <div class="col-sm-6">
+                            <div class="single-query  form-group bottom20">
+                                <label>City</label>
+                                <div class="intro">
+                                    <select>
+                                        <option class="active">Select City</option>
+                                        <option>For Sale</option>
+                                        <option>For Sale</option>
+                                        <option>For Sale</option>
+                                        <option>For Rent</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="single-query  form-group bottom20">
+                                <label>Select Area</label>
+                                <div class="intro">
+                                    <select>
+                                        <option class="active">Number of bathrooms</option>
+                                        <option>For Sale</option>
+                                        <option>For Sale</option>
+                                        <option>For Sale</option>
+                                        <option>For Rent</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+
+                            <div class="group">
+                                <input type="text" required="required"/><span class="highlight"></span><span
+                                    class="bar"></span>
+                                <label>Enter Location</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="single-query  form-group bottom20">
+                                <label>Select Bedrooms</label>
+                                <div class="intro">
+                                    <select>
+                                        <option class="active">Number of bathrooms</option>
+                                        <option>For Sale</option>
+                                        <option>For Sale</option>
+                                        <option>For Sale</option>
+                                        <option>For Rent</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 clearfix">
+                            <div class="single-query  form-group bottom20">
+                                <label>Select Bathrooms</label>
+                                <div class="intro">
+                                    <select>
+                                        <option class="active">Number of bathrooms</option>
+                                        <option>For Sale</option>
+                                        <option>For Sale</option>
+                                        <option>For Sale</option>
+                                        <option>For Rent</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+
+                            <div class="single-query  form-group bottom20" ng-if="property.type.type !== 'plot'">
+                                <lable>Expies After</lable>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Expires After Months"
+                                           ng-model="property.expiresAfter"></div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <p>Property and Land details</p>
+                    <hr class="m-t-0">
+                    <form class="callus clearfix border_radius submit_property">
+                        <div class="col-xs-6 no-padding">
+
+                            <div class="single-query form-group bottom20">
+                                <label>Property Title</label>
+                                <input type="text" class="keyword-input" placeholder="Enter title here"
+                                       ng-model="property.title">
+                            </div>
+                            <div class="col-xs-12">
+
+                                <div class="single-query form-group bottom20">
+                                    <label>Enter Price (PKR)</label>
+                                    <input type="number" class="keyword-input" placeholder="Enter price"
+                                           ng-model="property.price">
+                                </div>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="single-query form-group bottom20">
+                                    <label>Land Area</label>
+                                    <input type="number" class="keyword-input" placeholder="Enter land area"
+                                           ng-model="property.area">
+                                </div>
+                            </div>
+                            <div class="col-md-4 no-padding">
+                                <div class="single-query  form-group bottom20">
+
+                                    <label>Unit</label>
+                                    <div class="intro">
+                                        <select ng-model="property.unit">
+                                            <option value="square feet"> Square Feet</option>
+                                            <option value="square yards"> Square Yards</option>
+                                            <option value="square meter"> Square Meter</option>
+                                            <option value="marla"> Marla</option>
+                                            <option value="kanal"> Kanal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+
+                            <div class="single-query form-group bottom20">
+                                <label>Property Desciption</label>
+                                <textarea name="description" class="form-control" rows="5"
+                                          ng-model="property.description"></textarea>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <button id="testButton" type="button" class="btn btn-info btn-lg" data-toggle="modal"
+                                    data-target="#myModal">Add Features
+                            </button>
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="col-xs-12 col-md-12">
+                    <p> Add images</p>
+                    <hr class="m-t-0">
+                    <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(event)"
+                           multiple/>
+                    <div ng-repeat="step in property.images">
+                        <img class="thumb" ng-src="{{step}}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="success" ng-click="submitProperty()">submit</button>
+        <!--
+              <div class="col-sm-6 col-md-6">
+                <h2 class="text-uppercase bottom40">Add Your Property</h2>
+                  <form class="callus clearfix border_radius submit_property">
+                      <div class="row">
+                            <div class="col-sm-6 col-md-6">
+
+                            <div class="single-query form-group bottom20">
+                               <label>Title</label>
+                                    <input type="text" class="keyword-input" placeholder="Enter your property title">
+                              </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                              <div class="single-query form-group bottom20">
+                                      <label>Location</label>
+                                      <input type="text" class="keyword-input" placeholder="Enter Proprty Location">
+                              </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                              <div class="single-query bottom20">
+                                    <label>Status </label>
+                                    <div class="intro">
+                                      <select>
+                                         <option class="active">For Sale</option>
+                                         <option>For Sale</option>
+                                         <option>For Sale </option>
+                                         <option>For Sale</option>
+                                         <option>For Rent</option>
+                                      </select>
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="single-query form-group bottom20">
+                                    <label>Price</label>
+                                    <input type="text" class="keyword-input" placeholder="23,000">
+                                </div>
+                            </div>
+                      </div>
+                  </form>
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <h3 class="margin40 bottom15">Propertie Photos <i class="fa fa-info-circle help" data-toggle="tooltip" title="add images to upload for property!"></i></h3>
+
+                        <div class="file_uploader bottom20">
+                           <form id="upload-widget" method="post" action="/upload" class="dropzone">
+                               <div class="dz-default dz-message">
+                                  <span>
+                                       <i class="fa fa-plus-circle"></i>
+                                        Click here or drop files to upload
+                                  </span>
+                               </div>
+                           </form>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-12">
+                        <h3 class="bottom15 margin40">Propertie Detail</h3>
+                      </div>
+                  </div>
+                 <form class="callus clearfix border_radius submit_property">
+                  <div class="row">
+                     <div class="col-sm-4">
+                          <div class="single-query form-group bottom20">
+                              <label>Size Prefix</label>
+                              <div class="intro">
+                                <select>
+                                  <option class="active">Sq Ft</option>
+                                  <option>For Sale</option>
+                                  <option>For Sale </option>
+                                  <option>For Sale</option>
+                                  <option>For Rent</option>
+                                </select>
+                              </div>
+                          </div>
+                     </div>
+                     <div class="col-sm-4">
+                        <div class="single-query form-group bottom20">
+                          <label>Bedrooms</label>
+                          <div class="intro">
+                              <select>
+                                <option class="active">Number of Bedrooms</option>
+                                <option>For Sale</option>
+                                <option>For Sale </option>
+                                <option>For Sale</option>
+                                <option>For Rent</option>
+                              </select>
+                          </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-4">
+                          <div class="single-query  form-group bottom20">
+                            <label>Bathrooms</label>
+                            <div class="intro">
+                              <select>
+                                <option class="active">Number of bathrooms</option>
+                                <option>For Sale</option>
+                                <option>For Sale </option>
+                                <option>For Sale</option>
+                                <option>For Rent</option>
+                              </select>
+                            </div>
+                          </div>
+                     </div>
+                     <div class="col-sm-4">
+                          <div class="single-query form-group bottom20">
+                              <label>TV Lounge</label>
+                              <div class="intro">
+                                <select>
+                                  <option class="active">Number of TV Lounge</option>
+                                  <option>For Sale</option>
+                                  <option>For Sale </option>
+                                  <option>For Sale</option>
+                                  <option>For Rent</option>
+                                </select>
+                              </div>
+                          </div>
+                     </div>
+                     <div class="col-sm-4">
+                          <div class="single-query form-group  bottom20">
+                              <label>Garages</label>
+                              <div class="intro">
+                                <select>
+                                  <option class="active">Number of Garages</option>
+                                  <option>For Sale</option>
+                                  <option>For Sale </option>
+                                  <option>For Sale</option>
+                                  <option>For Rent</option>
+                                </select>
+                              </div>
+                          </div>
+                     </div>
+                     <div class="col-sm-4">
+                            <div class="single-query form-group bottom20">
+                                  <label>Swimming Pool</label>
+                                  <div class="intro">
+                                    <select>
+                                      <option class="active">Number of Pool</option>
+                                      <option>For Sale</option>
+                                      <option>For Sale </option>
+                                      <option>For Sale</option>
+                                      <option>For Rent</option>
+                                    </select>
+                                  </div>
+                            </div>
+                     </div>
+                     <div class="col-sm-12">
+                          <h3 class="bottom15 margin40">Propertie Description </h3>
+                          <textarea id="txtEditor"></textarea>
+                     </div>
+
+
+                  </div>
+
+                  </form>
+              </div>
+        -->
+        <!--
+
+              <div class="col-sm-6 col-md-6">
+
+                     <div class="col-sm-12">
+                        <h3 class="bottom15 margin40">Property Features</h3>
+                        <div class="search-propertie-filters">
+                          <div class="container-2">
+                            <div class="row">
+                              <div class="col-md-4 col-sm-4">
+                                <div class="search-form-group white">
+                                  <input type="checkbox" name="check-box" />
+                                  <span>Air Conditioning</span>
+                                </div>
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                                <div class="search-form-group white">
+                                  <input type="checkbox" name="check-box" />
+                                  <span>Balcony</span>
+                                </div>
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                                <div class="search-form-group white">
+                                  <input type="checkbox" name="check-box" />
+                                  <span>Gas Heat</span>
+                                </div>
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                                <div class="search-form-group white">
+                                  <input type="checkbox" name="check-box" />
+                                  <span>Fire Place</span>
+                                </div>
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                                <div class="search-form-group white">
+                                  <input type="checkbox" name="check-box" />
+                                  <span>Washer and Dryer</span>
+                                </div>
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                                <div class="search-form-group white">
+                                  <input type="checkbox" name="check-box" />
+                                  <span>Swimming Pool</span>
+                                </div>
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                                <div class="search-form-group white">
+                                  <input type="checkbox" name="check-box" />
+                                  <span>Laundry Room</span>
+                                </div>
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                                <div class="search-form-group white">
+                                  <input type="checkbox" name="check-box" />
+                                  <span>Home Theater</span>
+                                </div>
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                                <div class="search-form-group white">
+                                  <input type="checkbox" name="check-box" />
+                                  <span>Smoking allowed</span>
+                                </div>
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                                <div class="search-form-group white">
+                                  <input type="checkbox" name="check-box" />
+                                  <span>Cable TV</span>
+                                </div>
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                                <div class="search-form-group white">
+                                  <input type="checkbox" name="check-box" />
+                                  <span>Window Coverings</span>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                     </div>
+
+                     <div class="col-sm-12">
+                        <h3 class="bottom15 margin40">Video Presentation</h3>
+                        <div class="single-query form-group bottom15">
+                              <label>Vimeo or Youtube URL</label>
+                              <input type="text" class="keyword-input" placeholder="https://vimeo.com">
+                        </div>
+                     </div>
+                      <div class="col-sm-12">
+                          <h3 class="bottom15 margin40">Place on Map</h3>
+                          <div class="single-query form-group bottom15">
+                          <label>Property Address</label>
+                                <input type="text" class="keyword-input" placeholder="Enter a Location">
+                              </div>
+                              <div id="single_map"></div>
+                      </div>
+                      <div class="col-md-4">
+                         <button type="submit" class="btn-blue border_radius margin40">submit property</button>
+                      </div>
+              </div>
+        -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Property Features</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12"><p class="m-b-0">Main features</p>
+                                <hr>
+                                <div class="col-md-4"><span>Built in year</span> <input type="text" class="form-control"
+                                                                                        placeholder="Enter address here">
+                                </div>
+                                <div class="col-md-4"><span>View</span> <input type="text" class="form-control"
+                                                                               placeholder="Enter address here"></div>
+                                <div class="col-md-4"><span>Parking spaces</span> <input type="text"
+                                                                                         class="form-control"
+                                                                                         placeholder="Enter address here">
+                                </div>
+                                <div class="col-md-4 m-t-10"><span>Total number of floors</span> <input type="text"
+                                                                                                        class="form-control"
+                                                                                                        placeholder="Enter address here">
+                                </div>
+
+                                <div class="col-md-4 m-t-10"><span>Other main features</span> <input type="text"
+                                                                                                     class="form-control"
+                                                                                                     placeholder="Enter address here">
+                                </div>
+                                <div class="col-md-4 m-t-10"><span>Other main features</span> <select
+                                        class="form-control" id="source">
+                                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                                        <option value="AK"> Argentina</option>
+                                        <option value="HI"> Aruba</option>
+                                    </optgroup>
+                                    <optgroup label="Pacific Time Zone">
+                                        <option value="CA"> Belarus</option>
+                                        <option value="NV"> Chile</option>
+                                        <option value="OR"> Ecuador</option>
+                                        <option value="WA"> Cyprus</option>
+                                    </optgroup>
+                                </select></div>
+                                <div class="col-md-4"><span>Other main features</span> <select class="form-control"
+                                                                                               id="source">
+                                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                                        <option value="AK"> Argentina</option>
+                                        <option value="HI"> Aruba</option>
+                                    </optgroup>
+                                    <optgroup label="Pacific Time Zone">
+                                        <option value="CA"> Belarus</option>
+                                        <option value="NV"> Chile</option>
+                                        <option value="OR"> Ecuador</option>
+                                        <option value="WA"> Cyprus</option>
+                                    </optgroup>
+                                </select></div>
+
+                                <div class="col-md-4">
+                                    <div><input type="checkbox"><label>Double Glazed Windows</label>
+                                    </div>
+                                    <div><input type="checkbox"><label>Central Air Conditioning</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox"><label>Central Heating</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div><input type="checkbox"><label>Waste Disposal</label>
+                                    </div>
+                                    <div><input type="checkbox"><label>Furnished</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12"><p class="m-b-0">Rooms</p>
+                                <hr>
+                                <div class="col-md-4"><span>Built in year</span> <input type="text" class="form-control"
+                                                                                        placeholder="Enter address here">
+                                </div>
+                                <div class="col-md-4"><span>View</span> <input type="text" class="form-control"
+                                                                               placeholder="Enter address here"></div>
+                                <div class="col-md-4"><span>Parking spaces</span> <input type="text"
+                                                                                         class="form-control"
+                                                                                         placeholder="Enter address here">
+                                </div>
+                                <div class="col-md-4 m-t-10"><span>Total number of floors</span> <input type="text"
+                                                                                                        class="form-control"
+                                                                                                        placeholder="Enter address here">
+                                </div>
+
+                                <div class="col-md-4 m-t-10"><span>Other main features</span> <input type="text"
+                                                                                                     class="form-control"
+                                                                                                     placeholder="Enter address here">
+                                </div>
+
+                                <div class="col-md-4 m-t-10"><span>Other main features</span> <input type="text"
+                                                                                                     class="form-control"
+                                                                                                     placeholder="Enter address here">
+                                </div>
+                                <div class="col-md-12 col-xs-12 m-t-20">
+                                    <div class="col-md-4">
+                                        <div><input type="checkbox"><label>Double Glazed Windows</label>
+                                        </div>
+                                        <div><input type="checkbox"><label>Central Air Conditioning</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox"><label>Central Heating</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div><input type="checkbox"><label>Waste Disposal</label>
+                                        </div>
+                                        <div><input type="checkbox"><label>Furnished</label>
+                                        </div>
+                                        <div><input type="checkbox"><label>Furnished</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div><input type="checkbox"><label>Waste Disposal</label>
+                                        </div>
+                                        <div><input type="checkbox"><label>Furnished</label>
+                                        </div>
+                                        <div><input type="checkbox"><label>Furnished</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12 col-xs-12 m-t-20">
+                                <div class="col-md-6">
+                                    <p class="m-b-0">Business and Communication
+                                    </p>
+                                    <hr>
+                                    <div class="col-md-6">
+                                        <div><input type="checkbox"><label>Waste Disposal</label>
+                                        </div>
+                                        <div><input type="checkbox"><label>Furnished</label>
+                                        </div>
+                                        <div><input type="checkbox"><label>Furnished</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span>Built in year</span> <input type="text" class="form-control"
+                                                                          placeholder="Enter address here">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <p class="m-b-0">Healthcare Recreational
+                                    </p>
+                                    <hr>
+                                    <div class="col-md-6">
+                                        <div><input type="checkbox"><label>Waste Disposal</label>
+                                        </div>
+                                        <div><input type="checkbox"><label>Furnished</label>
+                                        </div>
+                                        <div><input type="checkbox"><label>Furnished</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span>Built in year</span> <input type="text" class="form-control"
+                                                                          placeholder="Enter address here">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12 m-t-20">
+                                <div class="col-md-6">
+                                    <p class="m-b-0">Nearby Locations and Other Facilities
+
+                                    </p>
+                                    <hr>
+                                    <div class="col-md-6"><span>Built in year</span> <input type="text"
+                                                                                            class="form-control"
+                                                                                            placeholder="Enter address here">
+                                        <span>Built in year</span> <input type="text" class="form-control"
+                                                                          placeholder="Enter address here">
+                                        <span>Built in year</span> <input type="text" class="form-control"
+                                                                          placeholder="Enter address here">
+                                        <span>Built in year</span> <input type="text" class="form-control"
+                                                                          placeholder="Enter address here">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span>Built in year</span> <input type="text" class="form-control"
+                                                                          placeholder="Enter address here">
+                                        <span>Built in year</span> <input type="text" class="form-control"
+                                                                          placeholder="Enter address here">
+                                        <span>Built in year</span> <input type="text" class="form-control"
+                                                                          placeholder="Enter address here">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <p class="m-b-0">Other Facilities
+
+                                    </p>
+                                    <hr>
+                                    <div class="col-md-6">
+                                        <div><input type="checkbox"><label>Waste Disposal</label>
+                                        </div>
+                                        <div><input type="checkbox"><label>Furnished</label>
+                                        </div>
+                                        <div><input type="checkbox"><label>Furnished</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span>Built in year</span> <input type="text" class="form-control"
+                                                                          placeholder="Enter address here">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-info col-xs-3 pull-none" data-toggle="modal"
+                                        data-target="#myModal">Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="testModal2" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Property Features</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12"><p class="m-b-0">Plot Features
+                            </p>
+                                <hr>
+                                <div class="col-md-4 m-t-10"><span>Total number of floors</span> <input type="text"
+                                                                                                        class="form-control"
+                                                                                                        placeholder="Enter address here">
+                                </div>
+                                <div class="col-md-4">
+                                    <div><input type="checkbox"><label>Double Glazed Windows</label>
+                                    </div>
+                                    <div><input type="checkbox"><label>Central Air Conditioning</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox"><label>Central Heating</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div><input type="checkbox"><label>Waste Disposal</label>
+                                    </div>
+                                    <div><input type="checkbox"><label>Furnished</label>
+                                    </div>
+                                    <div><input type="checkbox"><label>Furnished</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 m-t-20">
+                                    <div><input type="checkbox"><label>Waste Disposal</label>
+                                    </div>
+                                    <div><input type="checkbox"><label>Furnished</label>
+                                    </div>
+                                    <div><input type="checkbox"><label>Furnished</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 m-t-20">
+                                    <div><input type="checkbox"><label>Waste Disposal</label>
+                                    </div>
+                                    <div><input type="checkbox"><label>Furnished</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12 m-t-20"><p class="m-b-0">Nearby Locations and Other Facilities
+                            </p>
+                                <hr>
+                                <div class="col-md-4"><span>Built in year</span> <input type="text" class="form-control"
+                                                                                        placeholder="Enter address here">
+                                </div>
+                                <div class="col-md-4"><span>View</span> <input type="text" class="form-control"
+                                                                               placeholder="Enter address here"></div>
+                                <div class="col-md-4"><span>Parking spaces</span> <input type="text"
+                                                                                         class="form-control"
+                                                                                         placeholder="Enter address here">
+                                </div>
+                                <div class="col-md-4 m-t-10"><span>Total number of floors</span> <input type="text"
+                                                                                                        class="form-control"
+                                                                                                        placeholder="Enter address here">
+                                </div>
+
+                                <div class="col-md-4 m-t-10"><span>Other main features</span> <input type="text"
+                                                                                                     class="form-control"
+                                                                                                     placeholder="Enter address here">
+                                </div>
+
+                                <div class="col-md-4 m-t-10"><span>Other main features</span> <input type="text"
+                                                                                                     class="form-control"
+                                                                                                     placeholder="Enter address here">
+                                </div>
+
+                                <div class="col-md-4 m-t-10"><span>Other main features</span> <input type="text"
+                                                                                                     class="form-control"
+                                                                                                     placeholder="Enter address here">
+                                </div>
+
+                                <div class="col-md-4 m-t-10"><span>Other main features</span> <input type="text"
+                                                                                                     class="form-control"
+                                                                                                     placeholder="Enter address here">
+                                </div>
+                                <div class="col-md-4 m-t-10">
+                                    <div><input type="checkbox"><label>Waste Disposal</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 m-t-20">
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-info col-xs-3 pull-none" data-toggle="modal"
+                                            data-target="#myModal">Save
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- My Properties End -->

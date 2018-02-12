@@ -1,0 +1,58 @@
+<!-- My - Property Start -->
+<section id="agent-2-peperty" class="my-pro padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="f-p-links margin_bottom">
+                    <li><a ng-click="clickToView('profile')"><i class="icon-icons230"></i>Profile</a></li>
+                    <li><a ng-click="clickToView('myProperties')" class="active"><i class="icon-icons215"></i> My Properties</a></li>
+                    <li><a ng-click="clickToView('submitProperty')"><i class="icon-icons215"></i> Submit Property</a></li>
+                    <li><a ng-click="clickToView('saveProperty')"><i class="icon-icons43"></i> Save Properties</a></li>
+                    <li><a ng-click="clickToView('logout')"><i class="icon-lock-open3"></i>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row bottom30">
+            <div class="col-md-12 text-center">
+                <h2 class="text-uppercase">My Properties</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container  list-t-border" ng-repeat="property in myProperties">
+        <div class="row bg-hover bg-color-gray">
+            <div class="my-pro-list">
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <img ng-src="{{property.images[0]}}" alt="image"/>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    <div class="feature-p-text">
+                        <h4>{{property.title}}</h4>
+                        <p>{{property.location}}</p>
+                        <span><b>Status:</b>  {{property.purpose}}</span><br>
+                        <div class="button-my-pro-list">
+                            <a >{{property.price}} PKR</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <div class="select-pro-list">
+                        <a ng-click="editProperty(property)"><i class="icon-pen2"></i></a>
+                        <a ><i class="icon-cross"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row padding_top">
+            <div class="col-md-12">
+                <ul class="pager">
+                    <li><a href="#">1</a></li>
+                    <li class="active"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- My - Property end -->

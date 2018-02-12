@@ -1,0 +1,2309 @@
+
+<!--style-->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title> Zameen Four You </title>
+
+
+    <!--<link rel="icon" href="assets/images/user/icon.png">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">-->
+    <!--<link rel="stylesheet" href="assets/pe-icon-7-stroke/css/pe-icon-7-stroke.css">-->
+    <!--style-->
+    <!--Slider-->
+    <style type="text/css">
+        .carousel.vertical .carousel-inner > .item {
+            width: auto;
+            /* padding-right: 50px;*/
+        }
+        .carousel.vertical .carousel-inner .item a{
+            display: block;
+            line-height: 34px;
+            padding: 0px 10px;
+            color: #fff;
+            border-bottom: 1px dashed #fff;
+        }
+        .carousel.vertical .carousel-inner .item a:hover{
+            background: #44920d;
+        }
+        @media all and (transform-3d), (-webkit-transform-3d) {
+            .carousel.vertical .carousel-inner > .item {
+                /*    transition: 0.6s ease-in-out;*/
+            }
+            .carousel.vertical .carousel-inner > .item.next, .carousel.vertical .carousel-inner > .item.active.right {
+                transform: translate3d(0, 100%, 0);
+                top: 0;
+            }
+            .carousel.vertical .carousel-inner > .item.prev, .carousel.vertical .carousel-inner > .item.active.left {
+                transform: translate3d(0, -100%, 0);
+                top: 0;
+            }
+            .carousel.vertical .carousel-inner > .item.next.left, .carousel.vertical .carousel-inner > .item.prev.right, .carousel.vertical .carousel-inner > .item.active {
+                transform: translate3d(0, 0, 0);
+                top: 0;
+            }
+        }
+        .carousel.vertical .carousel-inner > .active, .carousel.vertical .carousel-inner > .next, .carousel.vertical .carousel-inner > .prev {
+            display: block;
+        }
+        .carousel.vertical .carousel-inner > .active {
+            top: 0;
+        }
+        .carousel.vertical .carousel-inner > .next, .carousel.vertical .carousel-inner > .prev {
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        .carousel.vertical .carousel-inner > .next {
+            top: 100%;
+        }
+        .carousel.vertical .carousel-inner > .prev {
+            top: -100%;
+        }
+        .carousel.vertical .carousel-inner > .next.left, .carousel.vertical .carousel-inner > .prev.right {
+            top: 0;
+        }
+        .carousel.vertical .carousel-inner > .active.left {
+            top: -100%;
+        }
+        .carousel.vertical .carousel-inner > .active.right {
+            top: 100%;
+        }
+        .carousel.vertical .carousel-control {
+            left: auto;
+            width: 50px;
+        }
+        .carousel.vertical .carousel-control.up {
+            top: 0;
+            bottom: 90%;
+            width: 100%;
+            background:#243f4f;
+            opacity:1;
+        }
+        .carousel.vertical .carousel-control.down {
+            top: 90%;
+            bottom: 0;
+            width: 100%;
+            background:#243f4f;
+            opacity: 1;
+        }
+        .carousel.vertical .carousel-control .icon-prev, .carousel.vertical .carousel-control .icon-next, .carousel.vertical .carousel-control .glyphicon-chevron-up, .carousel.vertical .carousel-control .glyphicon-chevron-down {
+            position: absolute;
+            top: 50%;
+            z-index: 5;
+            display: inline-block;
+        }
+        .carousel.vertical .carousel-control .icon-prev, .carousel.vertical .carousel-control .glyphicon-chevron-up {
+            left: 50%;
+            margin-left: -10px;
+            top: 50%;
+            margin-top: -10px;
+        }
+        .carousel.vertical .carousel-control .icon-next, .carousel.vertical .carousel-control .glyphicon-chevron-down {
+            left: 50%;
+            margin-left: -10px;
+            top: 50%;
+            margin-top: -10px;
+        }
+        .carousel.vertical .carousel-control .icon-up, .carousel.vertical .carousel-control .icon-down {
+            width: 20px;
+            height: 20px;
+            line-height: 1;
+            font-family: serif;
+        }
+
+        .carousel-zoomer {
+            width: 29em;
+            height: 25em;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .carousel-zoomer li {
+            width: 400px;
+            height: 281px;
+            background: #333;
+            display: inline-block;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .carousel-zoomer li p {
+            color: white;
+            font-weight: bold;
+            font-size: 5em;
+            text-align: center;
+            margin-top: 1.175em;
+        }
+
+        .carousel-zoomer .items {
+            position: absolute;
+        }
+
+        .main-pos {
+            margin-left: 2em !important;
+            z-index: 3000;
+            /*background-image: url('https://dl.dropbox.com/u/32649907/imgs/shadow.png');*/
+        }
+
+        .left-pos {
+            opacity: .3;
+            margin-left: -17em !important;
+            z-index: 1000;
+            -webkit-transform: scale(.75);
+            -moz-transform: scale(.75);
+            transform: scale(.75);
+        }
+
+        .back-pos {
+            margin-left: 2em !important;
+            opacity: .05;
+            -webkit-transform: scale(.5);
+            -moz-transform: scale(.5);
+            transform: scale(.5);
+        }
+
+        .right-pos {
+            opacity: .3;
+            margin-left:  21em !important;
+            z-index: 1000;
+            -webkit-transform: scale(.75);
+            -moz-transform: scale(.75);
+            transform: scale(.75);
+        }
+
+        .carousel-zoomer span {
+            position: relative;
+            margin: 0 auto;
+            left: 17em;
+            top: 20em;
+        }
+
+        /*  bhoechie tab */
+        div.bhoechie-tab-container{
+            z-index: 10;
+            padding: 0 !important;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            background-clip: padding-box;
+            opacity: 0.97;
+            filter: alpha(opacity=97);
+        }
+        div.bhoechie-tab-menu{
+            padding-right: 0;
+            padding-left: 0;
+            padding-bottom: 0;
+            padding-top: 15px;
+        }
+        div.bhoechie-tab-menu div.list-group{
+            margin-bottom: 0;
+        }
+        div.bhoechie-tab-menu div.list-group>a{
+            margin-bottom: 0;
+            font-size: 13px;
+        }
+        div.bhoechie-tab-menu div.list-group>a .glyphicon,
+        div.bhoechie-tab-menu div.list-group>a .fa {
+            color:#59b45d;
+        }
+        div.bhoechie-tab-menu div.list-group>a:first-child{
+            border-top-right-radius: 0;
+            -moz-border-top-right-radius: 0;
+        }
+        div.bhoechie-tab-menu div.list-group>a:last-child{
+            border-bottom-right-radius: 0;
+            -moz-border-bottom-right-radius: 0;
+        }
+        div.bhoechie-tab-menu div.list-group>a.active,
+        div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
+        div.bhoechie-tab-menu div.list-group>a.active .fa{
+            background-color: #59b45d;
+            background-image: #5A55A3;
+            color: #ffffff;
+        }
+        div.bhoechie-tab-menu div.list-group>a.active:after{
+            content: '';
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            margin-top: -13px;
+            border-left: 0;
+            border-bottom: 13px solid transparent;
+            border-top: 13px solid transparent;
+            border-left: 10px solid #59b45d;
+        }
+
+        div.bhoechie-tab-content{
+            /* background-color: #ffffff;*/
+            /* border: 1px solid #eeeeee; */
+            padding-left: 10px;
+            /*padding-top: 10px;*/
+        }
+
+        div.bhoechie-tab div.bhoechie-tab-content:not(.active){
+            display: none;
+        }
+        /*input animation start*/
+        input:focus,
+        textarea:focus {
+            outline: none;
+        }
+        input:focus ~ label, input:valid ~ label,
+        textarea:focus ~ label,
+        textarea:valid ~ label {
+            top: -7px;
+            font-size: 12px;
+            color: #2196F3;
+        }
+        input:focus ~ .bar:before,
+        textarea:focus ~ .bar:before {
+            width:100%;
+        }
+
+        input[type="password"] {
+            letter-spacing: 0.3em;
+        }
+
+        label {
+            color: #c6c6c6;
+            font-size: 13px!important;
+            font-weight: normal;
+            position: absolute;
+            pointer-events: none;
+            left: 5px;
+            top: 10px;
+            -webkit-transition: 100ms ease all;
+            transition: 100ms ease all;
+            margin-top: 0px!important;
+        }
+
+        .bar {
+            position: relative;
+            display: block;
+        }
+        .bar:before {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 0px;
+            position: absolute;
+            background: #2196F3;
+            -webkit-transition: 100ms ease all;
+            transition: 100ms ease all;
+            left: 0%;
+        }
+        .group {
+            position: relative;
+            margin-top: 10px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        input,
+        textarea {
+            background: none!important;
+            font-size: 14px!important;
+            padding: 10px 10px 2px 5px!important;
+            display: block;
+            border: none!important;
+            border-radius: 0!important;
+            border-bottom: 1px solid #fff!important;
+            height: auto!important;
+            color: #fff!important;
+            width: 100%;
+        }
+
+        .carousel-3d-container figure {
+            margin:0;
+        }
+
+        .carousel-3d-container figcaption {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            bottom: 0;
+            position: absolute;
+            bottom: 0;
+            padding: 15px;
+            font-size: 12px;
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+    <div class="rev_slider_wrapper" ng-controller="homeCtrl">
+        <div id="rev_overlaped" class="rev_slider"  data-version="5.0">
+            <ul>
+                <!-- SLIDE -->
+                <li data-transition="fade">
+                    <img src="assets/images/user/sliders/1.jpg" alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg">
+                </li>
+                <li data-transition="fade">
+                    <img src="assets/images/user/sliders/2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg">
+                </li>
+                <li data-transition="fade">
+                    <img src="assets/images/user/sliders/3.jpg" alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg">
+                </li>
+                <div class="tp-static-layers">
+                    <div class="tp-caption tp-static-layer"
+                         id="slide-37-layer-22"
+                         data-x="['left','left','left','left']" data-hoffset="['50','50','50','50']"
+                         data-y="['bottom','bottom','bottom','bottom']" data-voffset="['230','180','150','100']"
+                         data-whitespace="nowrap"
+                         data-visibility="['on','on','on','on']"
+                         data-fontsize="['48','48','28','28']"
+                         data-start="500"
+                         data-responsive_offset="on"
+                         data-basealign="slide"
+                         data-startslide="0"
+                         data-endslide="5"
+                         style="z-index: 5;">
+                        <h1><span class="t_white">Lorem ipsum dolor sit amet <br>consectetur adipiscing.</span></h1>
+                    </div>
+                    <div class="tp-caption tp-static-layer"
+                         id="slide-37-layer-2"
+                         data-x="['left','left','left','left']" data-hoffset="['50','50','50','50']"
+                         data-y="['bottom','bottom','bottom','bottom']" data-voffset="['150','100','120','120']"
+                         data-whitespace="nowrap"
+                         data-visibility="['on','on','on','on']"
+                         data-start="500"
+                         data-basealign="slide"
+                         data-startslide="0"
+                         data-endslide="5"
+                         style="z-index: 5;">
+
+                    </div>
+                    <div class="tp-caption tp-static-layer"
+                         id="slide-37-layer-21"
+                         data-x="['left','left','left','left']" data-hoffset="['50','50','50','50']"
+                         data-y="['bottom','bottom','bottom','bottom']" data-voffset="['60','60','60','60']"
+                         data-whitespace="nowrap"
+                         data-visibility="['on','on','on','on']"
+                         data-start="500"
+                         data-basealign="slide"
+                         data-startslide="0"
+                         data-endslide="5"
+                         style="z-index: 5;">
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <!--Slider ends-->
+    <!--Navigation-->
+    <div id="mainMenuBarAnchor"></div>
+    <header class="white_header">
+        <nav class="navbar navbar-default bootsnav">
+            <div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="attr-nav">
+                            <div class="upper-column info-box first">
+                                <div class="icons"><i class="icon-telephone114"></i></div>
+                                <ul>
+                                    <li><strong>Phone Number</strong></li>
+                                    <li>123456789</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <a class="navbar-brand" href="index.html"><img src="assets/images/user/logo/1.png" class="logo" alt="Zameen Four You"></a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-menu">
+                            <ul class="nav navbar-nav" data-in="fadeIn" data-out="fadeOut">
+                                <li><a href="index.html"><i class="pe-7s-home pe-2x pe-va"></i> Home</a></li>
+                                <li><a href="search.html"><i class="pe-7s-world pe-2x pe-va"></i> Plots</a></li>
+                                <li><a href="search.html"><i class="pe-7s-map pe-2x pe-va"></i> Commercial</a></li>
+                                <li><a href="search.html"><i class="pe-7s-culture pe-2x pe-va"></i> Rent</a></li>
+                                <li><a href="search.html"><i class="pe-7s-map-2 pe-2x pe-va"></i> Wanted</a></li>
+                                <li><a href="agents.html"><i class="pe-7s-users pe-2x pe-va"></i> Agents</a></li>
+                                <li><a href="contact_us.html"><i class="pe-7s-call pe-2x pe-va"></i> Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--Navigaton Ends-->
+    <!--PROPERTY FOR SALE IN PAKISTAN-->
+    <div class="tp_overlay">
+        <div class="topbar clearfix" style="background-color: black";>
+            <ul class="breadcrumb_top">
+                <li><a ng-click="clickToView('saveProperty')"><i class="icon-icons43"></i>Favorite Property</a></li>
+                <li><a ng-click="clickToView('submitProperty')"><i class="icon-icons215"></i>Submit Property</a></li>
+                <li><a ng-click="clickToView('myProperties')"><i class="icon-icons215"></i>My Property</a></li>
+                <li><a ng-click="clickToView('profile')"><i class="icon-icons230"></i>Profile</a></li>
+                <li><a ng-click="clickToView('login')"><i class="icon-icons179"></i>Login / Register</a></li>
+                <li class="last-icon"><i class="icon-icons215"></i></li>
+            </ul>
+        </div>
+        <h5 class="text-uppercase t_white bottom20 text-center" style="font-size: 20px;">Property For Sale In Pakistan</h5>
+        <form class="callus clearfix" style="padding:10px 15px;margin-top: 30px;">
+            <div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-8 col-xs-9 bhoechie-tab-container">
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 bhoechie-tab-menu">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item active text-center">
+                                    <h4 class="glyphicon glyphicon-credit-card"></h4><br/>Buy
+                                </a>
+                                <a href="#" class="list-group-item text-center">
+                                    <h4 class="glyphicon glyphicon-home"></h4><br/>Rent
+                                </a>
+                                <a href="#" class="list-group-item text-center">
+                                    <h4 class="glyphicon glyphicon-road"></h4><br/>Projects
+                                </a>
+                                <a href="#" class="list-group-item text-center">
+                                    <h4 class="glyphicon glyphicon-import"></h4><br/>Wanted
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-10 no-padding col-sm-9 col-xs-9 bhoechie-tab">
+                            <!-- flight section -->
+                            <div class="bhoechie-tab-content active">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!--  <input type="text" class="keyword-input" placeholder="Then Enter Location Here"> -->
+                                        <div class="group">
+                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <label>Enter Location</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="single-query bottom15">
+                                            <div class="intro">
+                                                <select>
+                                                    <option selected="" value="any">All Homes</option>
+                                                    <option>All areas</option>
+                                                    <option>Bayonne </option>
+                                                    <option>Greenville</option>
+                                                    <option>Manhattan</option>
+                                                    <option>Queens</option>
+                                                    <option>The Heights</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="single-query bottom15">
+                                            <div class="intro">
+                                                <select>
+                                                    <option class="active">Select City</option>
+                                                    <option>All areas</option>
+                                                    <option>Bayonne </option>
+                                                    <option>Greenville</option>
+                                                    <option>Manhattan</option>
+                                                    <option>Queens</option>
+                                                    <option>The Heights</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="single-query bottom15">
+                                            <div class="intro">
+                                                <select>
+                                                    <option class="active">Property Status</option>
+                                                    <option>All areas</option>
+                                                    <option>Bayonne </option>
+                                                    <option>Greenville</option>
+                                                    <option>Manhattan</option>
+                                                    <option>Queens</option>
+                                                    <option>The Heights</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-2">
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="single-query bottom15">
+                                                <div class="intro">
+                                                    <select>
+                                                        <option class="active">Min Beds</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="single-query bottom15">
+                                                <div class="intro">
+                                                    <select>
+                                                        <option class="active">Min Baths</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                        <!--  <div class="single-query bottom15">
+                                           <input type="text" class="keyword-input" placeholder="Min Area (sq ft)">
+                                         </div> -->
+                                        <div class="group">
+                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <label>Min Area</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                        <div class="group">
+                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <label>Max Area</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 bottom15">
+                                        <div class="single-query-slider">
+                                            <div class="clearfix top20">
+                                                <label class="pull-left">Price Range:</label>
+                                                <div class="price text-right">
+                                                    <span>$</span>
+                                                    <div class="leftLabel"></div>
+                                                    <span>to $</span>
+                                                    <div class="rightLabel"></div>
+                                                </div>
+                                            </div>
+                                            <div data-range_min="0" data-range_max="1500000" data-cur_min="0" data-cur_max="1500000" class="nstSlider">
+                                                <div class="bar"></div>
+                                                <div class="leftGrip"></div>
+                                                <div class="rightGrip"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="    clear: both;
+    position: relative;
+    top: 20px;
+    text-align: right;
+    padding: 10px 15px;">
+                                        <button type="submit" class="btn btn-success" style="    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;font-size: 18px;"><i class="glyphicon glyphicon-search"></i> Search</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="group-button-search">
+                                            <a data-toggle="collapse" href=".search-propertie-filters" class="more-filter">
+                                                <i class="fa fa-plus text-1" aria-hidden="true"></i><i class="fa fa-minus text-2 hide" aria-hidden="true"></i>
+                                                <div class="text-1">Show more search options</div>
+                                                <div class="text-2 hide">less more search options</div>
+                                            </a>
+                                        </div>
+                                        <div class="search-propertie-filters collapse">
+                                            <div class="container-2">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Features</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Balcony</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Gas Heat</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Washer, Dryer</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>TV Cable</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Swimming Pool</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Home Theater</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- train section -->
+                            <div class="bhoechie-tab-content">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!--  <input type="text" class="keyword-input" placeholder="Then Enter Location Here"> -->
+                                        <div class="group">
+                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <label>Enter Location</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="single-query bottom15">
+                                            <div class="intro">
+                                                <select>
+                                                    <option selected="" value="any">All Homes</option>
+                                                    <option>All areas</option>
+                                                    <option>Bayonne </option>
+                                                    <option>Greenville</option>
+                                                    <option>Manhattan</option>
+                                                    <option>Queens</option>
+                                                    <option>The Heights</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="single-query bottom15">
+                                            <div class="intro">
+                                                <select>
+                                                    <option class="active">Select City</option>
+                                                    <option>All areas</option>
+                                                    <option>Bayonne </option>
+                                                    <option>Greenville</option>
+                                                    <option>Manhattan</option>
+                                                    <option>Queens</option>
+                                                    <option>The Heights</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="single-query bottom15">
+                                            <div class="intro">
+                                                <select>
+                                                    <option class="active">Property Status</option>
+                                                    <option>All areas</option>
+                                                    <option>Bayonne </option>
+                                                    <option>Greenville</option>
+                                                    <option>Manhattan</option>
+                                                    <option>Queens</option>
+                                                    <option>The Heights</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-2">
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="single-query bottom15">
+                                                <div class="intro">
+                                                    <select>
+                                                        <option class="active">Min Beds</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="single-query bottom15">
+                                                <div class="intro">
+                                                    <select>
+                                                        <option class="active">Min Baths</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                        <!--  <div class="single-query bottom15">
+                                           <input type="text" class="keyword-input" placeholder="Min Area (sq ft)">
+                                         </div> -->
+                                        <div class="group">
+                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <label>Min Area</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                        <div class="group">
+                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <label>Max Area</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 bottom15">
+                                        <div class="single-query-slider">
+                                            <div class="clearfix top20">
+                                                <label class="pull-left">Price Range:</label>
+                                                <div class="price text-right">
+                                                    <span>$</span>
+                                                    <div class="leftLabel"></div>
+                                                    <span>to $</span>
+                                                    <div class="rightLabel"></div>
+                                                </div>
+                                            </div>
+                                            <div data-range_min="0" data-range_max="1500000" data-cur_min="0" data-cur_max="1500000" class="nstSlider">
+                                                <div class="bar"></div>
+                                                <div class="leftGrip"></div>
+                                                <div class="rightGrip"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="    clear: both;
+    position: relative;
+    top: 20px;
+    text-align: right;
+    padding: 10px 15px;">
+                                        <button type="submit" class="btn btn-success" style="    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;font-size: 18px;"><i class="glyphicon glyphicon-search"></i> Search</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="group-button-search">
+                                            <a data-toggle="collapse" href=".search-propertie-filters" class="more-filter">
+                                                <i class="fa fa-plus text-1" aria-hidden="true"></i><i class="fa fa-minus text-2 hide" aria-hidden="true"></i>
+                                                <div class="text-1">Show more search options</div>
+                                                <div class="text-2 hide">less more search options</div>
+                                            </a>
+                                        </div>
+                                        <div class="search-propertie-filters collapse">
+                                            <div class="container-2">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Features</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Balcony</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Gas Heat</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Washer, Dryer</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>TV Cable</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Swimming Pool</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Home Theater</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- hotel search -->
+                            <div class="bhoechie-tab-content">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="single-query bottom15">
+                                            <div class="intro">
+                                                <select>
+                                                    <option class="active">Select City</option>
+                                                    <option>All areas</option>
+                                                    <option>Bayonne </option>
+                                                    <option>Greenville</option>
+                                                    <option>Manhattan</option>
+                                                    <option>Queens</option>
+                                                    <option>The Heights</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="single-query bottom15">
+                                            <div class="intro">
+                                                <select>
+                                                    <option selected="" value="any">All Property type</option>
+                                                    <option>All areas</option>
+                                                    <option>Bayonne </option>
+                                                    <option>Greenville</option>
+                                                    <option>Manhattan</option>
+                                                    <option>Queens</option>
+                                                    <option>The Heights</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="group">
+                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <label>Developer Type</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="group">
+                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <label>Project title</label>
+                                        </div>
+                                    </div>
+                                    <div class="search-2">
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="single-query bottom15">
+                                                <div class="intro">
+                                                    <select>
+                                                        <option class="active">Min Beds</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="single-query bottom15">
+                                                <div class="intro">
+                                                    <select>
+                                                        <option class="active">Min Baths</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                        <!--  <div class="single-query bottom15">
+                                           <input type="text" class="keyword-input" placeholder="Min Area (sq ft)">
+                                         </div> -->
+                                        <div class="group">
+                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <label>Min Area</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                        <div class="group">
+                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <label>Max Area</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 bottom15">
+                                        <div class="single-query-slider">
+                                            <div class="clearfix top20">
+                                                <label class="pull-left">Price Range:</label>
+                                                <div class="price text-right">
+                                                    <span>$</span>
+                                                    <div class="leftLabel"></div>
+                                                    <span>to $</span>
+                                                    <div class="rightLabel"></div>
+                                                </div>
+                                            </div>
+                                            <div data-range_min="0" data-range_max="1500000" data-cur_min="0" data-cur_max="1500000" class="nstSlider">
+                                                <div class="bar"></div>
+                                                <div class="leftGrip"></div>
+                                                <div class="rightGrip"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="    clear: both;
+    position: relative;
+    top: 20px;
+    text-align: right;
+    padding: 10px 15px;">
+                                        <button type="submit" class="btn btn-success" style="    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;font-size: 18px;"><i class="glyphicon glyphicon-search"></i> Search</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="group-button-search">
+                                            <a data-toggle="collapse" href=".search-propertie-filters" class="more-filter">
+                                                <i class="fa fa-plus text-1" aria-hidden="true"></i><i class="fa fa-minus text-2 hide" aria-hidden="true"></i>
+                                                <div class="text-1">Show more search options</div>
+                                                <div class="text-2 hide">less more search options</div>
+                                            </a>
+                                        </div>
+                                        <div class="search-propertie-filters collapse">
+                                            <div class="container-2">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Features</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Balcony</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Gas Heat</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Washer, Dryer</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>TV Cable</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Swimming Pool</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Home Theater</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bhoechie-tab-content">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!--  <input type="text" class="keyword-input" placeholder="Then Enter Location Here"> -->
+                                        <div class="group">
+                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <label>Enter Location</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="single-query bottom15">
+                                            <div class="intro">
+                                                <select>
+                                                    <option selected="" value="any">All Homes</option>
+                                                    <option>All areas</option>
+                                                    <option>Bayonne </option>
+                                                    <option>Greenville</option>
+                                                    <option>Manhattan</option>
+                                                    <option>Queens</option>
+                                                    <option>The Heights</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="single-query bottom15">
+                                            <div class="intro">
+                                                <select>
+                                                    <option class="active">Select City</option>
+                                                    <option>All areas</option>
+                                                    <option>Bayonne </option>
+                                                    <option>Greenville</option>
+                                                    <option>Manhattan</option>
+                                                    <option>Queens</option>
+                                                    <option>The Heights</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="single-query bottom15">
+                                            <div class="intro">
+                                                <select>
+                                                    <option class="active">Property Status</option>
+                                                    <option>All areas</option>
+                                                    <option>Bayonne </option>
+                                                    <option>Greenville</option>
+                                                    <option>Manhattan</option>
+                                                    <option>Queens</option>
+                                                    <option>The Heights</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-2">
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="single-query bottom15">
+                                                <div class="intro">
+                                                    <select>
+                                                        <option class="active">Min Beds</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="single-query bottom15">
+                                                <div class="intro">
+                                                    <select>
+                                                        <option class="active">Min Baths</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                        <!--  <div class="single-query bottom15">
+                                           <input type="text" class="keyword-input" placeholder="Min Area (sq ft)">
+                                         </div> -->
+                                        <div class="group">
+                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <label>Min Area</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                        <div class="group">
+                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <label>Max Area</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 bottom15">
+                                        <div class="single-query-slider">
+                                            <div class="clearfix top20">
+                                                <label class="pull-left">Price Range:</label>
+                                                <div class="price text-right">
+                                                    <span>$</span>
+                                                    <div class="leftLabel"></div>
+                                                    <span>to $</span>
+                                                    <div class="rightLabel"></div>
+                                                </div>
+                                            </div>
+                                            <div data-range_min="0" data-range_max="1500000" data-cur_min="0" data-cur_max="1500000" class="nstSlider">
+                                                <div class="bar"></div>
+                                                <div class="leftGrip"></div>
+                                                <div class="rightGrip"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="    clear: both;
+    position: relative;
+    top: 20px;
+    text-align: right;
+    padding: 10px 15px;">
+                                        <button type="submit" class="btn btn-success" style="    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;font-size: 18px;"><i class="glyphicon glyphicon-search"></i> Search</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="group-button-search">
+                                            <a data-toggle="collapse" href=".search-propertie-filters" class="more-filter">
+                                                <i class="fa fa-plus text-1" aria-hidden="true"></i><i class="fa fa-minus text-2 hide" aria-hidden="true"></i>
+                                                <div class="text-1">Show more search options</div>
+                                                <div class="text-2 hide">less more search options</div>
+                                            </a>
+                                        </div>
+                                        <div class="search-propertie-filters collapse">
+                                            <div class="container-2">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Features</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Balcony</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Gas Heat</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Washer, Dryer</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>TV Cable</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Swimming Pool</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="search-form-group white bottom10">
+                                                            <input type="checkbox" name="check-box" />
+                                                            <span>Home Theater</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div style="    position: absolute;
+    right: 80px;
+    top: 20%;">
+
+        <header style="color: #fff;
+    text-align: center;
+    font-size: 26px;
+    background:#57b15f;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 45px;">Population location in Homes</header>
+        <div style="background:#243f4f;width:377px;">
+            <div>
+                <div id="" class="carousel vertical slide carousel-showsixmoveone carousel-example-vertical" style="height:323px;
+	    overflow: hidden;">
+                    <div class="carousel-inner m-t-35" role="listbox">
+                        <div class="item active">
+                            <a href="#">
+                                <strong>Lahore</strong> <span class="pull-right">okara</span>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <strong>Karachi</strong> <span class="pull-right">okara</span>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <strong>Islamabad</strong> <span class="pull-right">okara</span>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <strong>Faislabad</strong> <span class="pull-right">okara</span>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <strong>Gujranwala</strong> <span class="pull-right">okara</span>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <strong>Gujrat</strong> <span class="pull-right">okara</span>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <strong>Peshawar</strong> <span class="pull-right">okara</span>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <strong>
+                                    Rawalpindi
+                                </strong> <span class="pull-right">okara</span>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="#">
+                                <strong>
+                                    Quetta
+                                </strong> <span class="pull-right">okara</span>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="#">
+                                <strong>
+                                    Hyderabad
+                                </strong> <span class="pull-right">okara</span>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="#">
+                                <strong>
+                                    Murree
+                                </strong> <span class="pull-right">okara</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- Controls -->
+                    <a class="up carousel-control" href=".carousel-example-vertical" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="down carousel-control" href=".carousel-example-vertical" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--PROPERTY FOR SALE IN PAKISTAN END-->
+
+    <div id="example">
+        <carousel-3d :autoplay="true" :autoplay-timeout="3000" :controls-visible="true" :clickable="false">
+            <slide v-for="(slide, i) in slides" :index="i">
+                <figure>
+                    <img src="https://placehold.it/360x270">
+                    <figcaption>
+                        The sky is the limit only for those who aren't afraid to fly!
+                        The sky is the limit only for those who aren't afraid to fly!
+
+                    </figcaption>
+                </figure>
+            </slide>
+        </carousel-3d>
+    </div>
+    <!--Packages One-->
+    <section id="property" class="padding index2 bg_light">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10">
+                    <h2 class="uppercase">Package 1 Project</h2>
+                    <p class="heading_space"> We are proud to present to you some of the best homes, apartments, offices e.g.
+                        across Pakistan for affordable prices.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="three-item owl-carousel">
+                    <div class="item">
+                        <div class="property_item">
+                            <div class="property_head text-center">
+                                <h3 class="captlize"><a href="property.html">DHA</a></h3>
+                                <p>Panta Square By DHA Lahore</p>
+                            </div>
+                            <div class="image">
+                                <a href="property.html"><img src="assets/images/user/pakages1projects/1.jpg" alt="latest property" class="img-responsive"></a>
+                                <div class="price lighter clearfix">
+                                    <span class="tag pull-right">For Rent</span>
+                                </div>
+                            </div>
+                            <div class="proerty_content">
+                                <div class="property_meta">
+                                    <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span>
+                                    <span><i class="icon-bed"></i>Bedrooms</span>
+                                    <span><i class="icon-safety-shower"></i>1 Bathroom</span>
+                                </div>
+                                <div class="property_meta">
+                                    <span><i class="icon-old-television"></i>TV Lounge</span>
+                                    <span><i class="icon-garage"></i>Parking Garage</span>
+                                    <span><i class="icon-select-an-objecto-tool"></i>Square Feet</span>
+                                </div>
+
+                                <div class="favroute clearfix">
+                                    <p class="pull-md-left">60,000 PKR</p>
+                                    <ul class="pull-right">
+                                        <li><a href="#."><i class="icon-like"></i></a></li>
+                                        <li><a href="#."><i class="icon-video"></i></a></li>
+
+                                        <li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="toggle_share collapse" id="one">
+                                    <ul>
+                                        <li><a href="#." class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                                        <li><a href="#." class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                                        <li><a href="#." class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="property_item">
+                            <div class="property_head text-center">
+                                <h3 class="captlize"><a href="property.html">DHA</a></h3>
+                                <p>Panta Square By DHA Lahore</p>
+                            </div>
+                            <div class="image">
+                                <a href="property.html"><img src="assets/images/user/pakages1projects/2.jpg" alt="latest property" class="img-responsive"></a>
+                                <div class="price lighter clearfix">
+                                    <span class="tag pull-right">For Rent</span>
+                                </div>
+                            </div>
+                            <div class="proerty_content">
+                                <div class="property_meta">
+                                    <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span>
+                                    <span><i class="icon-bed"></i>Bedrooms</span>
+                                    <span><i class="icon-safety-shower"></i>1 Bathroom</span>
+                                </div>
+                                <div class="property_meta">
+                                    <span><i class="icon-old-television"></i>TV Lounge</span>
+                                    <span><i class="icon-garage"></i>Parking Garage</span>
+                                    <span><i class="icon-select-an-objecto-tool"></i>Square Feet</span>
+                                </div>
+
+                                <div class="favroute clearfix">
+                                    <p class="pull-md-left">60,000 PKR</p>
+                                    <ul class="pull-right">
+                                        <li><a href="#."><i class="icon-like"></i></a></li>
+                                        <li><a href="#."><i class="icon-video"></i></a></li>
+
+                                        <li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="toggle_share collapse" id="one">
+                                    <ul>
+                                        <li><a href="#." class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                                        <li><a href="#." class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                                        <li><a href="#." class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="property_item">
+                            <div class="property_head text-center">
+                                <h3 class="captlize"><a href="property.html">DHA</a></h3>
+                                <p>Panta Square By DHA Lahore</p>
+                            </div>
+                            <div class="image">
+                                <a href="property.html"><img src="assets/images/user/pakages1projects/3.jpg" alt="latest property" class="img-responsive"></a>
+                                <div class="price lighter clearfix">
+                                    <span class="tag pull-right">For Rent</span>
+                                </div>
+                            </div>
+                            <div class="proerty_content">
+                                <div class="property_meta">
+                                    <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span>
+                                    <span><i class="icon-bed"></i>Bedrooms</span>
+                                    <span><i class="icon-safety-shower"></i>1 Bathroom</span>
+                                </div>
+                                <div class="property_meta">
+                                    <span><i class="icon-old-television"></i>TV Lounge</span>
+                                    <span><i class="icon-garage"></i>Parking Garage</span>
+                                    <span><i class="icon-select-an-objecto-tool"></i>Square Feet</span>
+                                </div>
+
+                                <div class="favroute clearfix">
+                                    <p class="pull-md-left">60,000 PKR</p>
+                                    <ul class="pull-right">
+                                        <li><a href="#."><i class="icon-like"></i></a></li>
+                                        <li><a href="#."><i class="icon-video"></i></a></li>
+
+                                        <li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="toggle_share collapse" id="one">
+                                    <ul>
+                                        <li><a href="#." class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                                        <li><a href="#." class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                                        <li><a href="#." class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="property_item">
+                            <div class="property_head text-center">
+                                <h3 class="captlize"><a href="property.html">DHA</a></h3>
+                                <p>Panta Square By DHA Lahore</p>
+                            </div>
+                            <div class="image">
+                                <a href="property.html"><img src="assets/images/user/pakages1projects/4.jpg" alt="latest property" class="img-responsive"></a>
+                                <div class="price lighter clearfix">
+                                    <span class="tag pull-right">For Rent</span>
+                                </div>
+                            </div>
+                            <div class="proerty_content">
+                                <div class="property_meta">
+                                    <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span>
+                                    <span><i class="icon-bed"></i>Bedrooms</span>
+                                    <span><i class="icon-safety-shower"></i>1 Bathroom</span>
+                                </div>
+                                <div class="property_meta">
+                                    <span><i class="icon-old-television"></i>TV Lounge</span>
+                                    <span><i class="icon-garage"></i>Parking Garage</span>
+                                    <span><i class="icon-select-an-objecto-tool"></i>Square Feet</span>
+                                </div>
+
+                                <div class="favroute clearfix">
+                                    <p class="pull-md-left">60,000 PKR</p>
+                                    <ul class="pull-right">
+                                        <li><a href="#."><i class="icon-like"></i></a></li>
+                                        <li><a href="#."><i class="icon-video"></i></a></li>
+
+                                        <li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="toggle_share collapse" id="one">
+                                    <ul>
+                                        <li><a href="#." class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                                        <li><a href="#." class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                                        <li><a href="#." class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="property_item">
+                            <div class="property_head text-center">
+                                <h3 class="captlize"><a href="property.html">DHA</a></h3>
+                                <p>Panta Square By DHA Lahore</p>
+                            </div>
+                            <div class="image">
+                                <a href="property.html"><img src="assets/images/user/pakages1projects/5.jpg" alt="latest property" class="img-responsive"></a>
+                                <div class="price lighter clearfix">
+                                    <span class="tag pull-right">For Rent</span>
+                                </div>
+                            </div>
+                            <div class="proerty_content">
+                                <div class="property_meta">
+                                    <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span>
+                                    <span><i class="icon-bed"></i>Bedrooms</span>
+                                    <span><i class="icon-safety-shower"></i>1 Bathroom</span>
+                                </div>
+                                <div class="property_meta">
+                                    <span><i class="icon-old-television"></i>TV Lounge</span>
+                                    <span><i class="icon-garage"></i>Parking Garage</span>
+                                    <span><i class="icon-select-an-objecto-tool"></i>Square Feet</span>
+                                </div>
+
+                                <div class="favroute clearfix">
+                                    <p class="pull-md-left">60,000 PKR</p>
+                                    <ul class="pull-right">
+                                        <li><a href="#."><i class="icon-like"></i></a></li>
+                                        <li><a href="#."><i class="icon-video"></i></a></li>
+
+                                        <li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="toggle_share collapse" id="one">
+                                    <ul>
+                                        <li><a href="#." class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                                        <li><a href="#." class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                                        <li><a href="#." class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="property_item">
+                            <div class="property_head text-center">
+                                <h3 class="captlize"><a href="property.html">DHA</a></h3>
+                                <p>Panta Square By DHA Lahore</p>
+                            </div>
+                            <div class="image">
+                                <a href="property.html"><img src="assets/images/user/pakages1projects/6.jpg" alt="latest property" class="img-responsive"></a>
+                                <div class="price lighter clearfix">
+                                    <span class="tag pull-right">For Rent</span>
+                                </div>
+                            </div>
+                            <div class="proerty_content">
+                                <div class="property_meta">
+                                    <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span>
+                                    <span><i class="icon-bed"></i>Bedrooms</span>
+                                    <span><i class="icon-safety-shower"></i>1 Bathroom</span>
+                                </div>
+                                <div class="property_meta">
+                                    <span><i class="icon-old-television"></i>TV Lounge</span>
+                                    <span><i class="icon-garage"></i>Parking Garage</span>
+                                    <span><i class="icon-select-an-objecto-tool"></i>Square Feet</span>
+                                </div>
+
+                                <div class="favroute clearfix">
+                                    <p class="pull-md-left">60,000 PKR</p>
+                                    <ul class="pull-right">
+                                        <li><a href="#."><i class="icon-like"></i></a></li>
+                                        <li><a href="#."><i class="icon-video"></i></a></li>
+
+                                        <li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="toggle_share collapse" id="one">
+                                    <ul>
+                                        <li><a href="#." class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                                        <li><a href="#." class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                                        <li><a href="#." class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Packages One ends-->
+    <!--Featured Agents-->
+    <section id="logos">
+        <div class="container partner2 padding">
+            <div class="row">
+                <div class="col-sm-10">
+                    <h2 class="uppercase">Featured Agents</h2>
+                    <p class="heading_space">Aliquam nec viverra erat. Aenean elit tellus mattis quis maximus.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div id="partner-slider" class="owl-carousel">
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/1.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/2.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/3.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/4.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/5.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/6.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/7.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/8.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/9.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/10.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/11.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/12.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/13.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/14.png" alt="Featured Partner">
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/user/featuredagents/15.png" alt="Featured Partner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Featured Agents-->
+    <!--Packages Two-->
+    <section id="property" class="padding index2 bg_light">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10">
+                    <h2 class="uppercase">Package 2 Homes</h2>
+                    <p class="heading_space"> We are proud to present to you some of the best homes, apartments, offices e.g.
+                        across Pakistan for affordable prices.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="three-item owl-carousel">
+                    <div class="item">
+                        <div class="property_item">
+                            <div class="property_head text-center">
+                                <h3 class="captlize"><a href="property.html">DHA</a></h3>
+                                <p>Panta Square By DHA Lahore</p>
+                            </div>
+                            <div class="image">
+                                <a href="property.html"><img src="assets/images/user/packages2homes/1.jpg" alt="latest property" class="img-responsive"></a>
+                                <div class="price lighter clearfix">
+                                    <span class="tag pull-right">For Rent</span>
+                                </div>
+                            </div>
+                            <div class="proerty_content">
+                                <div class="property_meta">
+                                    <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span>
+                                    <span><i class="icon-bed"></i>Bedrooms</span>
+                                    <span><i class="icon-safety-shower"></i>1 Bathroom</span>
+                                </div>
+                                <div class="property_meta">
+                                    <span><i class="icon-old-television"></i>TV Lounge</span>
+                                    <span><i class="icon-garage"></i>Parking Garage</span>
+                                    <span><i class="icon-select-an-objecto-tool"></i>Square Feet</span>
+                                </div>
+
+                                <div class="favroute clearfix">
+                                    <p class="pull-md-left">60,000 PKR</p>
+                                    <ul class="pull-right">
+                                        <li><a href="#."><i class="icon-like"></i></a></li>
+                                        <li><a href="#."><i class="icon-video"></i></a></li>
+
+                                        <li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="toggle_share collapse" id="one">
+                                    <ul>
+                                        <li><a href="#." class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                                        <li><a href="#." class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                                        <li><a href="#." class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="property_item">
+                            <div class="property_head text-center">
+                                <h3 class="captlize"><a href="property.html">DHA</a></h3>
+                                <p>Panta Square By DHA Lahore</p>
+                            </div>
+                            <div class="image">
+                                <a href="property.html"><img src="assets/images/user/packages2homes/2.jpg" alt="latest property" class="img-responsive"></a>
+                                <div class="price lighter clearfix">
+                                    <span class="tag pull-right">For Rent</span>
+                                </div>
+                            </div>
+                            <div class="proerty_content">
+                                <div class="property_meta">
+                                    <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span>
+                                    <span><i class="icon-bed"></i>Bedrooms</span>
+                                    <span><i class="icon-safety-shower"></i>1 Bathroom</span>
+                                </div>
+                                <div class="property_meta">
+                                    <span><i class="icon-old-television"></i>TV Lounge</span>
+                                    <span><i class="icon-garage"></i>Parking Garage</span>
+                                    <span><i class="icon-select-an-objecto-tool"></i>Square Feet</span>
+                                </div>
+
+                                <div class="favroute clearfix">
+                                    <p class="pull-md-left">60,000 PKR</p>
+                                    <ul class="pull-right">
+                                        <li><a href="#."><i class="icon-like"></i></a></li>
+                                        <li><a href="#."><i class="icon-video"></i></a></li>
+
+                                        <li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="toggle_share collapse" id="one">
+                                    <ul>
+                                        <li><a href="#." class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                                        <li><a href="#." class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                                        <li><a href="#." class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="property_item">
+                            <div class="property_head text-center">
+                                <h3 class="captlize"><a href="property.html">DHA</a></h3>
+                                <p>Panta Square By DHA Lahore</p>
+                            </div>
+                            <div class="image">
+                                <a href="property.html"><img src="assets/images/user/packages2homes/3.jpg" alt="latest property" class="img-responsive"></a>
+                                <div class="price lighter clearfix">
+                                    <span class="tag pull-right">For Rent</span>
+                                </div>
+                            </div>
+                            <div class="proerty_content">
+                                <div class="property_meta">
+                                    <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span>
+                                    <span><i class="icon-bed"></i>Bedrooms</span>
+                                    <span><i class="icon-safety-shower"></i>1 Bathroom</span>
+                                </div>
+                                <div class="property_meta">
+                                    <span><i class="icon-old-television"></i>TV Lounge</span>
+                                    <span><i class="icon-garage"></i>Parking Garage</span>
+                                    <span><i class="icon-select-an-objecto-tool"></i>Square Feet</span>
+                                </div>
+
+                                <div class="favroute clearfix">
+                                    <p class="pull-md-left">60,000 PKR</p>
+                                    <ul class="pull-right">
+                                        <li><a href="#."><i class="icon-like"></i></a></li>
+                                        <li><a href="#."><i class="icon-video"></i></a></li>
+
+                                        <li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="toggle_share collapse" id="one">
+                                    <ul>
+                                        <li><a href="#." class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                                        <li><a href="#." class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                                        <li><a href="#." class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="property_item">
+                            <div class="property_head text-center">
+                                <h3 class="captlize"><a href="property.html">DHA</a></h3>
+                                <p>Panta Square By DHA Lahore</p>
+                            </div>
+                            <div class="image">
+                                <a href="property.html"><img src="assets/images/user/packages2homes/4.jpg" alt="latest property" class="img-responsive"></a>
+                                <div class="price lighter clearfix">
+                                    <span class="tag pull-right">For Rent</span>
+                                </div>
+                            </div>
+                            <div class="proerty_content">
+                                <div class="property_meta">
+                                    <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span>
+                                    <span><i class="icon-bed"></i>Bedrooms</span>
+                                    <span><i class="icon-safety-shower"></i>1 Bathroom</span>
+                                </div>
+                                <div class="property_meta">
+                                    <span><i class="icon-old-television"></i>TV Lounge</span>
+                                    <span><i class="icon-garage"></i>Parking Garage</span>
+                                    <span><i class="icon-select-an-objecto-tool"></i>Square Feet</span>
+                                </div>
+
+                                <div class="favroute clearfix">
+                                    <p class="pull-md-left">60,000 PKR</p>
+                                    <ul class="pull-right">
+                                        <li><a href="#."><i class="icon-like"></i></a></li>
+                                        <li><a href="#."><i class="icon-video"></i></a></li>
+
+                                        <li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="toggle_share collapse" id="one">
+                                    <ul>
+                                        <li><a href="#." class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                                        <li><a href="#." class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                                        <li><a href="#." class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="property_item">
+                            <div class="property_head text-center">
+                                <h3 class="captlize"><a href="property.html">DHA</a></h3>
+                                <p>Panta Square By DHA Lahore</p>
+                            </div>
+                            <div class="image">
+                                <a href="property.html"><img src="assets/images/user/packages2homes/5.jpg" alt="latest property" class="img-responsive"></a>
+                                <div class="price lighter clearfix">
+                                    <span class="tag pull-right">For Rent</span>
+                                </div>
+                            </div>
+                            <div class="proerty_content">
+                                <div class="property_meta">
+                                    <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span>
+                                    <span><i class="icon-bed"></i>Bedrooms</span>
+                                    <span><i class="icon-safety-shower"></i>1 Bathroom</span>
+                                </div>
+                                <div class="property_meta">
+                                    <span><i class="icon-old-television"></i>TV Lounge</span>
+                                    <span><i class="icon-garage"></i>Parking Garage</span>
+                                    <span><i class="icon-select-an-objecto-tool"></i>Square Feet</span>
+                                </div>
+
+                                <div class="favroute clearfix">
+                                    <p class="pull-md-left">60,000 PKR</p>
+                                    <ul class="pull-right">
+                                        <li><a href="#."><i class="icon-like"></i></a></li>
+                                        <li><a href="#."><i class="icon-video"></i></a></li>
+
+                                        <li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="toggle_share collapse" id="one">
+                                    <ul>
+                                        <li><a href="#." class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                                        <li><a href="#." class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                                        <li><a href="#." class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="property_item">
+                            <div class="property_head text-center">
+                                <h3 class="captlize"><a href="#">DHA</a></h3>
+                                <p>Panta Square By DHA Lahore</p>
+                            </div>
+                            <div class="image">
+                                <a href="#"><img src="assets/images/user/packages2homes/6.jpg" alt="latest property" class="img-responsive"></a>
+                                <div class="price lighter clearfix">
+                                    <span class="tag pull-right">For Rent</span>
+                                </div>
+                            </div>
+                            <div class="proerty_content">
+                                <div class="property_meta">
+                                    <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span>
+                                    <span><i class="icon-bed"></i>Bedrooms</span>
+                                    <span><i class="icon-safety-shower"></i>1 Bathroom</span>
+                                </div>
+                                <div class="property_meta">
+                                    <span><i class="icon-old-television"></i>TV Lounge</span>
+                                    <span><i class="icon-garage"></i>Parking Garage</span>
+                                    <span><i class="icon-select-an-objecto-tool"></i>Square Feet</span>
+                                </div>
+
+                                <div class="favroute clearfix">
+                                    <p class="pull-md-left">60,000 PKR</p>
+                                    <ul class="pull-right">
+                                        <li><a href="#."><i class="icon-like"></i></a></li>
+                                        <li><a href="#."><i class="icon-video"></i></a></li>
+
+                                        <li><a href="#one" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="toggle_share collapse" id="one">
+                                    <ul>
+                                        <li><a href="#." class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                                        <li><a href="#." class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                                        <li><a href="#." class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Packages Two ends-->
+    <!--Buying Properties in Pakistan-->
+    <section id="layouts">
+
+
+        <div class="container">
+            <h2 class="uppercase">Latest News</h2>
+            <p class="heading_space"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pellentesque dolor nec odio semper semper. Donec iaculis nibh neque, eu lobortis lorem elementum mollis...
+            </p>
+            <div class="row">
+                <div class="col-sm-8 margin_bottom">
+
+                    <div class="media news_media">
+                        <div class="media-left">
+                            <a href="javascript:void(0)">
+                                <img class="media-object border_radius" src="assets/images/user/latestnews/1.png" alt="Latest news">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h3><a href="#">Lorem ipsum dolor</a></h3>
+                            <span class="bottom15"><i class="icon-clock4"></i>Nov 05, 2017</span>
+                            <p class="bottom15"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam power nonummy nibh
+                                tempor cum soluta nobis eleifend...
+                            </p>
+                            <a href="javascript:void(0)" class="btn-more">
+                                <i><img src="assets/images/user/arrowl.png" alt="arrow"></i>
+                                <span>Contact Me</span>
+                                <i><img src="assets/images/user/arrowr.png" alt="arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="media news_media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object border_radius" src="assets/images/user/latestnews/2.jpg" alt="Latest news">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h3><a href="#">Lorem ipsum dolor</a></h3>
+                            <span class="bottom15"><i class="icon-clock4"></i>Nov 05, 2017</span>
+                            <p class="bottom15">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam power nonummy nibh
+                                tempor cum soluta nobis eleifend...
+                            </p>
+                            <a href="javascript:void(0)" class="btn-more">
+                                <i><img src="assets/images/user/arrowl.png" alt="arrow"></i>
+                                <span>Contact Me</span>
+                                <i><img src="assets/images/user/arrowr.png" alt="arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="media news_media">
+                        <div class="media-left">
+                            <a href="javascript:void(0)">
+                                <img class="media-object border_radius" src="assets/images/user/latestnews/3.jpg" alt="Latest news">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h3><a href="#.">Lorem ipsum dolor</a></h3>
+                            <span class="bottom15"><i class="icon-clock4"></i>Nov 05, 2017</span>
+                            <p class="bottom15">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam power nonummy nibh
+                                tempor cum soluta nobis eleifend...
+                            </p>
+                            <a href="javascript:void(0)" class="btn-more">
+                                <i><img src="assets/images/user/arrowl.png" alt="arrow"></i>
+                                <span>Contact Me</span>
+                                <i><img src="assets/images/user/arrowr.png" alt="arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 margin_bottom">
+                    <div id="agent-slider" class="owl-carousel">
+                        <div class="item">
+                            <div class="image bottom15">
+                                <img src="assets/images/user/latestnews/4.jpg" alt="Our Agents" class="border_radius">
+                            </div>
+                            <div class="item-bottom">
+                                <div class="row">
+                                    <div class="col-sm-5 bottom15">
+                                        <h3>Lorem ipsum dolor</h3>
+                                    </div>
+                                </div>
+                                <p class="bottom15">Lorem ipsum dolor sit amet, consectetuer adipiscing tempor cum soluta nobis eleifend orem ipsum dolor sit amet, consectetuer adipiscing tempor cum soluta nobis eleifend...</p>
+                                <a class="uppercase btn-blue border_radius" href="#.">Contact me</a>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="image bottom15">
+                                <img src="assets/images/user/latestnews/5.jpg" alt="Our Agents" class="border_radius">
+                            </div>
+                            <div class="item-bottom">
+                                <div class="row">
+                                    <div class="col-sm-5 bottom15">
+                                        <h3>Lorem ipsum dolor</h3>
+                                    </div>
+                                </div>
+                                <p class="bottom15">Lorem ipsum dolor sit amet, consectetuer adipiscing tempor cum soluta nobis eleifend orem ipsum dolor sit amet, consectetuer adipiscing tempor cum soluta nobis eleifend...</p>
+                                <a class="uppercase btn-blue border_radius" href="#.">Contact me</a>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="image bottom15">
+                                <img src="assets/images/user/latestnews/6.jpg" alt="Our Agents" class="border_radius">
+                            </div>
+                            <div class="item-bottom">
+                                <div class="row">
+                                    <div class="col-sm-5 bottom15">
+                                        <h3>Lorem ipsum dolor</h3>
+                                    </div>
+                                </div>
+                                <p class="bottom15">orem ipsum dolor sit amet, consectetuer adipiscing tempor cum soluta nobis eleifend orem ipsum dolor sit amet, consectetuer adipiscing tempor cum soluta nobis eleifend...</p>
+                                <a class="uppercase btn-blue border_radius" href="#.">Contact me</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--Buying Properties in Pakistan Ends-->
+    <!--footer starts-->
+    <footer class="footer_third">
+        <div class="container contacts">
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                    <div class="info-box first">
+                        <div class="icons"><i class="icon-telephone114"></i></div>
+                        <ul class="text-center">
+                            <li><strong>Phone Number</strong></li>
+                            <li>123456789</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <div class="info-box">
+                        <div class="icons"><i class="icon-icons74"></i></div>
+                        <ul class="text-center">
+                            <li><strong>Gulburg</li>
+                            <li>Main Boulevard Lahore</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <div class="info-box">
+                        <div class="icons"><i class="icon-icons142"></i></div>
+                        <ul class="text-center">
+                            <li><strong>Email Address</strong></li>
+                            <li><a href="#">info@zameenfouryou.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container padding_top">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer_panel bottom30">
+                        <a href="index.html" class="logo bottom30"><img src="assets/images/user/logo/1.png" alt"ZameenyourYou"></a>
+                        <p class="bottom15">Main Boulevard Gulberg Lahore.
+
+                        </p>
+                        <p class="bottom15">Main Boulevard Gulberg Lahore. <a href="#">Main Boulevard Gulberg Lahore.!</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer_panel bottom30">
+                        <h4 class="bottom30 heading">Company</h4>
+                        <table style="width:100%;">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <ul class="links">
+
+                                        <li class="active"><a href="#"><i></i>Work With US</a></li>
+                                        <li><a href="#."><i></i>Help & Support</a></li>
+                                        <li><a href="privacy.html"> <i></i>Privacy Policy</a></li>
+                                        <li><a href="toc.html"><i></i>Terms Of Use</a></li>
+                                        <li><a href="#."><i></i>Advertise on Zameen Four You</a></li>
+                                    </ul>
+                                </td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer_panel bottom30">
+                        <h4 class="bottom30 heading">Latest News</h4>
+                        <div class="media bottom30">
+                            <div class="media-body">
+                                <a href="#.">Nearest mall in high tech Goes google map your villa</a>
+                                <span><i class="icon-clock5"></i>Nov 05, 2017</span>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-body">
+                                <a href="#.">Nearest mall in high tech Goes google map your villa</a>
+                                <span><i class="icon-clock5"></i>Nov 05, 2017</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer_panel bottom30">
+                        <h4 class="bottom30 heading">Subscribe</h4>
+                        <p>Sign up with your email to get latest updates and offers</p>
+                        <form class="top30">
+                            <input class="search" placeholder="Enter your Email" type="search">
+                            <a class="button_s" href="#">
+                                <i class="icon-mail-envelope-open"></i>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--CopyRight-->
+            <div class="copyright_simple">
+                <div class="row">
+                    <div class="col-md-6 col-sm-5 top20 bottom20">
+                        <p>Copyright &copy; 2017 <span>Zameen Four You</span>. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 col-sm-7 text-right top15 bottom10">
+                        <ul class="social_share">
+                            <li><a href="https://www.facebook.com/" class="facebook"><i class="icon-facebook-1"></i></a></li>
+                            <li><a href="https://twitter.com" class="twitter"><i class="icon-twitter-1"></i></a></li>
+                            <li><a href="https://plus.google.com/" class="google"><i class="icon-google4"></i></a></li>
+                            <li><a href="https://www.linkedin.com/" class="linkden"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://vimeo.com/" class="vimo"><i class="icon-vimeo3"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+
+
+        $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+            e.preventDefault();
+            $(this).siblings('a.active').removeClass("active");
+            $(this).addClass("active");
+            var index = $(this).index();
+            $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+        });
+
+        (function(){
+            $('.carousel-showsixmoveone .item').each(function(){
+                var itemToClone = $(this);
+
+                for (var i=1;i<8;i++) {
+                    itemToClone = itemToClone.next();
+
+                    // wrap around if at end of item collection
+                    if (!itemToClone.length) {
+                        itemToClone = $(this).siblings(':first');
+                    }
+
+                    // grab item, clone, add marker class, add to collection
+                    itemToClone.children(':first-child').clone()
+                        .addClass("cloneditem-"+(i))
+                        .appendTo($(this));
+                }
+            });
+        }());
+    </script>
+
+
+    <!--foorter ends-->
+    <!--files-->
+    <!--end files-->
