@@ -82,6 +82,9 @@ html, body {
 #propertyModal {
     padding-right: 0px !important;
 }
+#map div > a > div > img{
+    display: none;
+}
 </style>
 
 <div class="container clear_both padding_fix">
@@ -290,10 +293,10 @@ html, body {
                                         <label for="use-strict-bounds">Strict Bounds</label>
                                     </div>
                                 </div>
-                                <div id="pac-container">
+                                <!-- <div id="pac-container">
                                     <input id="pac-input" type="text"
                                            placeholder="Enter a location">
-                                </div>
+                                </div> -->
                             </div>
                             <!--google map-->
 
@@ -309,8 +312,12 @@ html, body {
                             </select>
                         </div>
                         <div class="col-sm-12 m-t-20">
-                            <input type="text" class="form-control" placeholder="Enter address here"
-                                   id="searchTextField" ng-model="property.address">
+                            <!-- <input type="text" class="form-control" placeholder="Enter address here"
+                                   id="searchTextField" ng-model="property.address"> -->
+                                    <div id="pac-container">
+                                    <input class="form-control" id="pac-input" type="text"
+                                           placeholder="Enter a location">
+                                </div>
                         </div>
                         <!--                  <div>insert map here</div>-->
 
