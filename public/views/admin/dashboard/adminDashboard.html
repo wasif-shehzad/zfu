@@ -49,10 +49,10 @@
                               </li>
                              </ul>
                         </li>
-                        <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Property <span class="badge badge color_1">{{pendingProperties.length}}</span> </a>
-                           <ul class="drop_down_task dropdown-menu" ng-repeat="pProperty in pendingProperties">
-                                 <div class="top_pointer"></div>
-                                 <li> <a class="task">
+                        <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Property
+                           <span class="badge badge color_1">{{pendingProperties.length}}</span> </a>
+                           <ul class="drop_down_task dropdown-menu">
+                                 <li ng-repeat="pProperty in pendingProperties"> <a class="task">
                                     <div class="green_status task_height"></div>
                                     <div class="task_head"> <span class="pull-left">{{pProperty.type.type}}</span> <span class="pull-right green_label">80%</span> </div>
                                     <div class="task_detail" ng-click="approveProperty(pProperty)">Approve</div>
