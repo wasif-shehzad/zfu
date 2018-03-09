@@ -692,6 +692,7 @@ header{
 .topbar.white ul.breadcrumb_top li a, 
 .topbar.white ul.breadcrumb_top > li + li::before{
   color: #ffffff;
+  cursor: pointer;
 }
 .topbar p, .topbar ul.breadcrumb_top li a, 
 .topbar ul.breadcrumb_top > li + li::before,
@@ -888,6 +889,7 @@ nav.navbar.bootsnav ul.nav > li > a{
 .layout_default nav.navbar.bootsnav ul.nav > li > a,
 .layout_boxed nav.navbar.bootsnav ul.nav > li > a{
 	color:#fff;
+	cursor: pointer;
 }
 .white_header nav.navbar.bootsnav ul.nav > li > a:hover, 
 .white_header nav.navbar.bootsnav ul.nav > li > a:focus, 

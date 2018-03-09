@@ -335,6 +335,9 @@
             min-width: 100%;
             box-sizing: border-box;
         }
+        .white_header{
+            z-index: 1001;
+        }
     </style>
     <div class="rev_slider_wrapper" ng-controller="homeCtrl">
         <div id="rev_overlaped" class="rev_slider"  data-version="5.0">
@@ -2302,6 +2305,20 @@
             });
         }());
     </script>
+
+    <script>
+  new Vue({
+  el: '#example',
+  data: {
+    slides: 7
+  },
+  components: {
+    'carousel-3d': Carousel3d.Carousel3d,
+    'slide': Carousel3d.Slide
+  }
+})
+</script>
+ <script src="assets/js/user/functions.js"></script>
 
 
     <!--foorter ends-->

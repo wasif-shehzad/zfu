@@ -9,8 +9,6 @@ $(window).on("load", function() {
 
 
 // JavaScript Document
-jQuery(function($) {
-  "use strict";
   // +++++ open for Search section
   $(".toggler").on("click", function() {
     $(".property-query-area").slideToggle(300);
@@ -650,4 +648,3 @@ jQuery(function($) {
   
   
   $('.fancybox').fancybox();
-});

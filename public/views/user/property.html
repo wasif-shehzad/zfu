@@ -5,15 +5,15 @@
             <div class="col-md-8 listing1 property-details">
                 <h2 class="text-uppercase">{{property.town}} </h2>
                 <p class="bottom30">{{property.address}}</p>
-                <!--<div id="property-d-1" class="owl-carousel">-->
-                    <!--<div class="item"><img src="assets/images/properties/property1.jpg" alt="image"/></div>-->
-                    <!--<div class="item"><img src="assets/images/properties/property2.jpg" alt="image"/></div>-->
-                    <!--<div class="item"><img src="assets/images/properties/property3.jpg" alt="image"/></div>-->
-                    <!--<div class="item"><img src="assets/images/properties/property4.jpg" alt="image"/></div>-->
-                    <!--<div class="item"><img src="assets/images/properties/property5.jpg" alt="image"/></div>-->
-                    <!--<div class="item"><img src="assets/images/properties/property6.jpg" alt="image"/></div>-->
-                    <!--<div class="item"><img src="assets/images/properties/property7.jpg" alt="image"/></div>-->
-                <!--</div>-->
+                <div id="property-d-1" class="owl-carousel">
+                    <div class="item"><img src="assets/images/properties/property1.jpg" alt="image"/></div>
+                    <div class="item"><img src="assets/images/properties/property2.jpg" alt="image"/></div>
+                    <div class="item"><img src="assets/images/properties/property3.jpg" alt="image"/></div>
+                    <div class="item"><img src="assets/images/properties/property4.jpg" alt="image"/></div>
+                    <div class="item"><img src="assets/images/properties/property5.jpg" alt="image"/></div>
+                    <div class="item"><img src="assets/images/properties/property6.jpg" alt="image"/></div>
+                    <div class="item"><img src="assets/images/properties/property7.jpg" alt="image"/></div>
+                </div>
                 <div  class="pull-left" ng-repeat="img in property.images">
                     <div class="item" ><img height="70" width="70" ng-src="{{img}}" alt="image"/></div>
                 </div>
@@ -125,8 +125,8 @@
                         <div class="pro-video">
                             <figure class="wpf-demo-gallery">
                                 <video  class="video" controls>
-                                    <source src="video/video.mp4" type="video/mp4">
-                                    <source src="video/video.ogg" type="video/ogg">
+                                    <source src="assets/video/video.mp4" type="video/mp4">
+                                    <source src="assets/video/video.ogg" type="video/ogg">
                                 </video>
                             </figure>
                         </div>
@@ -153,7 +153,7 @@
                     <div class="col-sm-6 bottom40">
                         <div class="agent_wrap">
                             <div class="image">
-                                <img src="images/agent1.jpg" alt="Agents">
+                                <img src="assets/images/agent1.jpg" alt="Agents">
                             </div>
                         </div>
                     </div>
@@ -798,5 +798,8 @@
             </div>
         </div>
     </div>
+
 </section>
+     <script src="assets/js/user/functions.js"></script>
+
 <!--Packages Two ends-->
