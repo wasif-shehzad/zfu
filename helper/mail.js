@@ -36,7 +36,7 @@ module.exports = function(data) {
             service:'gmail',
             auth: {
                 user: 'wasifshehzad063@gmail.com',
-                pass: '63wasif63'
+                pass: 'nulllllllll'
             }
         });
 
