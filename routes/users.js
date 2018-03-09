@@ -42,7 +42,7 @@
         Properties.filterPropertiesForUser(req.body).then(function (data) {
             res.status(200).json(data);
         }).catch(function (err) {
-            res.status(400).json(err)
+            res.status(400).json(err);
         });
     });
     router.get("/getUserCount",function (req,res) {

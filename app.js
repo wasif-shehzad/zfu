@@ -9,6 +9,7 @@
   var agents= require('./routes/agents');
   var properties = require('./routes/properties');
   var employees =  require('./routes/employees');
+  var emails = require('./routes/emails');
 
 
 
@@ -19,6 +20,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
    app.use('/properties',properties);
    app.use('/agents',agents);
    app.use('/employees',employees);
+   app.use('/emails',emails);
 var url= 'mongodb://localhost:27017/zameen';
 mongoose.connect(url);
 var db= mongoose.connection;
