@@ -1450,8 +1450,10 @@ button{
 }
 
 .submit_property label {
-  font-weight: 500;
-  margin-top: 0;
+      font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 14px;
 }
 .submit_property .search-propertie-filters .container-2 {
   padding:0;
@@ -3050,6 +3052,7 @@ i.icon-safety-shower{font-size:16px !important;}
 }
 .my-pro .my-pro-list img {
   width:100%;
+      height: 140px;
 }
 .my-pro .my-pro-list .col-md-2 {
 }
