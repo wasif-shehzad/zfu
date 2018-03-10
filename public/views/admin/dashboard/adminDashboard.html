@@ -55,7 +55,7 @@
                                  <li ng-repeat="pProperty in pendingProperties"> <a class="task">
                                     <div class="green_status task_height"></div>
                                     <div class="task_head"> <span class="pull-left">{{pProperty.type.type}}</span> <span class="pull-right green_label">80%</span> </div>
-                                    <div class="task_detail" ng-click="approveProperty(pProperty)">Approve</div>
+                                    <button class="btn btn-success btn-sm pull-right m-r-5 m-t-10 m-b-10" ng-click="approveProperty(pProperty)">Approve</button>
                                  </a>
                                  </li>
 

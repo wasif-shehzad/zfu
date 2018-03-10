@@ -13,7 +13,9 @@ h4,.h4{font-size:23px;}
 h5,.h5{font-size:19px;}
 h6,.h6{font-size:15px;}
 
-
+.m-r-5{
+	margin-right: 5px;
+}
 
 a {outline: none!important;}
 a img {outline: none!important;}
@@ -51,7 +53,7 @@ img {border: 0!important;}
 .top_right_menu ul li{list-style-type:none;text-decoration:none;float:left; margin:-10px 0px 0px 0px; padding:0px 15px 14px 15px;}
 .top_right_menu ul li a{ font-size:13px;color:#6e778c; margin:23px 0px 0px 0px; float:left; text-decoration:none;} 
 .top_right_menu ul li a:hover{color:#5DCFF3 !important;}
-.top_right_menu ul li ul{ padding:0px; background:#FFF; position:absolute; float:left; z-index:99;-moz-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.2);box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);}
+.top_right_menu ul li ul{ height:250px;overflow:auto;  padding:0px; background:#FFF; position:absolute; float:left;padding-bottom: 10px; z-index:99;-moz-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.2);box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);}
 .top_right_menu ul li ul li{ list-style-type:none; padding:0px 15px 0px 15px; margin:0px; width:100%;}
 .top_right_menu ul li ul li a{margin-top:5px;}
 .bg_color{ background:none; border:none;}
