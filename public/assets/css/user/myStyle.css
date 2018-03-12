@@ -720,8 +720,8 @@ header{
 }
 .topbar ul.breadcrumb_top > li + li::before {
   content: "|";
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  /*padding-left: 0.5rem;
+  padding-right: 0.5rem;*/
 }
 .topbar ul.breadcrumb_top li a{
 	font-size:16px;
