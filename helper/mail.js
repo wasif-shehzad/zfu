@@ -42,10 +42,10 @@ module.exports = function(data) {
 
         // setup e-mail data with unicode symbols
         var mailOptions = {
-            from: 'wasifshehzad063@gmail.com', // sender address
-            to: "mustafabutt69@gmail.com", // list of receivers
-            subject: "hi there", // Subject line'Welcome to ITBoost!'
-            text: 'Hello world 🐴', // plaintext body
+            from: 'zameenforyou@gmail.com', // sender address
+            to: recepientEmail, // list of receivers
+            subject: subjectEmail, // Subject line'Welcome to ITBoost!'
+            text: emailBody, // plaintext body
          //   html: emailBody
 
             // // html body

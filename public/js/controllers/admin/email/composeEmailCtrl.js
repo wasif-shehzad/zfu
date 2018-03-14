@@ -54,7 +54,14 @@ angular.module('app')
             Subject:$scope.draft.subject,
             Message:$scope.draft.message
 
-          }
+          };
+          if($scope.allAgents){
+              data.AllAgents=true;
+          }if($scope.allUsers){
+              data.AllUsers=true;
+            }if($scope.allSubscribers){
+              data.AllSubscribers=true;
+            }
             var sendEmail=globalsvc.GetData("emails/send","Post",data);
             sendEmail.then(function (data) {
 
