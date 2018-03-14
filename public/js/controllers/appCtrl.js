@@ -10,6 +10,7 @@
                 };
 
                 $scope.clickToView=function(e){
+                    debugger;
                     if(e=="login")
                     {
                         $state.go("app.user.login");
@@ -26,6 +27,18 @@
                     } else if(e=="submitProperty")
                     {
                         $state.go("app.user.submitProperty");
+                    }else if(e=="search")
+                    {
+                        $state.go("app.user.search");
+                    }else if(e=="agents")
+                    {
+                        $state.go("app.user.agents");
+                    }else if(e=="contact")
+                    {
+                        $state.go("app.user.contact");
+                    }else if(e=="home")
+                    {
+                        $state.go("app");
                     }
 
 
