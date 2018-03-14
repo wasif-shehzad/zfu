@@ -1444,7 +1444,7 @@ button{
 .tp_overlay .search-propertie-filters{ background-color:transparent;}
 .blue_navi .check-box i,
 .tp_overlay .check-box i{
-	background:url(../images/check_mark_dark.png) no-repeat;
+	background:url(../../images/check_mark_dark.png) no-repeat;
 }
 .blue_navi .checkedBox, .tp_overlay .checkedBox{
 	box-shadow:0 0 1px 5px #5ab55d inset;

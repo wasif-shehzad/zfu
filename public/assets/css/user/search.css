@@ -385,7 +385,7 @@
     border: 1px solid #2c7ebb;
 }
 .check-box i {
-    background: url("../images/check_mark.png") no-repeat center center;
+    background: url("../../images/check_mark.png") no-repeat center center;
     position: absolute;
     left: 3px;
     bottom: -15px;
