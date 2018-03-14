@@ -73,6 +73,19 @@ module.exports = {
                 err:err
             };
         });
+    },
+    getUser:function(_DATA){
+        return Users.find(_DATA,{firstName:1,lastName:1,image:1,city:1,contact:1,email:1,skype:1,about:1}).then(function(data){
+            return{
+                data:data,
+                status:true
+            };
+        }).catch(function (err) {
+            return{
+                status:false,
+                err:err
+            };
+        });
     }
 
 }

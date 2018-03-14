@@ -153,31 +153,31 @@
                     <div class="col-sm-6 bottom40">
                         <div class="agent_wrap">
                             <div class="image">
-                                <img src="assets/images/agent1.jpg" alt="Agents">
+                                <img ng-src={{agent.image}} alt="Agents">
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 bottom40">
                         <div class="agent_wrap">
-                            <h3>{{property.addedBy.name}}</h3>
-                            <p class="bottom30">Lorem ipsum dolor sit amet, consectetuer adipiscing eliiet doming…</p>
+                            <h3>{{agent.name}}</h3>
+                            <p class="bottom30">{{agent.about}}</p>
                             <table class="agent_contact table">
                                 <tbody>
                                 <tr class="bottom10">
                                     <td><strong>Phone:</strong></td>
-                                    <td class="text-right">{{property.addedBy.name}}</td>
+                                    <td class="text-right">{{agent.contact}}</td>
                                 </tr>
                                 <tr class="bottom10">
                                     <td><strong>Mobile:</strong></td>
-                                    <td class="text-right">{{property.addedBy.contact}}</td>
+                                    <td class="text-right">{{agent.contact}}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Email Adress:</strong></td>
-                                    <td class="text-right"><a>{{property.addedBy.email}}</a></td>
+                                    <td class="text-right"><a>{{agent.email}}</a></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Skype:</strong></td>
-                                    <td class="text-right"><a href="#.">bohdan.kononets</a></td>
+                                    <td class="text-right"><a href="#.">{{agent.skype}}</a></td>
                                 </tr>
                                 </tbody>
                             </table>

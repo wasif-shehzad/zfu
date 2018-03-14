@@ -13,7 +13,7 @@ var propertySchema = new Schema({
     description: String,
     title: String,
     unit: String,
-    expiresAfter: Number,
+    expiresAfter: Date,
     views: Number,
     addedBy: {
         name: {type: String},

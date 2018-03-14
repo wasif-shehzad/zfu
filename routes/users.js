@@ -65,5 +65,12 @@
             res.status(400).json(err);
         });
     });
+    router.get("/user/:UserId",function (req,res) {
+        Users.getUser({"UserId":req.params.UserId}).then(function(data){
+            res.status(200).json(data);
+        }).catch(function (err) {
+            res.status(400).json(err);
+        });
+    });
 
 module.exports = router;
