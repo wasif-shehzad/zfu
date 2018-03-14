@@ -1364,21 +1364,6 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content.bg .col-menu{
 	margin-top: 20px;
 	margin-bottom: 0px;
 }
-.callus select{
-border-bottom: 1px solid #98e2ff!important;
-    height: 34px;
-    padding: 6px 0px;
-    font-size: 13px;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    background: transparent!important;
-    /* border: none!important; */
-    border-top: none!important;
-    border-left: none!important;
-    border-right: none!important;
-    color: #fff;
-    margin-top: 20px;
-}
 .callus textarea{
 	min-height:160px;
 	resize:none;
@@ -3782,6 +3767,11 @@ h1.bold-text{
   max-width:100%;
   border-radius:5px;
 }
+
+#login .profile-login .tab-content{
+	background: transparent;
+}
+
 #login .profile-login ul li{
 	display:inline-block;
 }
