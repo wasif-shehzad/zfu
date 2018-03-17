@@ -101,6 +101,12 @@ h3, h4{
 .m-b-0{
     margin-bottom: 0px;
 }
+.p-l-0{
+	padding-left: 0px !important: 
+}
+.p-r-0{
+	padding-right: 0px !important: 
+}
 .no-padding{
     padding:0px;
 }
@@ -878,6 +884,7 @@ nav.navbar.bootsnav ul.nav > li > a{
     /*font-weight: 500;*/
     border: 1px;
     padding-top: 13px;
+    cursor: pointer;
 }
 .white_header nav.navbar.bootsnav ul.nav > li > a > i{
 	font-size: 25px;
