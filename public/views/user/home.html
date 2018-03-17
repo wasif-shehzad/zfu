@@ -339,7 +339,7 @@
             z-index: 1001;
         }
         .tp_overlay{
-            height: 500px!important;
+            height: auto!important;
         }
         .callus select{
 border-bottom: 1px solid #98e2ff!important;
@@ -611,74 +611,66 @@ border-bottom: 1px solid #98e2ff!important;
                                             </div>
                                         </div>
                                     </div>
-                                    <div style="    clear: both;
+                                    <div class="pull-right" style="    clear: both;
     position: relative;
-    top: 20px;
-    text-align: right;
-    padding: 10px 15px;">
-                                        <button type="submit" class="btn btn-success" style="    width: 30%;
-    padding-top: 10px;
-    padding-bottom: 10px;font-size: 18px;"><i class="glyphicon glyphicon-search"></i> Search</button>
+    top: 20px;">
+                                        <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-search"></i> Search</button>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="group-button-search">
+                                      <div class="group-button-search">
                                             <a data-toggle="collapse" href=".search-propertie-filters" class="more-filter">
                                                 <i class="fa fa-plus text-1" aria-hidden="true"></i><i class="fa fa-minus text-2 hide" aria-hidden="true"></i>
                                                 <div class="text-1">Show more search options</div>
                                                 <div class="text-2 hide">less more search options</div>
                                             </a>
                                         </div>
+                                </div>
+                                <div class="row m-t-10">
+                                    <div class="col-sm-12">
                                         <div class="search-propertie-filters collapse">
-                                            <div class="container-2">
-                                                <div class="row">
-                                                    <div class="col-md-3 col-sm-6 col-xs-12">
-                                                        <div class="search-form-group white bottom10">
+                                            <ul class="list-inline">
+                                                    <li>
+                                                        <div class="search-form-group white">
                                                             <input type="checkbox" name="check-box" />
                                                             <span>Features</span>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-2 no-padding col-sm-6 col-xs-12">
-                                                        <div class="search-form-group white bottom10">
+                                                    </li>
+                                                    <li>
+                                                        <div class="search-form-group white">
                                                             <input type="checkbox" name="check-box" />
                                                             <span>Balcony</span>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-3 col-sm-6 col-xs-12">
-                                                        <div class="search-form-group white bottom10">
+                                                    </li>
+                                                    <li>
+                                                        <div class="search-form-group white">
                                                             <input type="checkbox" name="check-box" />
                                                             <span>Gas Heat</span>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-sm-6 col-xs-12">
-                                                        <div class="search-form-group white bottom10">
+                                                    </li>
+                                                    <li>
+                                                        <div class="search-form-group white">
                                                             <input type="checkbox" name="check-box" />
                                                             <span>Washer, Dryer</span>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-4 col-sm-6 col-xs-12">
-                                                        <div class="search-form-group white bottom10">
+                                                    </li>
+                                                    <li>
+                                                        <div class="search-form-group white">
                                                             <input type="checkbox" name="check-box" />
                                                             <span>TV Cable</span>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-sm-6 col-xs-12">
-                                                        <div class="search-form-group white bottom10">
+                                                    </li>
+                                                    <li>
+                                                        <div class="search-form-group white">
                                                             <input type="checkbox" name="check-box" />
                                                             <span>Swimming Pool</span>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-sm-6 col-xs-12">
-                                                        <div class="search-form-group white bottom10">
+                                                    </li>
+                                                    <li>
+                                                        <div class="search-form-group white">
                                                             <input type="checkbox" name="check-box" />
                                                             <span>Home Theater</span>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                    </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -1367,7 +1359,7 @@ border-bottom: 1px solid #98e2ff!important;
         <carousel-3d :autoplay="true" :autoplay-timeout="3000" :controls-visible="true" :clickable="false">
             <slide v-for="(slide, i) in slides" :index="i">
                 <figure>
-                    <img src="https://placehold.it/360x270">
+                    <img src="assets/images/user/latestnews/4.jpg">
                     <figcaption>
                         The sky is the limit only for those who aren't afraid to fly!
                         The sky is the limit only for those who aren't afraid to fly!
