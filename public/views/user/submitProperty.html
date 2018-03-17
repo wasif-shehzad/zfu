@@ -162,20 +162,20 @@ p{
   margin: 0;
   padding: 0;
   list-style: none;
-  background-color: #ab3326;
+  background-color: #5bc0de;
 }
 .select-options li {
   margin: 0;
   padding: 12px 0;
   text-indent: 15px;
-  border-top: 1px solid #962d22;
+  border-top: 1px solid #fff;
   -moz-transition: all 0.15s ease-in;
   -o-transition: all 0.15s ease-in;
   -webkit-transition: all 0.15s ease-in;
   transition: all 0.15s ease-in;
 }
 .select-options li:hover {
-  color: #c0392b;
+  color: #333;
   background: #fff;
 }
 .select-options li[rel="hide"] {
@@ -198,6 +198,62 @@ visibility: hidden;
 }
 .tab-content{
     background: transparent;
+}
+#myModal{
+    padding-right: 0px!important;
+}
+#myModal .modal-dialog{
+    height: 100%;
+    margin-top: 0;
+    display: table;
+    margin-bottom: 0;
+        width: calc(100% - 20px);
+}
+#myModal .modal-dialog .modal-content-wrapper{
+    display: table-cell;
+    vertical-align: middle;
+}
+#myModal input[type="checkbox"] { display: none; }
+
+#myModal input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 15px;
+  font: 14px/20px 'Open Sans', Arial, sans-serif;
+  color:#5bc0de;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+#myModal input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #5bc0de;
+  position: absolute;
+  left: 0;
+  top: 2;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+#myModal input[type="checkbox"]:checked + label:before {
+  width: 10px;
+  top: -1px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#myModal p{
+    color: #5bc0de;
+    font-weight: 600;
 }
 </style>
 <!-- My Properties  -->
@@ -939,136 +995,187 @@ visibility: hidden;
             <div class="modal-dialog modal-lg">
 
                 <!-- Modal content-->
+                  <div class="modal-content-wrapper">
                 <div class="modal-content">
                     <div class="modal-header">
-                         <button type="button" class=" pull-right" data-dismiss="modal">&times;</button>
                            <div class="pull-right">
-                                <button type="button" class="btn btn-info m-r-5 pull-none" data-toggle="modal"
-                                        data-target="#myModal"><i data-toggle="tooltip" title="save" class="fa fa-save" style="font-size: 30px;"></i>
+                                <button type="button" class="btn pull-left btn-info m-r-5 p-r-10 p-t-0 p-b-0 p-l-0 pull-none" data-toggle="modal"
+                                        data-target="#myModal" style="background: transparent;border: 0;"><i data-toggle="tooltip" data-placement="bottom" title="save" class="pe-7s-diskette" style="font-size: 30px;    color: #5bc0de;
+    font-weight: 600;"></i>
                                 </button>
+                                 <div class="seperator pull-left"></div>
+
+                         <button type="button" class=" pull-right btn btn-info p-r-0 p-t-0 p-b-0 p-l-10" data-dismiss="modal" style="background: transparent;border: 0;"><i data-toggle="tooltip" title="Cancel"  data-placement="bottom" class="pe-7s-close" style="    font-size: 40px;
+    color: #5bc0de;
+    font-weight: 600;
+    position: relative;
+    top: -5px;"></i></button>
                             </div>
                        
                         <h4 class="modal-title">Property Features</h4>
                     </div>
-                    <div class="modal-body" style="    height: calc(100vw - 860px);
+                    <div class="modal-body" style="    height: calc(100vh - 100px);
     overflow: auto;">
                         <div class="row">
-                            <div class="col-md-12"><p class="m-b-0">Main features</p>
-                                <hr>
-                                <div class="col-md-4"><span>Built in year</span> <input type="text" class="form-control"
-                                                                                        placeholder="Enter address here">
+                            <div class="col-md-6 col-sm-6 col-xs-12"><p class="m-b-0">Main features</p>
+                               <hr class="m-t-0">
+                                <div class="col-md-6 col-sm-6 col-lg-4">
+                                          <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>built in year</label>
+                                        </div>
                                 </div>
-                                <div class="col-md-4"><span>View</span> <input type="text" class="form-control"
-                                                                               placeholder="Enter address here"></div>
-                                <div class="col-md-4"><span>Parking spaces</span> <input type="text"
-                                                                                         class="form-control"
-                                                                                         placeholder="Enter address here">
+                                <div class="col-md-6 col-sm-6 col-lg-4 ">
+    <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>view</label>
+                                        </div>
                                 </div>
-                                <div class="col-md-4 m-t-10"><span>Total number of floors</span> <input type="text"
-                                                                                                        class="form-control"
-                                                                                                        placeholder="Enter address here">
+                                <div class="col-md-6 col-sm-6 col-lg-4 ">
+                                        <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Parking spaces</label>
+                                        </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
+                                        <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Number of floors</label>
+                                        </div>
                                 </div>
 
-                                <div class="col-md-4 m-t-10"><span>Other main features</span> <input type="text"
-                                                                                                     class="form-control"
-                                                                                                     placeholder="Enter address here">
+                                <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
+                                        <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Other main features</label>
+                                        </div>
                                 </div>
-                                <div class="col-md-4 m-t-10"><span>Other main features</span> <select
-                                        class="form-control" id="source">
-                                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                                  <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
+                                        <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Electricity backup</label>
+                                        </div>
+                                </div>
+                             
+                                <div class="col-xs-12 col-sm-12 col-md-12  no-padding">
+                              <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
+                                 <select id="source">
+                                         <option value="hide">Flooring</option>
+                                
+                                        <option value="AK"> Tiles</option>
+                                        <option value="HI"> marbles</option>
+                                   
+                                  
+                                        <option value="CA">wooden</option>
+                                        <option value="NV">chip</option>
+                                        <option value="OR"> cement</option>
+                                        <option value="WA">other</option>
+                                  
+                                </select></div>
+                                <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
+                                 <select id="source">
+                                         <option value="hide">Select City</option>
+                                
                                         <option value="AK"> Argentina</option>
                                         <option value="HI"> Aruba</option>
-                                    </optgroup>
-                                    <optgroup label="Pacific Time Zone">
+                                   
+                                  
                                         <option value="CA"> Belarus</option>
                                         <option value="NV"> Chile</option>
                                         <option value="OR"> Ecuador</option>
                                         <option value="WA"> Cyprus</option>
-                                    </optgroup>
+                                  
                                 </select></div>
-                                <div class="col-md-4"><span>Other main features</span> <select class="form-control"
-                                                                                               id="source">
-                                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                                <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
+                                    <select id="source">
+                                         <option value="hide">Select City</option>
                                         <option value="AK"> Argentina</option>
                                         <option value="HI"> Aruba</option>
-                                    </optgroup>
-                                    <optgroup label="Pacific Time Zone">
                                         <option value="CA"> Belarus</option>
                                         <option value="NV"> Chile</option>
                                         <option value="OR"> Ecuador</option>
                                         <option value="WA"> Cyprus</option>
-                                    </optgroup>
+
                                 </select></div>
-
-                                <div class="col-md-4">
-                                    <div><input type="checkbox"><label>Double Glazed Windows</label>
-                                    </div>
-                                    <div><input type="checkbox"><label>Central Air Conditioning</label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox"><label>Central Heating</label>
-                                    </div>
+                                             <div class="col-xs-12 m-t-20 col-md-12 col-sm-12">
+                                            <ul class="list-inline">
+                                    <li>  <input type="checkbox" id="box-1">
+  <label for="box-1">Double glazed window</label>
+                                    </li>
+                                    <li><input id="box-2" type="checkbox"><label for="box-2">Central Air Conditioning</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="box-3"><label for="box-3">Central Heating</label>
+                                    </li>
+                                    <li><input type="checkbox" id="box-4"><label for="box-4">Waste Disposal</label>
+                                    </li>
+                                    <li><input type="checkbox" id="box-5"><label for="box-5">Furnished</label>
+                                    </li>
+                                </ul>
                                 </div>
-                                <div class="col-md-4">
-                                    <div><input type="checkbox"><label>Waste Disposal</label>
-                                    </div>
-                                    <div><input type="checkbox"><label>Furnished</label>
-                                    </div>
-                                </div>
-
                             </div>
-                            <div class="col-md-12"><p class="m-b-0">Rooms</p>
-                                <hr>
-                                <div class="col-md-4"><span>Built in year</span> <input type="text" class="form-control"
-                                                                                        placeholder="Enter address here">
+
+                              
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-xs-12"><p class="m-b-0">Rooms</p>
+                         <hr class="m-t-0">
+                                  <div class="col-md-6 col-sm-6 col-lg-4">
+                                          <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>built in year</label>
+                                        </div>
                                 </div>
-                                <div class="col-md-4"><span>View</span> <input type="text" class="form-control"
-                                                                               placeholder="Enter address here"></div>
-                                <div class="col-md-4"><span>Parking spaces</span> <input type="text"
-                                                                                         class="form-control"
-                                                                                         placeholder="Enter address here">
+                                <div class="col-md-6 col-sm-6 col-lg-4 ">
+    <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>view</label>
+                                        </div>
                                 </div>
-                                <div class="col-md-4 m-t-10"><span>Total number of floors</span> <input type="text"
-                                                                                                        class="form-control"
-                                                                                                        placeholder="Enter address here">
+                                <div class="col-md-6 col-sm-6 col-lg-4 ">
+                                        <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Parking spaces</label>
+                                        </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
+                                        <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Number of floors</label>
+                                        </div>
                                 </div>
 
-                                <div class="col-md-4 m-t-10"><span>Other main features</span> <input type="text"
-                                                                                                     class="form-control"
-                                                                                                     placeholder="Enter address here">
+                                <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
+                                        <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Other main features</label>
+                                        </div>
                                 </div>
-
-                                <div class="col-md-4 m-t-10"><span>Other main features</span> <input type="text"
-                                                                                                     class="form-control"
-                                                                                                     placeholder="Enter address here">
+                                  <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
+                                        <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Electricity backup</label>
+                                        </div>
                                 </div>
-                                <div class="col-md-12 col-xs-12 m-t-20">
-                                    <div class="col-md-4">
-                                        <div><input type="checkbox"><label>Double Glazed Windows</label>
-                                        </div>
-                                        <div><input type="checkbox"><label>Central Air Conditioning</label>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox"><label>Central Heating</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div><input type="checkbox"><label>Waste Disposal</label>
-                                        </div>
-                                        <div><input type="checkbox"><label>Furnished</label>
-                                        </div>
-                                        <div><input type="checkbox"><label>Furnished</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div><input type="checkbox"><label>Waste Disposal</label>
-                                        </div>
-                                        <div><input type="checkbox"><label>Furnished</label>
-                                        </div>
-                                        <div><input type="checkbox"><label>Furnished</label>
-                                        </div>
-                                    </div>
+                                         <div class="col-xs-12 m-t-20 col-md-12 col-sm-12">
+                                            <ul class="list-inline">
+                                    <li><input type="checkbox" id="box-6"><label for="box-6">Drawing room</label>
+                                    </li>
+                                    <li><input type="checkbox" id="box-7"><label for="box-7">Dining room</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="box-8"><label for="box-8">Study room</label>
+                                    </li>
+                                    <li><input type="checkbox" id="box-9"><label for="box-9">Prayer room</label>
+                                    </li>
+                                    <li><input type="checkbox" id="box-10"><label for="box-10">Gym</label>
+                                    </li>
+                                     <li><input type="checkbox" id="box-11"><label for="box-11">Steam room</label>
+                                    </li>
+                                     <li><input type="checkbox" id="box-12"><label for="box-12">Sitting room</label>
+                                    </li>
+                                     <li><input type="checkbox" id="box-13"><label for="box-13">Laundry rooms</label>
+                                    </li>
+                                </ul>
                                 </div>
 
                             </div>
@@ -1076,37 +1183,49 @@ visibility: hidden;
                                 <div class="col-md-6">
                                     <p class="m-b-0">Business and Communication
                                     </p>
-                                    <hr>
-                                    <div class="col-md-6">
-                                        <div><input type="checkbox"><label>Waste Disposal</label>
-                                        </div>
-                                        <div><input type="checkbox"><label>Furnished</label>
-                                        </div>
-                                        <div><input type="checkbox"><label>Furnished</label>
+                                  <hr class="m-t-0">
+                                  <div class="col-md-6">
+                                        <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Other facilities</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <span>Built in year</span> <input type="text" class="form-control"
-                                                                          placeholder="Enter address here">
+                                                 <ul class="list-inline">
+                                    <li><input type="checkbox" id="box-14"><label for="box-14">Satelite or tv cable ready</label>
+                                    </li>
+                                     <li><input type="checkbox" id="box-15"><label for="box-15">Intercom</label>
+                                    </li>
+                                      <li><input type="checkbox" id="box-16"><label for="box-16">Broadband Internet Access</label>
+                                      </li>
+                                </ul>
                                     </div>
+                                    
                                 </div>
 
                                 <div class="col-md-6">
                                     <p class="m-b-0">Healthcare Recreational
                                     </p>
-                                    <hr>
-                                    <div class="col-md-6">
-                                        <div><input type="checkbox"><label>Waste Disposal</label>
-                                        </div>
-                                        <div><input type="checkbox"><label>Furnished</label>
-                                        </div>
-                                        <div><input type="checkbox"><label>Furnished</label>
+                                <hr class="m-t-0">
+                                 <div class="col-md-6">
+                                        <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Other Healthcare and Recreation </label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <span>Built in year</span> <input type="text" class="form-control"
-                                                                          placeholder="Enter address here">
+                                       <div class="col-md-6">
+                                                 <ul class="list-inline">
+                                    <li><input type="checkbox" id="box-17"><label for="box-17">Lawn or Garden</label>
+                                    </li>
+                                     <li><input type="checkbox" id="box-18"><label for="box-18">Swimming Pool</label>
+                                    </li>
+                                      <li><input type="checkbox" id="box-19"><label for="box-19">Sauna</label>
+                                      </li>
+                                         <li><input type="checkbox" id="box-23"><label for="box-23">Jacuzy</label>
+                                      </li>
+                                </ul>
                                     </div>
+                                   
                                 </div>
                             </div>
                             <div class="col-md-12 col-xs-12 m-t-20">
@@ -1114,24 +1233,42 @@ visibility: hidden;
                                     <p class="m-b-0">Nearby Locations and Other Facilities
 
                                     </p>
-                                    <hr>
-                                    <div class="col-md-6"><span>Built in year</span> <input type="text"
-                                                                                            class="form-control"
-                                                                                            placeholder="Enter address here">
-                                        <span>Built in year</span> <input type="text" class="form-control"
-                                                                          placeholder="Enter address here">
-                                        <span>Built in year</span> <input type="text" class="form-control"
-                                                                          placeholder="Enter address here">
-                                        <span>Built in year</span> <input type="text" class="form-control"
-                                                                          placeholder="Enter address here">
+                                    <hr class="m-t-0">
+                                    <div class="col-md-6 col-sm-6 col-lg-4">
+                                       <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Nearby Schools</label>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <span>Built in year</span> <input type="text" class="form-control"
-                                                                          placeholder="Enter address here">
-                                        <span>Built in year</span> <input type="text" class="form-control"
-                                                                          placeholder="Enter address here">
-                                        <span>Built in year</span> <input type="text" class="form-control"
-                                                                          placeholder="Enter address here">
+                                    <div class="col-md-6 col-sm-6 col-lg-4">
+                                      <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Nearby Hospitals</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-4">
+                                      <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Nearby Shopping Malls</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
+                                      <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Nearby Restaurants</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
+                                      <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Distance From Airport (kms)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
+                                      <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Other Nearby Places</label>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -1139,25 +1276,31 @@ visibility: hidden;
                                     <p class="m-b-0">Other Facilities
 
                                     </p>
-                                    <hr>
-                                    <div class="col-md-6">
-                                        <div><input type="checkbox"><label>Waste Disposal</label>
-                                        </div>
-                                        <div><input type="checkbox"><label>Furnished</label>
-                                        </div>
-                                        <div><input type="checkbox"><label>Furnished</label>
+                                   <hr class="m-t-0">
+                                      <div class="col-md-6">
+                                        <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Other facilities</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <span>Built in year</span> <input type="text" class="form-control"
-                                                                          placeholder="Enter address here">
+                                     <div class="col-md-6">
+                                                 <ul class="list-inline">
+                                    <li><input type="checkbox" id="box-20"><label for="box-20">Maintenance Staff</label>
+                                    </li>
+                                     <li><input type="checkbox" id="box-21"><label for="box-21">Security Staff</label>
+                                    </li>
+                                      <li><input type="checkbox" id="box-22"><label for="box-22">Facilities for Disabled</label>
+                                      </li>
+                                </ul>
                                     </div>
+                                 
                                 </div>
                             </div>
                          
                         </div>
                     </div>
                 </div>
+            </div>
 
             </div>
         </div>
@@ -1321,5 +1464,8 @@ $('select').each(function(){
 
 });
     </script>
+    <script>
+    $('[data-toggle="tooltip"]').tooltip();   
+</script>
 </section>
 <!-- My Properties End -->
