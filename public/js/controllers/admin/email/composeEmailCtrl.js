@@ -8,6 +8,8 @@ angular.module('app')
         $scope.user=sharedDatasvc.getUser();
 
             $scope.draft={};
+            $scope.toUser;
+            $scope.toCC;
 
             $scope.saveAsDraft=function () {
                 debugger;
@@ -38,13 +40,34 @@ angular.module('app')
         $scope.goToDraft=function(draft)
         {
             $scope.draft=draft;
-        }
+        };
         $scope.composeEmail=function(){
             $scope.draft.subject="";
             $scope.draft.message="";
 
-        }
+        };
+        $scope.sendEmail = function () {
+          debugger;
+          var data={
+                To:$scope.toUser,
+                CC:$scope.toCC,
+            Subject:$scope.draft.subject,
+            Message:$scope.draft.message
 
+          };
+          if($scope.allAgents){
+              data.AllAgents=true;
+          }if($scope.allUsers){
+              data.AllUsers=true;
+            }if($scope.allSubscribers){
+              data.AllSubscribers=true;
+            }
+            var sendEmail=globalsvc.GetData("emails/send","Post",data);
+            sendEmail.then(function (data) {
+
+            });
+
+        };
 
         }
     ]);

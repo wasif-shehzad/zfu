@@ -147,7 +147,7 @@ module.exports = {
         });
     },
     getAgent:function (_DATA) {
-        return Agents.find({AgentId:_DATA}).then(function (data) {
+        return Agents.find({AgentId:_DATA},{firstName:1,lastName:1,image:1,city:1,contact:1,email:1,skype:1,about:1}).then(function (data) {
             return{
                 status:true,
                 data:data,

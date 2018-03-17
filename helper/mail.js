@@ -5,9 +5,9 @@ var smtpTransport = require('nodemailer-smtp-transport');
 
 module.exports = function(data) {
 
-    var recepientEmail = data.email;
-    var subjectEmail = data.subject;
-    var emailBody = data.html;
+    var recepientEmail = data.To;
+    var subjectEmail = data.Subject;
+    var emailBody = data.Message;
 
     var promise = new Promise(function(resolve, reject) {
         var Xml;
@@ -21,8 +21,8 @@ module.exports = function(data) {
             //secure: true,
             // requiresAuth: true, // use SSL
             auth: {
-                user: 'wasifshehzad063@gmail.com',
-                pass: '63wasif63'
+                user: '', // email manager@demo.com
+                pass: '' ///password
             },
             //secure:true,
             tls: {
@@ -42,10 +42,10 @@ module.exports = function(data) {
 
         // setup e-mail data with unicode symbols
         var mailOptions = {
-            from: 'wasifshehzad063@gmail.com', // sender address
-            to: "mustafabutt69@gmail.com", // list of receivers
-            subject: "hi there", // Subject line'Welcome to ITBoost!'
-            text: 'Hello world 🐴', // plaintext body
+            from: 'zameenforyou@gmail.com', // sender address
+            to: recepientEmail, // list of receivers
+            subject: subjectEmail, // Subject line'Welcome to ITBoost!'
+            text: emailBody, // plaintext body
          //   html: emailBody
 
             // // html body
