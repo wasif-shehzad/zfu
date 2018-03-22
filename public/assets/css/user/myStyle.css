@@ -119,6 +119,9 @@ h3, h4{
 .p-b-0{
 	padding-bottom: 0px;
 }
+.p-t-20{
+	padding-top: 20px;
+}
 .no-padding{
     padding:0px;
 }
@@ -1385,7 +1388,7 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content.bg .col-menu{
 	margin-bottom: 0px;
 }
 .callus textarea{
-	min-height:160px;
+	min-height:100px;
 	resize:none;
 }
 .callus .btn-blue {
@@ -1909,11 +1912,9 @@ i.icon-safety-shower{font-size:16px !important;}
 #two-col-slider .owl-prev, #two-col-slider .owl-next,
 #agent-slider .owl-prev, #agent-slider .owl-next,
 #nav_slider .owl-prev, #nav_slider .owl-next{
-  background: #fff;
-  border: 1px solid #d5dadf;
   border-radius: 4px;
   color: #777;
-  font-size: 30px;
+  font-size: 40px;
   height: 42px;
   line-height:38px;
   position: absolute;
@@ -1921,16 +1922,22 @@ i.icon-safety-shower{font-size:16px !important;}
   width: 42px;
 }
 #full-slider .owl-prev, #full-slider .owl-next,
-.three-item .owl-prev, .three-item .owl-next,
-#partner-slider .owl-prev, #partner-slider .owl-next,
 #two-col-slider .owl-prev, #two-col-slider .owl-next{
   top:-96px;
 }
-#full-slider .owl-prev, .three-item .owl-prev, #partner-slider .owl-prev,
-#two-col-slider .owl-prev{
-	right:60px;
+.three-item .owl-prev, .three-item .owl-next{
+	bottom: 180px;
 }
-#full-slider .owl-next, .three-item .owl-next, #partner-slider .owl-next,
+#partner-slider .owl-prev, #partner-slider .owl-next{
+	    bottom: 44px;
+}
+.three-item .owl-next, #partner-slider .owl-next, #agent-slider .owl-next{
+	    right: -50px;
+}
+.three-item .owl-prev, #partner-slider .owl-prev, #agent-slider .owl-prev{
+	    left: -50px;
+}
+#full-slider .owl-next,
 #two-col-slider .owl-next{
 	right:15px;
 }
@@ -1958,8 +1965,6 @@ i.icon-safety-shower{font-size:16px !important;}
   margin-top: -21px;
   border:none;
 }
-#agent-slider .owl-prev{ left:0; }
-#agent-slider .owl-next{ right:0;}
 #agent-slider .owl-prev:hover, #agent-slider .owl-next:hover,
 #two-col-slider .owl-prev:hover, #two-col-slider .owl-next:hover,
 .three-item .owl-prev:hover, .three-item .owl-next:hover,
@@ -3906,7 +3911,6 @@ footer .footer_panel .media-body span > i{
 }
 .footer_third{
 	background:#005696;
-    margin-top: 70px;
 }
 .footer_fourth{
 	background:#fff;

@@ -479,7 +479,7 @@ visibility: hidden;
                         <li><a data-toggle="tab">
                             <div class="btn-group btn-group-vertical" data-toggle="buttons">
                                 <label class="btn">
-                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                    <input type="radio" name="email1-tab5"><i class="fa fa-square-o fa-2x"></i><i
                                         class="fa fa-check-square-o fa-2x"></i> <span
                                         ng-click="propertySubType('shop')">Shop</span>
                                 </label></div>
@@ -601,7 +601,7 @@ visibility: hidden;
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        
                             <div class="col-xs-6">
                                  <!-- <label>Enter Location</label>
                                   <div id="pac-container" style="margin-bottom: 15px;">
@@ -613,7 +613,21 @@ visibility: hidden;
                                             <label>Enter Location</label>
                                         </div>
                             </div>
-                        <div class="col-xs-6">
+                                     <div class="col-xs-6 m-t-10">
+                            <div class="single-query  form-group bottom20">
+                                <div class="intro">
+                                    <select>
+                                       <option value="hide">Expires after</option>
+                                        <option>1 month</option>
+                                        <option>2 month</option>
+                                        <option>3 month</option>
+                                        <option>4 month</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+          <!--               <div class="col-xs-6">
 
                             <div class="single-query  form-group bottom20" ng-if="property.type.type !== 'plot'">
                                 <div class="col-md-12">
@@ -625,8 +639,8 @@ visibility: hidden;
     border-bottom-width: 2px!important;
     color: #333;"></div>
                             </div>
-                        </div>
-                    </div>
+                        </div> -->
+                  
 
                     </form>
                 </div>
@@ -661,8 +675,8 @@ visibility: hidden;
                                         </div>
                                 </div>
                             </div>
-                            <div>
-                                <div>
+                            <div class="col-md-6" style="padding-left: 0px;">
+                                <div >
                                  <!--    <label>Land Area</label>
                                     <input type="number" class="keyword-input" placeholder="Enter land area"
                                            ng-model="property.area"> -->
@@ -675,7 +689,7 @@ visibility: hidden;
                                         </div>
                                 </div>
                             </div>
-                            <div>
+                            <div class="col-md-6 no-padding">
                                 <div class="single-query  form-group bottom20 m-t-20">
                                     <div class="intro">
                                         <select ng-model="property.unit">
@@ -710,7 +724,7 @@ visibility: hidden;
 
                 </div>
                                     <div class="row">
-    <div class="col-lg-12 col-xs-12" style="height: 350px;overflow: hidden;">
+    <div class="col-md-6 col-sm-12 col-xs-12" style="height: 350px;overflow: hidden;">
         <div id="map"></div>
         <div id="infowindow-content">
             <img src="" width="16" height="16" id="place-icon">
@@ -718,6 +732,100 @@ visibility: hidden;
         </div>
         <div ng-init="initMap()"></div>
     </div>
+    <div class="col-md-6 col-sm-12 col-xs-12">
+       <p>Contact details</p>
+                    <hr class="m-t-0">
+                       <ul class="nav nav-pills nav-justified">
+                        <header style="    font-size: 23px;
+    margin-bottom: 20px;
+    color: #5bc0de;
+    font-weight: 600;    z-index: auto;">Membership status</header>
+                <li class="active"><a id="admin-home" data-toggle="tab" href=".member1">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="member-tab1" checked><i class="fa fa-square-o fa-2x"></i><i
+                                class="fa fa-check-square-o fa-2x"></i> <span>Existing member</span>
+                        </label></div>
+                </a></li>
+                <li><a id="admin-plot" data-toggle="tab" href=".member2">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="member-tab1"><i class="fa fa-square-o fa-2x"></i><i
+                                class="fa fa-check-square-o fa-2x"></i>
+                            <span>New member (free)</span>
+                        </label></div>
+                </a></li>
+            </ul>
+             <div class="tab-content m-t-10">
+                <div class="tab-pane active member1">
+                    <form class="callus clearfix border_radius submit_property">
+                      <div class="col-md-6">
+                         <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>User name</label>
+                                        </div>
+                                      </div>
+                                       <div class="col-md-6">
+                         <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Password</label>
+                                        </div>
+                                      </div>
+                    </form>
+                  </div>
+                   <div class="tab-pane  member2">
+
+                    <form class="callus clearfix border_radius submit_property">
+                      <div class="row">
+                      <div class="col-md-6">
+                         <div class="group m-t-0">
+                                          <input class="m-t-0" type="text"
+                                        required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Full name</label>
+                                        </div>
+                                      </div>
+                                       <div class="col-md-6">
+                         <div class="group m-t-0">
+                                          <input class="m-t-0" type="text"
+                                        required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Email</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row m-t-20">
+                                       <div class="col-md-6">
+                         <div class="group m-t-0">
+                                          <input class="m-t-0" type="number"
+                                      required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Phone</label>
+                                        </div>
+                                      </div>
+                                       <div class="col-md-6">
+                         <div class="group m-t-0">
+                                          <input class="m-t-0" type="password"
+                                        required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Password</label>
+                                        </div>
+                                      </div>
+                                  </div>
+                                           <div class="row m-t-20">
+                                       <div class="col-md-6">
+                         <div class="group m-t-0">
+                                          <input class="m-t-0" type="text"
+                                        required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Security code</label>
+                                        </div>
+                                    </div>
+                                       <div class="col-md-6">
+                                        <img id="security_image" src="https://www.zameen.com/captcha.jpg" alt="Security Code" class="rfield l captcha_image">
+                                      </div>
+                                    </div>
+                    </form>
+                   </div>
+                </div>
+
+    </div>
+
 </div>
                 <div class="col-xs-12 col-md-12">
                     <p> Add images</p>
@@ -725,11 +833,11 @@ visibility: hidden;
                     <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(event)"
                            multiple/>
                     <div class="pull-left" ng-repeat="step in property.images">
-                        <img class="thumb" ng-src="{{step}}" width="250px" height="250px"/>
+                        <img class="thumb" ng-src="{{step}}" width="150px" height="150px"/>
                     </div>
                 </div>
             </div>
-            <button class="btn btn-success col-md-2 btn-lg m-t-20" ng-click="submitProperty()">Submit Property</button>
+            <button class="btn btn-info pull-right col-md-2 btn-lg m-t-20" ng-click="submitProperty()">Submit Property</button>
         </div>
      
         <!--
