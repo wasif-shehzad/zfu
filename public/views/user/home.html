@@ -356,6 +356,60 @@ border-bottom: 1px solid #98e2ff!important;
     color: #fff;
     margin-top: 20px;
 }
+#myCarousel .carousel-caption {
+    left:0;
+    right:0;
+    bottom:0;
+    text-align:left;
+    padding:10px;
+    background:rgba(0,0,0,0.6);
+    text-shadow:none;
+}
+#myCarousel .list-group {
+    position:absolute;
+    top:0;
+    right:0;
+}
+#myCarousel .list-group-item {
+         border-radius: 0px;
+    cursor: pointer;
+    height: 58px;
+    padding: 5px 0px 5px 5px;
+    color: #333;
+    border-color: #5bc0de;
+
+}
+#myCarousel .list-group-item h4{
+        font-size: 15px;
+    line-height: 23px;
+}
+#myCarousel .list-group-item img{
+    float: left;
+    margin-right: 10px;
+    /* vertical-align: text-bottom; */
+    height: 46px;
+    width: 90px;
+}
+#myCarousel .list-group .active {
+    background-color:#eee;  
+}
+#myCarousel .carousel-inner h4{
+    font-size: 20px;
+}
+
+#myCarousel .carousel-inner p{
+    font-size: 13px;
+    line-height: 20px;
+    color: #fff;
+}
+@media (min-width: 992px) { 
+    #myCarousel {padding-right:33.3333%;}
+    #myCarousel .carousel-controls {display:none;}  
+}
+@media (max-width: 991px) { 
+    .carousel-caption p,
+    #myCarousel .list-group {display:none;} 
+}
     </style>
     <div class="rev_slider_wrapper" ng-controller="homeCtrl">
         <div id="rev_overlaped" class="rev_slider"  data-version="5.0">
@@ -2051,7 +2105,7 @@ border-bottom: 1px solid #98e2ff!important;
             <p class="heading_space"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pellentesque dolor nec odio semper semper. Donec iaculis nibh neque, eu lobortis lorem elementum mollis...
             </p>
             <div class="row">
-                <div class="col-sm-8 margin_bottom">
+                <div class="col-sm-12 margin_bottom">
 
                    <!--  <div class="media news_media">
                         <div class="media-left">
@@ -2110,33 +2164,91 @@ border-bottom: 1px solid #98e2ff!important;
                             </a>
                         </div>
                     </div> -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+      
+        <div class="item active">
+          <img src="http://placehold.it/760x400/cccccc/ffffff">
+           <div class="carousel-caption">
+            <h4><a href="#">Lorem ipsum dolor sit amet consetetur sadipscing</a></h4>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+          </div>
+        </div><!-- End Item -->
+ 
+         <div class="item">
+          <img src="http://placehold.it/760x400/999999/cccccc">
+           <div class="carousel-caption">
+            <h4><a href="#">consetetur sadipscing elitr, sed diam nonumy eirmod</a></h4>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+          </div>
+        </div><!-- End Item -->
+        
+        <div class="item">
+          <img src="http://placehold.it/760x400/dddddd/333333">
+           <div class="carousel-caption">
+            <h4><a href="#">tempor invidunt ut labore et dolore</a></h4>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+          </div>
+        </div><!-- End Item -->
+        
+        <div class="item">
+          <img src="http://placehold.it/760x400/999999/cccccc">
+           <div class="carousel-caption">
+            <h4><a href="#">magna aliquyam erat, sed diam voluptua</a></h4>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+          </div>
+        </div><!-- End Item -->
 
-                        <div id="amazingslider-wrapper-1" style="display:block;position:relative;max-width:900px;padding-left:0px; padding-right:250px;margin:0px auto 0px;">
-        <div id="amazingslider-1" style="display:block;position:relative;margin:0 auto;">
-            <ul class="amazingslider-slides" style="display:none;">
-                <li><img src="images/bridge_three.jpg" alt="bridge_three"  title="bridge_three" />
-                </li>
-                <li><img src="images/download%20%281%29.jpg" alt="download (1)"  title="download (1)" />
-                </li>
-                <li><img src="images/download%20%282%29.jpg" alt="download (2)"  title="download (2)" />
-                </li>
-                <li><img src="images/images%20%281%29.jpg" alt="images (1)"  title="images (1)" />
-                </li>
-                <li><img src="images/images%20%282%29.jpg" alt="images (2)"  title="images (2)" data-description="asdf kjsdklfj klsjdklf jasdf asd fasdf" />
-                </li>
-            </ul>
-            <ul class="amazingslider-thumbnails" style="display:none;">
-                <li><img src="images/bridge_three-tn.jpg" alt="bridge_three" title="bridge_three" /></li>
-                <li><img src="images/download%20%281%29-tn.jpg" alt="download (1)" title="download (1)" /></li>
-                <li><img src="images/download%20%282%29-tn.jpg" alt="download (2)" title="download (2)" /></li>
-                <li><img src="images/images%20%281%29-tn.jpg" alt="images (1)" title="images (1)" /></li>
-                <li><img src="images/images%20%282%29-tn.jpg" alt="images (2)" title="images (2)" /></li>
-            </ul>
-        <div class="amazingslider-engine"><a href="http://amazingslider.com" title="Responsive Image Slider jQuery">Responsive Image Slider jQuery</a></div>
+        <div class="item">
+          <img src="http://placehold.it/760x400/dddddd/333333">
+           <div class="carousel-caption">
+            <h4><a href="#">tempor invidunt ut labore et dolore magna aliquyam erat</a></h4>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+          </div>
         </div>
-    </div>
+             <div class="item">
+          <img src="http://placehold.it/760x400/dddddd/333333">
+           <div class="carousel-caption">
+            <h4><a href="#">tempor invidunt ut labore et dolore magna aliquyam erat</a></h4>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+          </div>
+        </div>
+             <div class="item">
+          <img src="http://placehold.it/760x400/dddddd/333333">
+           <div class="carousel-caption">
+            <h4><a href="#">tempor invidunt ut labore et dolore magna aliquyam erat</a></h4>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+          </div>
+        </div><!-- End Item -->
+                
+      </div><!-- End Carousel Inner -->
+
+
+    <ul class="list-group col-sm-4">
+      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active"><img src="http://placehold.it/760x400/dddddd/333333"> <span>Lorem ipsum dolor sit amet consetetur sadipscing</span></li>
+      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><img src="http://placehold.it/760x400/dddddd/333333"> <span>consetetur sadipscing elitr, sed diam nonumy eirmod</span></li>
+      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><img src="http://placehold.it/760x400/dddddd/333333"><span>tempor invidunt ut labore et dolore</span></li>
+      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><img src="http://placehold.it/760x400/dddddd/333333"><span>magna aliquyam erat, sed diam voluptua</span></li>
+      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><img src="http://placehold.it/760x400/dddddd/333333"><span>tempor invidunt ut labore et dolore magna aliquyam erat</span></li>
+      <li data-target="#myCarousel" data-slide-to="5" class="list-group-item"><img src="http://placehold.it/760x400/dddddd/333333"><span>tempor invidunt ut labore et dolore magna aliquyam erat</span></li>
+      <li data-target="#myCarousel" data-slide-to="6" class="list-group-item"><img src="http://placehold.it/760x400/dddddd/333333"><span>tempor invidunt ut labore et dolore magna aliquyam erat</span></li>
+    </ul>
+
+      <!-- Controls -->
+      <div class="carousel-controls">
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+      </div>
+
+    </div><!-- End Carousel -->
                 </div>
-                <div class="col-sm-4 margin_bottom">
+             <!--    <div class="col-sm-4 margin_bottom">
                     <div id="agent-slider" class="owl-carousel">
                         <div class="item">
                             <div class="image bottom15">
@@ -2184,7 +2296,7 @@ border-bottom: 1px solid #98e2ff!important;
                         </div>
 
                     </div>
-                </div>
+                </div> -->
             </div>
 
         </div>
@@ -2364,9 +2476,38 @@ border-bottom: 1px solid #98e2ff!important;
 })
 </script>
  <script src="assets/js/user/functions.js"></script>
-    <script src="sliderengine/amazingslider.js"></script>
-    <link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css">
-    <script src="sliderengine/initslider-1.js"></script>
+
+ <script>
+     /*#####################
+Additional jQuery (required)
+#####################*/
+    
+    var clickEvent = false;
+    $('#myCarousel').carousel({
+        interval:   4000    
+    }).on('click', '.list-group li', function() {
+            clickEvent = true;
+            $('.list-group li').removeClass('active');
+            $(this).addClass('active');     
+    }).on('slid.bs.carousel', function(e) {
+        if(!clickEvent) {
+            var count = $('.list-group').children().length -1;
+            var current = $('.list-group li.active');
+            current.removeClass('active').next().addClass('active');
+            var id = parseInt(current.data('slide-to'));
+            if(count == id) {
+                $('.list-group li').first().addClass('active'); 
+            }
+        }
+        clickEvent = false;
+    });
+$(function() {
+    var boxheight = $('#myCarousel .carousel-inner').innerHeight();
+    var itemlength = $('#myCarousel .item').length;
+    var triggerheight = Math.round(boxheight/itemlength+1);
+    $('#myCarousel .list-group-item').outerHeight(triggerheight);
+});
+ </script>
 
 
     <!--foorter ends-->
