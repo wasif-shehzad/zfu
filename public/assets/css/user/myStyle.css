@@ -257,7 +257,7 @@ p{
    transition-duration: 0.5s;
 }
 .btn-blue:hover, .btn-white-fill:hover{
-  background:#ffd119; 
+  /*background:#ffd119;*/ 
 }
 .btn-white:hover, .btn-black:hover, .btn-dark:hover{
   background:#1F3F81; 
@@ -330,6 +330,7 @@ p{
 .btn-blue{
 	color:#fff;
 	background:#005696;
+	cursor: pointer;
 }
 .btn-dark{
 	color:#fff;
@@ -3389,8 +3390,8 @@ aside .property-query-area {
   padding:0px;
 }
 aside .btn-blue {
-  background: #ffd119;
-  color: #191919;
+/*  background: #ffd119;
+  color: #191919;*/
   display: inline-block;
   margin-top: 20px;
   width: auto !important;
@@ -3399,7 +3400,7 @@ aside .property-query-area h3{
 	margin-bottom:30px;
 }
 aside .callus label, aside .callus .price, aside .callus .leftLabel, aside .callus .rightLabel, aside .property-query-area h3{
-  color: #fff !important;
+  /*color: #fff !important;*/
 }
 aside .nstSlider .bar {
   background-color: #ffd119;
