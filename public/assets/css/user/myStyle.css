@@ -93,7 +93,10 @@ h3, h4{
     margin-top: 10px;
 }
 .m-t-20{
-    margin-top: 20px;
+    margin-top: 20px!important;
+}
+.m-t-30{
+    margin-top: 30px;
 }
 .m-b-10{
     margin-bottom: 10px;
@@ -1378,14 +1381,13 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content.bg .col-menu{
 .callus .keyword-input, 
 .callus .intro .zelect, 
 .callus select, .callus .form-control{
-	border-bottom: 1px solid #98e2ff!important;
-	height:34px;
-	/*border-radius:4px;
-	background:#fff;*/
-	padding:6px 12px;
-	font-size:13px;
-	margin-top: 20px;
-	margin-bottom: 0px;
+	    border-bottom: 2px solid #5bc0de!important;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    text-transform: capitalize;
 }
 .callus textarea{
 	min-height:100px;
@@ -1872,11 +1874,11 @@ i.icon-safety-shower{font-size:16px !important;}
   margin-right:5px;
 }
 .container-3 {
-  background: #ffd119;
+  /*background: #ffd119;*/
   border-radius: 5px;
   margin: auto;
   max-width: 100%;
-  padding: 30px;
+ /* padding: 30px;*/
   width: 889px;
 }
 .profile .agent-p-img > a {
@@ -1894,6 +1896,11 @@ i.icon-safety-shower{font-size:16px !important;}
 }
 .profile-form .callus .btn-blue{
 	width:auto;
+	cursor: pointer
+}
+hr {
+    border-color: #5bc0de;
+    border-width: 3px;
 }
 /* ---------------------- Latest Property ---------------------- */
 

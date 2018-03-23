@@ -19,7 +19,7 @@
 <!-- Login -->
 <style>
     .form {
-  background: rgba(19, 35, 47, 0.9);
+  background: rgb(1, 74, 128);
   padding: 40px;
   max-width: 600px;
   margin: 40px auto;
@@ -182,19 +182,42 @@ textarea {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-header{
-    display: none;
-}
 </style>
     <div class="form">
       
       <ul class="tab-group">
-        <li class="tab active"><a href=".signup">Sign Up</a></li>
-        <li class="tab"><a href=".login">Log In</a></li>
+          <li class="tab active"><a href=".login">Log In</a></li>
+        <li class="tab"><a href=".signup">Sign Up</a></li>
       </ul>
       
       <div class="tab-content">
-        <div class="signup">   
+        <div class="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form>
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email" required autocomplete="off" ng-model="user.userName"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" required autocomplete="off" ng-model="user.password"/>
+          </div>
+          
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          
+          <button ng-click="signIN()"  class="button button-block">Log In</button>
+          
+          </form>
+
+        </div>
+          <div class="signup">   
           <h1>Sign Up for Free</h1>
           
           <form>
@@ -224,7 +247,7 @@ header{
           
           <div class="field-wrap">
             <label>
-              Set A Password<span class="req">*</span>
+            Password<span class="req">*</span>
             </label>
             <input type="password" ng-model="user.password" required autocomplete="off"/>
           </div>
@@ -240,34 +263,6 @@ header{
           </form>
 
         </div>
-        
-        <div class="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form>
-          
-            <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email" required autocomplete="off" ng-model="user.userName"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password" required autocomplete="off" ng-model="user.password"/>
-          </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button ng-click="signIN()"  class="button button-block">Log In</button>
-          
-          </form>
-
-        </div>
-        
       </div><!-- tab-content -->
       
 </div>
@@ -365,13 +360,12 @@ header{
     } else if (e.type === 'focus') {
       
       if( $this.val() === '' ) {
-            label.removeClass('highlight'); 
+            label.addClass('active highlight'); 
             } 
       else if( $this.val() !== '' ) {
-            label.addClass('highlight');
+            label.addClass('active highlight');
             }
     }
-
 });
 
 $('.tab a').on('click', function (e) {
