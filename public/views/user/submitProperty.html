@@ -1108,7 +1108,7 @@ visibility: hidden;
                     <div class="modal-header">
                            <div class="pull-right">
                                 <button type="button" class="btn pull-left btn-info m-r-5 p-r-10 p-t-0 p-b-0 p-l-0 pull-none" data-toggle="modal"
-                                        data-target="#myModal" style="background: transparent;border: 0;"><i data-toggle="tooltip" data-placement="bottom" title="save" class="pe-7s-diskette" style="font-size: 30px;    color: #5bc0de;
+                                        data-target="#myModal" ng-click="saveFeatures()" style="background: transparent;border: 0;"><i data-toggle="tooltip" data-placement="bottom" title="save" class="pe-7s-diskette" style="font-size: 30px;    color: #5bc0de;
     font-weight: 600;"></i>
                                 </button>
                                  <div class="seperator pull-left"></div>
@@ -1129,45 +1129,52 @@ visibility: hidden;
                                <hr class="m-t-0">
                                 <div class="col-md-6 col-sm-6 col-lg-4">
                                           <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                          <input class="m-t-0" type="text" required ng-model="property.features.builtYear"><span class="highlight"></span><span class="bar"></span>
                                             <label>built in year</label>
                                         </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-lg-4 ">
     <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                          <input class="m-t-0" type="text" required ng-model="property.features.view"><span class="highlight"></span><span class="bar"></span>
                                             <label>view</label>
                                         </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-lg-4 ">
                                         <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                          <input class="m-t-0" type="text" required  ng-model="property.features.parkingSpaces"><span class="highlight"></span><span class="bar"></span>
                                             <label>Parking spaces</label>
                                         </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
                                         <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                          <input class="m-t-0" ng-model="property.features.floors" type="text" required><span class="highlight"></span><span class="bar"></span>
                                             <label>Number of floors</label>
                                         </div>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
                                         <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                          <input class="m-t-0" type="text" ng-model="property.features.others.main1" required><span class="highlight"></span><span class="bar"></span>
                                             <label>Other main features</label>
                                         </div>
                                 </div>
                                   <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
-                                        <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
-                                            <label>Electricity backup</label>
-                                        </div>
+                                       <select
+                                                        class="form-control" id="source"
+                                                        ng-model="property.features.elecricityBackup">
+                                                         <option value="hide">Electricity Backup</option>
+                                                    <option value="UPS"> UPS</option>
+                                                    <option value="generator"> Generator</option>
+                                                    <option value="solar"> Solar</option>
+                                                    <option value="other"> Other</option>
+                                                    <option value="none"> None</option>
+
+                                                </select>
                                 </div>
                              
                                 <div class="col-xs-12 col-sm-12 col-md-12  no-padding">
                               <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
-                                 <select id="source">
+                                 <select id="source"   ng-model="property.features.flooring">
                                          <option value="hide">Flooring</option>
                                 
                                         <option value="AK"> Tiles</option>
@@ -1207,17 +1214,17 @@ visibility: hidden;
                                 </select></div>
                                              <div class="col-xs-12 m-t-20 col-md-12 col-sm-12">
                                             <ul class="list-inline">
-                                    <li>  <input type="checkbox" id="box-1">
+                                    <li>  <input type="checkbox" id="box-1" ng-model="property.features.doubleGlazedWindows">
   <label for="box-1">Double glazed window</label>
                                     </li>
-                                    <li><input id="box-2" type="checkbox"><label for="box-2">Central Air Conditioning</label>
+                                    <li><input id="box-2" type="checkbox" ng-model="property.features.centralAirConditioning"><label for="box-2">Central Air Conditioning</label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" id="box-3"><label for="box-3">Central Heating</label>
+                                        <input type="checkbox" id="box-3" ng-model="property.features.centralHeating"><label for="box-3">Central Heating</label>
                                     </li>
-                                    <li><input type="checkbox" id="box-4"><label for="box-4">Waste Disposal</label>
+                                    <li><input type="checkbox" id="box-4" ng-model="property.features.wasteDisposal"><label for="box-4">Waste Disposal</label>
                                     </li>
-                                    <li><input type="checkbox" id="box-5"><label for="box-5">Furnished</label>
+                                    <li><input type="checkbox" id="box-5"  ng-model="property.features.furnished"><label for="box-5">Furnished</label>
                                     </li>
                                 </ul>
                                 </div>
@@ -1229,59 +1236,59 @@ visibility: hidden;
                          <hr class="m-t-0">
                                   <div class="col-md-6 col-sm-6 col-lg-4">
                                           <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
-                                            <label>built in year</label>
+                                          <input class="m-t-0" type="text" required ng-model="property.features.rooms"><span class="highlight"></span><span class="bar"></span>
+                                            <label>Number of Bedrooms</label>
                                         </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-lg-4 ">
     <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
-                                            <label>view</label>
+                                          <input class="m-t-0" type="text" required ng-model="property.features.bathrooms"><span class="highlight"></span><span class="bar"></span>
+                                            <label>Number of Bathrooms</label>
                                         </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-lg-4 ">
                                         <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
-                                            <label>Parking spaces</label>
+                                          <input class="m-t-0" type="text" required ng-model="property.features.serventQuarters"><span class="highlight"></span><span class="bar"></span>
+                                            <label>Number of Servant Quarters</label>
                                         </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
                                         <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
-                                            <label>Number of floors</label>
+                                          <input class="m-t-0" type="text" required ng-model="property.features.kitchens"><span class="highlight"></span><span class="bar"></span>
+                                            <label> Number of Kitchens</label>
                                         </div>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
                                         <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
-                                            <label>Other main features</label>
+                                          <input class="m-t-0" type="text" required  ng-model="property.features.storeRooms"><span class="highlight"></span><span class="bar"></span>
+                                            <label>Number of Store Room</label>
                                         </div>
                                 </div>
                                   <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
                                         <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
-                                            <label>Electricity backup</label>
+                                          <input class="m-t-0" type="text" required ng-model="property.features.otherRooms"><span class="highlight"></span><span class="bar"></span>
+                                            <label>Other Rooms</label>
                                         </div>
                                 </div>
                                          <div class="col-xs-12 m-t-20 col-md-12 col-sm-12">
                                             <ul class="list-inline">
-                                    <li><input type="checkbox" id="box-6"><label for="box-6">Drawing room</label>
+                                    <li><input type="checkbox" id="box-6" ng-model="property.features.drawingRoom"><label for="box-6">Drawing room</label>
                                     </li>
-                                    <li><input type="checkbox" id="box-7"><label for="box-7">Dining room</label>
+                                    <li><input type="checkbox" id="box-7" ng-model="property.features.diningRoom"><label for="box-7">Dining room</label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" id="box-8"><label for="box-8">Study room</label>
+                                        <input type="checkbox" id="box-8" ng-model="property.features.studyRoom"><label for="box-8">Study room</label>
                                     </li>
-                                    <li><input type="checkbox" id="box-9"><label for="box-9">Prayer room</label>
+                                    <li><input type="checkbox" id="box-9" ng-model="property.features.prayerRoom"><label for="box-9">Prayer room</label>
                                     </li>
-                                    <li><input type="checkbox" id="box-10"><label for="box-10">Gym</label>
+                                    <li><input type="checkbox" id="box-10" ng-model="property.features.gymRoom"><label for="box-10">Gym</label>
                                     </li>
-                                     <li><input type="checkbox" id="box-11"><label for="box-11">Steam room</label>
+                                     <li><input type="checkbox" id="box-11" ng-model="property.features.steamingRoom"><label for="box-11">Steam room</label>
                                     </li>
                                      <li><input type="checkbox" id="box-12"><label for="box-12">Sitting room</label>
                                     </li>
-                                     <li><input type="checkbox" id="box-13"><label for="box-13">Laundry rooms</label>
+                                     <li><input type="checkbox" id="box-13" ng-model="property.features.laundaryRoom"><label for="box-13">Laundry rooms</label>
                                     </li>
                                 </ul>
                                 </div>
@@ -1300,11 +1307,13 @@ visibility: hidden;
                                     </div>
                                     <div class="col-md-6">
                                                  <ul class="list-inline">
-                                    <li><input type="checkbox" id="box-14"><label for="box-14">Satelite or tv cable ready</label>
+                                    <li><input type="checkbox" id="box-14"  ng-model="property.features.satellite"><label for="box-14">Satelite or tv cable ready</label>
                                     </li>
-                                     <li><input type="checkbox" id="box-15"><label for="box-15">Intercom</label>
+                                     <li><input type="checkbox" id="box-15" ng-model="property.features.other"><label for="box-15">Other Facilities</label>
                                     </li>
-                                      <li><input type="checkbox" id="box-16"><label for="box-16">Broadband Internet Access</label>
+                                      <li><input type="checkbox" id="box-16" ng-model="property.features.internet"><label for="box-16">Broadband Internet Access</label>
+                                      </li>
+                                       <li><input type="checkbox" id="box-116" ng-model="property.features.intercom"><label for="box-116">Intercom</label>
                                       </li>
                                 </ul>
                                     </div>
@@ -1317,19 +1326,17 @@ visibility: hidden;
                                 <hr class="m-t-0">
                                  <div class="col-md-6">
                                         <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                          <input class="m-t-0" type="text" required  ng-model="property.features.other"><span class="highlight"></span><span class="bar"></span>
                                             <label>Other Healthcare and Recreation </label>
                                         </div>
                                     </div>
                                        <div class="col-md-6">
                                                  <ul class="list-inline">
-                                    <li><input type="checkbox" id="box-17"><label for="box-17">Lawn or Garden</label>
+                                    <li><input type="checkbox" id="box-17" ng-model="property.features.lawn"><label for="box-17">Lawn or Garden</label>
                                     </li>
-                                     <li><input type="checkbox" id="box-18"><label for="box-18">Swimming Pool</label>
+                                     <li><input type="checkbox" id="box-18" ng-model="property.features.swimingPool"><label for="box-18">Swimming Pool</label>
                                     </li>
-                                      <li><input type="checkbox" id="box-19"><label for="box-19">Sauna</label>
-                                      </li>
-                                         <li><input type="checkbox" id="box-23"><label for="box-23">Jacuzy</label>
+                                      <li><input type="checkbox" id="box-19" ng-model="property.features.sauna"><label for="box-19">Sauna</label>
                                       </li>
                                 </ul>
                                     </div>
@@ -1344,37 +1351,43 @@ visibility: hidden;
                                     <hr class="m-t-0">
                                     <div class="col-md-6 col-sm-6 col-lg-4">
                                        <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                          <input class="m-t-0" type="text" required ng-model="property.features.nearBy.schools"><span class="highlight"></span><span class="bar"></span>
                                             <label>Nearby Schools</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-4">
                                       <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                          <input class="m-t-0" type="text" required ng-model="property.features.nearBy.hospitals"><span class="highlight"></span><span class="bar"></span>
                                             <label>Nearby Hospitals</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-4">
                                       <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                          <input class="m-t-0" type="text" required  ng-model="property.features.nearBy.shoppingMalls"><span class="highlight"></span><span class="bar"></span>
                                             <label>Nearby Shopping Malls</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
                                       <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                          <input class="m-t-0" type="text" required   ng-model="property.features.nearBy.restaurants"><span class="highlight"></span><span class="bar"></span>
                                             <label>Nearby Restaurants</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
                                       <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                          <input class="m-t-0" type="text" required ng-model="property.features.nearBy.airport"><span class="highlight"></span><span class="bar"></span>
                                             <label>Distance From Airport (kms)</label>
+                                        </div>
+                                    </div>
+                                      <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
+                                      <div class="group m-t-0">
+                                          <input class="m-t-0" type="text" required  ng-model="property.features.nearBy.transport"><span class="highlight"></span><span class="bar"></span>
+                                            <label>Near by Public Transport Service</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-4 m-t-20">
                                       <div class="group m-t-0">
-                                          <input class="m-t-0" type="text" required><span class="highlight"></span><span class="bar"></span>
+                                          <input class="m-t-0" type="text" required  ng-model="property.features.nearBy.other"><span class="highlight"></span><span class="bar"></span>
                                             <label>Other Nearby Places</label>
                                         </div>
                                     </div>
