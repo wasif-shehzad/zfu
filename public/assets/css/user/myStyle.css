@@ -89,6 +89,12 @@ h3, h4{
 .m-t-0{
     margin-top: 0px!important;
 }
+.m-t-5{
+	margin-top: 5px!important;
+}
+.m-r-10{
+	margin-right: 10px!important;
+}
 .m-t-10{
     margin-top: 10px;
 }
@@ -130,6 +136,9 @@ h3, h4{
 }
 .clearfix{
     clear: both;
+}
+.fs-20{
+	font-size: 20px;
 }
 .btn_common, h2, nav.bootsnav .megamenu-content .title,
 .fullscreen_inner h3, .fullscreen_inner h1{

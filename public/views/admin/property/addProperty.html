@@ -56,7 +56,7 @@ html, body {
     font-weight: 300;
 }
 
-#pac-input {
+/*#pac-input {
     background-color: #fff;
     font-family: Roboto;
     font-size: 15px;
@@ -65,7 +65,7 @@ html, body {
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
     width: 400px;
-}
+}*/
 
 #pac-input:focus {
     border-color: #4d90fe;
@@ -138,191 +138,745 @@ html, body {
     color: #5bc0de;
     font-weight: 600;
 }
+    .nav-justified > li {
+        width: auto;
+        display: inline-block;
+    }
+
+    .nav-justified {
+        text-align: center;
+    }
+
+    hr {
+        border-color:#5bc0de;
+        border-width: 3px;
+    }
+
+    label input[type="radio"] ~ i.fa.fa-square-o {
+        color: #fff;
+        display: inline;
+    }
+
+    label input[type="radio"] ~ i.fa.fa-check-square-o {
+        display: none;
+    }
+
+    label input[type="radio"]:checked ~ i.fa.fa-square-o {
+        display: none;
+    }
+
+    label input[type="radio"]:checked ~ i.fa.fa-check-square-o {
+        color: #fff;
+        display: inline;
+    }
+
+    label:hover input[type="radio"] ~ i.fa {
+        color: #7AA3CC;
+    }
+
+    div[data-toggle="buttons"] label.active {
+        color: #7AA3CC;
+        /*    background: #337ab7;*/
+    }
+
+    div[data-toggle="buttons"] label {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 2em;
+        text-align: left;
+        white-space: nowrap;
+        vertical-align: top;
+        cursor: pointer;
+        background-color: none;
+        border: 0px solid #c8c8c8;
+        border-radius: 3px;
+        color: #c8c8c8;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+
+    div[data-toggle="buttons"] label:hover {
+        color: #7AA3CC;
+    }
+
+    div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .nav > li > a:focus, .nav > li > a:hover {
+        background: transparent;
+    }
+
+    .btn-group, .btn-group-vertical {
+        background:#5bc0de;
+    }
+
+    .btn-group, .btn-group-vertical span {
+        color: #fff;
+        vertical-align: inherit;
+    }
+
+    .nav-pills > li.active > a .btn-group-vertical, .nav-pills > li.active > a .btn-group-vertical:focus, .nav-pills > li.active > a .btn-group-vertical:hover {
+        background: #337ab7;
+        box-shadow: 1px 4px 6px #6c6c6c;
+    }
+
+    .nav > li > a {
+        padding: 0px;
+    }
+
+    .btn-group-vertical label {
+        padding-bottom: 0px !important;
+        padding-right: 18px !important;
+        padding-left: 18px !important;
+    }
 </style>
 
-<div class="container clear_both padding_fix">
+<div class="">
     <!--\\\\\\\ container  start \\\\\\-->
-    <div class="row ">
-        <div class="col-lg-6">
+    <div>
+        <div class="col-lg-12">
             <section class="panel default blue_title h2">
                 <div class="panel-heading">Property type and location</div>
                 <div class="panel-body center">
                     <div class="porlets-content">
                         <div class="basic-wizard" id="progressWizard">
                             <ul class="nav nav-pills nav-justified">
-                                <p>Select Property purpose</p>
-                                <hr>
+                                <p class="fs-20 text-left">Select Property Type and purpose</p>
+                                <hr class="m-t-5">
                                 <li>
-                                    <button ng-click="selectPropertyPurose('sale')" class="btn btn-default"
+                                 <!--    <button ng-click="selectPropertyPurose('sale')" class="btn btn-default"
                                             href="#ptab1">For sale
-                                    </button>
+                                    </button> -->
+                                    <a data-toggle="tab" href=".ptab1">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="email1"><i class="fa fa-square-o fa-2x"></i><i
+                                ng-click="selectPropertyPurose('sale')" class="fa fa-check-square-o fa-2x"></i> <span> For Sale</span>
+                        </label></div>
+                </a>
                                 </li>
                                 <li>
-                                    <button ng-click="selectPropertyPurose('rent')" class="btn btn-default"
+                                    <!-- <button ng-click="selectPropertyPurose('rent')" class="btn btn-default"
                                             href="#ptab2">Rent
-                                    </button>
+                                    </button> -->
+
+                                    <a data-toggle="tab" href=".ptab2">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="email1"><i class="fa fa-square-o fa-2x"></i><i
+                               ng-click="selectPropertyPurose('rent')" class="fa fa-check-square-o fa-2x"></i>
+                            <span> Rent</span>
+                        </label></div>
+                </a>
                                 </li>
                                 <li>
-                                    <button ng-click="selectPropertyPurose('wanted')" class="btn btn-default"
+                                    <!-- <button ng-click="selectPropertyPurose('wanted')" class="btn btn-default"
                                             href="#ptab3">Wanted
-                                    </button>
+                                    </button> -->
+
+                                    <a data-toggle="tab" href=".ptab3">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="email1"><i class="fa fa-square-o fa-2x"></i><i
+                                ng-click="selectPropertyPurose('wanted')" class="fa fa-check-square-o fa-2x"></i> <span>Wanted</span>
+                        </label></div>
+                </a>
                                 </li>
                             </ul>
-                            <div class="tab-content">
-                                <div id="ptab1" class="tab-pane">
+                            <div class="tab-content m-b-0">
+                                <div class="tab-pane ptab1">
                                 </div>
-                                <div id="ptab2" class="tab-pane">
+                                <div  class="tab-pane ptab2">
                                 </div>
-                                <div id="ptab3" class="tab-pane">
-                                    <ul class="nav nav-pills nav-justified">
+                                <div class="tab-pane ptab3">
+                                    <ul class="nav nav-pills m-b-10 nav-justified">
                                         <li>
-                                            <button class="btn btn-default" ng-show="property.purpose"
+                                          <!--   <button class="btn btn-default" ng-show="property.purpose"
                                                     data-toggle="tab">Buy
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab" href=".ptab3">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="radio-content" ng-show="property.purpose"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span>Buy</span>
+                                </label></div>
+                        </a>
                                         </li>
                                         <li>
-                                            <button class="btn btn-default" ng-show="property.purpose"
+                                          <!--   <button class="btn btn-default" ng-show="property.purpose"
                                                     data-toggle="tab">Rent
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab" href=".ptab3">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="radio-content" ng-show="property.purpose"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span>Rent</span>
+                                </label></div>
+                        </a>
                                         </li>
                                     </ul>
                                 </div>
-                            </div><!-- /tab-content -->
-                            <ul class="nav nav-pills nav-justified">
-                                <p>Select Property type</p>
-                                <hr>
+                                        <ul class="nav nav-pills nav-justified">
                                 <li>
-                                    <button ng-click="selectPropertyType('home')" id="admin-home"
+                                    <!-- <button ng-click="selectPropertyType('home')" id="admin-home"
                                             class="btn btn-default" data-toggle="tab" href="#ptab12">Homes
-                                    </button>
+                                    </button> -->
+                                    <a id="admin-home" data-toggle="tab" href=".ptab12">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="email1-tab2"><i class="fa fa-square-o fa-2x"></i><i
+                                class="fa fa-check-square-o fa-2x"></i> <span
+                                ng-click="selectPropertyType('home')"> Homes</span>
+                        </label></div>
+                </a>
                                 </li>
                                 <li>
-                                    <button ng-click="selectPropertyType('plot')" id="admin-plot"
+                                    <!-- <button ng-click="selectPropertyType('plot')" id="admin-plot"
                                             class="btn btn-default" data-toggle="tab" href="#ptab13">Plots
-                                    </button>
+                                    </button> -->
+
+                                    <a id="admin-plot" data-toggle="tab" href=".ptab13">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="email1-tab2"><i class="fa fa-square-o fa-2x"></i><i
+                                class="fa fa-check-square-o fa-2x"></i>
+                            <span ng-click="selectPropertyType('plot')"> Plots</span>
+                        </label></div>
+                </a>
                                 </li>
                                 <li>
-                                    <button ng-click="selectPropertyType('commercial')" id="admin-commercial"
+                                    <!-- <button ng-click="selectPropertyType('commercial')" id="admin-commercial"
                                             class="btn btn-default" data-toggle="tab" href="#ptab14">Commercial
-                                    </button>
+                                    </button> -->
+
+                                    <a id="admin-commercial" data-toggle="tab" href=".ptab14">
+                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="radio" name="email1-tab2"><i class="fa fa-square-o fa-2x"></i><i
+                                class="fa fa-check-square-o fa-2x"></i> <span ng-click="selectPropertyType('commercial')"> Commercial</span>
+                        </label></div>
+                </a>
                                 </li>
                             </ul>
+                            </div><!-- /tab-content -->
                             <div class="tab-content">
-                                <div id="ptab12" class="tab-pane">
+                                <div class="tab-pane ptab12">
                                     <ul class="nav nav-pills nav-justified">
-                                        <li>
-                                            <button ng-click="selectPropertySubtype('house')" class="btn btn-default"
+                                        <li ng-click="selectPropertySubtype('house')">
+                                            <!-- <button ng-click="selectPropertySubtype('house')" class="btn btn-default"
                                                     data-toggle="tab">House
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span>House</span>
+                                </label></div>
+                        </a>
                                         </li>
-                                        <li>
-                                            <button ng-click="selectPropertySubtype('flat')" class="btn btn-default"
+                                        <li ng-click="selectPropertySubtype('flat')">
+                                           <!--  <button ng-click="selectPropertySubtype('flat')" class="btn btn-default"
                                                     data-toggle="tab">Flat
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i>
+                                    <span>Flat</span>
+                                </label></div>
+                        </a>
                                         </li>
-                                        <li>
-                                            <button ng-click="selectPropertySubtype('upper portion')"
+                                        <li ng-click="selectPropertySubtype('upper portion')">
+                                            <!-- <button ng-click="selectPropertySubtype('upper portion')"
                                                     class="btn btn-default" data-toggle="tab">Upper portion
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i>
+                                    <span>Upper Portion</span>
+                                </label></div>
+                        </a>
                                         </li>
-                                        <li>
-                                            <button ng-click="selectPropertySubtype('lower protion')"
+                                        <li ng-click="selectPropertySubtype('lower protion')">
+                                         <!--    <button ng-click="selectPropertySubtype('lower protion')"
                                                     class="btn btn-default" data-toggle="tab">Lower portion
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i>
+                                    <span>Lower Portion</span>
+                                </label></div>
+                        </a>
                                         </li>
-                                        <li>
-                                            <button ng-click="selectPropertySubtype('farm house')"
+                                        <li ng-click="selectPropertySubtype('farm house')">
+                                            <!-- <button ng-click="selectPropertySubtype('farm house')"
                                                     class="btn btn-default" data-toggle="tab">Farm house
-                                            </button>
+                                            </button> -->
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i>
+                                    <span>Farm House</span>
+                                </label></div>
+                        </a>
                                         </li>
-                                        <li>
-                                            <button ng-click="selectPropertySubtype('room')" class="btn btn-default"
+                                        <li ng-click="selectPropertySubtype('room')">
+                                         <!--    <button ng-click="selectPropertySubtype('room')" class="btn btn-default"
                                                     data-toggle="tab">Room
-                                            </button>
+                                            </button> -->
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i>
+                                    <span>Room</span>
+                                </label></div>
+                        </a>
                                         </li>
-                                        <li>
-                                            <button ng-click="selectPropertySubtype('pent house')"
+                                        <li ng-click="selectPropertySubtype('pent house')">
+                                          <!--   <button ng-click="selectPropertySubtype('pent house')"
                                                     class="btn btn-default" data-toggle="tab">Penthouse
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab3"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i>
+                                    <span>Penthouse</span>
+                                </label></div>
+                        </a>
                                         </li>
                                     </ul>
                                 </div>
-                                <div id="ptab13" class="tab-pane">
+                                <div class="tab-pane ptab13">
                                     <ul class="nav nav-pills nav-justified">
                                         <li>
-                                            <button ng-click="selectPropertySubtype('residential plot')"
+                                          <!--   <button ng-click="selectPropertySubtype('residential plot')"
                                                     class="btn btn-default" data-toggle="tab">Residential plot
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab4"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="selectPropertySubtype('residential plot')">Residentail Plot</span>
+                                </label></div>
+                        </a>
                                         </li>
                                         <li>
-                                            <button ng-click="selectPropertySubtype('commercial plot')"
+                                            <!-- <button ng-click="selectPropertySubtype('commercial plot')"
                                                     class="btn btn-default" data-toggle="tab">Commercial plot
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab4"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="selectPropertySubtype('commercial plot')">Commercial Plot</span>
+                                </label></div>
+                        </a>
                                         </li>
                                         <li>
-                                            <button ng-click="selectPropertySubtype('aggricultural land')"
+                                           <!--  <button ng-click="selectPropertySubtype('aggricultural land')"
                                                     class="btn btn-default" data-toggle="tab">Aggricultural land
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab4"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="selectPropertySubtype('aggricultural land')">Aggriculture Land</span>
+                                </label></div>
+                        </a>
                                         </li>
                                         <li>
-                                            <button ng-click="selectPropertySubtype('industrial land')"
+                                         <!--    <button ng-click="selectPropertySubtype('industrial land')"
                                                     class="btn btn-default" data-toggle="tab">Industrial land
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab4"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                       ng-click="selectPropertySubtype('industrial land')">Industrial Land</span>
+                                </label></div>
+                        </a>
                                         </li>
                                         <li>
-                                            <button ng-click="selectPropertySubtype('plot file')"
+                                            <!-- <button ng-click="selectPropertySubtype('plot file')"
                                                     class="btn btn-default" data-toggle="tab">Plot file
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab4"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="selectPropertySubtype('plot file')">Plot File</span>
+                                </label></div>
+                        </a>
                                         </li>
                                         <li>
-                                            <button ng-click="selectPropertySubtype('plot from')"
+                                            <!-- <button ng-click="selectPropertySubtype('plot from')"
                                                     class="btn btn-default" data-toggle="tab">Plot form
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab4"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="selectPropertySubtype('plot from')">Plot Form</span>
+                                </label></div>
+                        </a>
                                         </li>
                                     </ul>
                                 </div>
-                                <div id="ptab14" class="tab-pane">
+                                <div class="tab-pane ptab14">
                                     <ul class="nav nav-pills nav-justified">
                                         <li>
-                                            <button ng-click="selectPropertySubtype('office')" class="btn btn-default"
+                                            <!-- <button ng-click="selectPropertySubtype('office')" class="btn btn-default"
                                                     data-toggle="tab">Office
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab5"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="selectPropertySubtype('office')">Office</span>
+                                </label></div>
+                        </a>
                                         </li>
                                         <li>
-                                            <button ng-click="selectPropertySubtype('shop')" class="btn btn-default"
+                                           <!--  <button ng-click="selectPropertySubtype('shop')" class="btn btn-default"
                                                     data-toggle="tab">Shop
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab5"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="selectPropertySubtype('shop')">Shop</span>
+                                </label></div>
+                        </a>
                                         </li>
                                         <li>
-                                            <button ng-click="selectPropertySubtype('ware house')"
+                                            <!-- <button ng-click="selectPropertySubtype('ware house')"
                                                     class="btn btn-default" data-toggle="tab">Ware house
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab5"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                       ng-click="selectPropertySubtype('ware house')">Ware House</span>
+                                </label></div>
+                        </a>
                                         </li>
                                         <li>
-                                            <button ng-click="selectPropertySubtype('factory')" class="btn btn-default"
+                                            <!-- <button ng-click="selectPropertySubtype('factory')" class="btn btn-default"
                                                     data-toggle="tab">Factory
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab5"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="selectPropertySubtype('factory')">Factory</span>
+                                </label></div>
+                        </a>
                                         </li>
                                         <li>
-                                            <button ng-click="selectPropertySubtype('building')" class="btn btn-default"
+                                            <!-- <button ng-click="selectPropertySubtype('building')" class="btn btn-default"
                                                     data-toggle="tab">Building
-                                            </button>
+                                            </button> -->
+
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab5"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="selectPropertySubtype('building')">Building</span>
+                                </label></div>
+                        </a>
                                         </li>
                                         <li>
-                                            <button ng-click="selectPropertySubtype('other')" class="btn btn-default"
+                                            <!-- <button ng-click="selectPropertySubtype('other')" class="btn btn-default"
                                                     data-toggle="tab">Other
-                                            </button>
+                                            </button> -->
+                                            <a data-toggle="tab">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <label class="btn">
+                                    <input type="radio" name="email1-tab5"><i class="fa fa-square-o fa-2x"></i><i
+                                        class="fa fa-check-square-o fa-2x"></i> <span
+                                        ng-click="selectPropertySubtype('other')">Other</span>
+                                </label></div>
+                        </a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div><!--/progressWizard-->
                     </div>
-                    <div class="row">
+                     <div class="row">
+
+                <div class="col-md-6 col-xs-12">
+                     <p class="fs-20 text-left">Select city and location</p>
+                    <hr class="m-t-0">
+                    <form class="callus clearfix border_radius submit_property">
+                        <div class="col-sm-6">
+                            <div class="single-query  form-group bottom20">
+                                <div class="intro">
+                                  <!--   <select>
+                                        <option class="active">Select City</option>
+                                        <option>For Sale</option>
+                                        <option>For Sale</option>
+                                        <option>For Sale</option>
+                                        <option>For Rent</option>
+                                    </select> -->
+
+                                    <select>
+    <option value="hide">Select city</option>
+    <option value="january" rel="icon-temperature">January</option>
+    <option value="february">February</option>
+    <option value="march">March</option>
+    <option value="april">April</option>
+    <option value="may">May</option>
+    <option value="june">June</option>
+    <option value="july">July</option>
+    <option value="august">August</option>
+    <option value="september">September</option>
+    <option value="october">October</option>
+    <option value="november">November</option>
+    <option value="december">December</option>
+</select> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="single-query  form-group bottom20">
+                                <div class="intro">
+                                    <select>
+                                        <option value="hide">Select Area</option>
+                                        <option>For Sale</option>
+                                        <option>For Sale</option>
+                                        <option>For Sale</option>
+                                        <option>For Rent</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                      <!--   <div class="col-xs-6">
+
+                            <div class="group">
+                                <input type="text" required="required"/><span class="highlight"></span><span
+                                    class="bar"></span>
+                                <label>Enter Location</label>
+                            </div>
+                        </div> -->
+                        <div class="col-sm-6 m-t-10">
+                            <div class="single-query  form-group bottom20">
+                                <div class="intro">
+                                    <select>
+                                       <option value="hide">Number of bedrooms</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-sm-6 m-t-10">
+                            <div class="single-query  form-group bottom20">
+                                <div class="intro">
+                                    <select>
+                                       <option value="hide">Number of bathrooms</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                            <div class="col-xs-6">
+                                 <!-- <label>Enter Location</label>
+                                  <div id="pac-container" style="margin-bottom: 15px;">
+                                    <input class="form-control" id="pac-input" type="text"
+                                           placeholder="Enter a location">
+                                </div> -->
+                                  <div class="group" id="pac-container">
+                                            <input type="text" id="pac-input" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                        </div>
+                            </div>
+                                     <div class="col-xs-6 m-t-10">
+                            <div class="single-query  form-group bottom20">
+                                <div class="intro">
+                                    <select>
+                                       <option value="hide">Expires after</option>
+                                        <option>1 month</option>
+                                        <option>2 month</option>
+                                        <option>3 month</option>
+                                        <option>4 month</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+          <!--               <div class="col-xs-6">
+
+                            <div class="single-query  form-group bottom20" ng-if="property.type.type !== 'plot'">
+                                <div class="col-md-12">
+                                    <input type="date" class="form-control"
+                                           ng-model="property.expiresAfter" style="background: transparent;
+    border: 0;
+    border-color: #5bc0de!important;
+    border-radius: 0;
+    border-bottom-width: 2px!important;
+    color: #333;"></div>
+                            </div>
+                        </div> -->
+                  
+
+                    </form>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                   <p class="fs-20 text-left">Property and Land details</p>
+                    <hr class="m-t-0">
+                    <form class="callus clearfix border_radius submit_property">
+                        <div class="col-xs-6 no-padding">
+
+                            <div>
+                                <!-- <label>Property Title</label>
+                                <input type="text" class="keyword-input" placeholder="Enter title here"
+                                       ng-model="property.title"> -->
+
+                                          <div class="group m-t-0">
+                                          <input class="m-t-0" type="text"
+                                       ng-model="property.title" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Enter title here</label>
+                                        </div>
+                            </div>
+                            <div>
+
+                                <div>
+                                 <!--    <label>Enter Price (PKR)</label>
+                                    <input type="number" class="keyword-input" placeholder="Enter price"
+                                           ng-model="property.price"> -->
+
+                                              <div class="group m-t-0">
+                                          <input type="number"
+                                       ng-model="property.price" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Enter price</label>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-left: 0px;">
+                                <div >
+                                 <!--    <label>Land Area</label>
+                                    <input type="number" class="keyword-input" placeholder="Enter land area"
+                                           ng-model="property.area"> -->
+
+
+                                              <div class="group m-t-0">
+                                          <input type="number"
+                                       ng-model="property.area" required><span class="highlight"></span><span class="bar"></span>
+                                            <label>Land Area</label>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 no-padding">
+                                <div class="single-query  form-group bottom20">
+                                    <div class="intro">
+                                        <select ng-model="property.unit">
+                                             <option value="hide">Select Unit</option>
+                                            <option value="square feet"> Square Feet</option>
+                                            <option value="square yards"> Square Yards</option>
+                                            <option value="square meter"> Square Meter</option>
+                                            <option value="marla"> Marla</option>
+                                            <option value="kanal"> Kanal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+
+                            <div class="single-query form-group bottom20">
+                                <textarea name="description" class="form-control" rows="5"
+                                          ng-model="property.description" placeholder="Enter property description here" style="border:1px solid #5bc0de!important"></textarea>
+                            </div>
+                        </div>
+                        <div style="    float: right;
+    margin-top: 6px;
+    padding-right: 15px;">
+                            <button  type="button" class="btn btn-info"
+                                    ng-click="selectFeatures()">Add Features
+                            </button>
+                        </div>
+
+
+                    </form>
+
+                </div>
+                                    <div style="clear: both;">
+    <div class="col-md-12 col-sm-12 col-xs-12" style="height: 350px;overflow: hidden;">
+        <div id="map"></div>
+        <div id="infowindow-content">
+            <img src="" width="16" height="16" id="place-icon">
+
+        </div>
+        <div ng-init="initMap()"></div>
+    </div>
+
+</div>
+                <div class="col-xs-12 col-md-12">
+                     <p class="fs-20 text-left"> Add images</p>
+                    <hr class="m-t-0">
+                    <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(event)"
+                           multiple/>
+                    <div class="pull-left" ng-repeat="step in property.images">
+                        <img class="thumb" ng-src="{{step}}" width="150px" height="150px"/>
+                    </div>
+                </div>
+                 <button class="btn btn-info pull-right col-md-2 btn-lg m-t-20 m-r-10" ng-click="submitProperty()">Submit Property</button>
+            </div>
+                  <!--   <div class="row">
                         <p>Select city and location</p>
                         <hr>
                         <div class="col-md-6">
-                            <!--google map-->
+                           
                             <div class="pac-card" id="pac-card">
                                 <div>
                                     <div id="title">
@@ -346,42 +900,21 @@ html, body {
                                         <label for="use-strict-bounds">Strict Bounds</label>
                                     </div>
                                 </div>
-                                <!-- <div id="pac-container">
-                                    <input id="pac-input" type="text"
-                                           placeholder="Enter a location">
-                                </div> -->
                             </div>
-                            <!--google map-->
-
-
-                        </div>
-                        <div class="col-md-6">
-                            <select class="form-control" ng-model="property.town">
-                                <option value="Model Town"> Model Town</option>
-                                <option value="Garden Town"> Garden Town</option>
-                                <option value="Johar Town"> Johar Town</option>
-
-
-                            </select>
                         </div>
                         <div class="col-sm-12 m-t-20">
-                            <!-- <input type="text" class="form-control" placeholder="Enter address here"
-                                   id="searchTextField" ng-model="property.address"> -->
                                     <div id="pac-container">
                                     <input class="form-control" id="pac-input" type="text"
                                            placeholder="Enter a location">
                                 </div>
                         </div>
-                        <!--                  <div>insert map here</div>-->
-
-
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </div>
         <div class="col-lg-6">
             <section class="panel default blue_title h2">
-                <div class="panel-heading">Property details</div>
+               <!--  <div class="panel-heading">Property details</div>
                 <div class="panel-body">
                     <div>
                         <p class="m-b-0">Property Title</p>
@@ -438,7 +971,7 @@ html, body {
                     <div class="m-t-20">
                         <p class="m-b-0">Features</p>
                         <hr>
-                        <button ng-click="selectFeatures()" class="btn btn-info btn-lg">Add Features</button>
+                        <button ng-click="selectFeatures()" class="btn btn-info btn-lg">Add Features</button> -->
 
                         <!-- Modal -->
                         <div class="modal fade" id="propertyModal" style="padding-right: 0px!important;">
@@ -1123,7 +1656,7 @@ html, body {
         </section>
     </div>
 </div>
-<div class="row">
+<!-- <div class="row">
     <div class="col-lg-12">
         <section class="panel default blue_title h2">
             <div class="panel-heading">
@@ -1132,8 +1665,8 @@ html, body {
             </div>
         </section>
     </div>
-</div>
-<div class="row">
+</div> -->
+<!-- <div class="row">
     <div class="col-lg-12">
         <div id="map"></div>
         <div id="infowindow-content">
@@ -1142,7 +1675,7 @@ html, body {
         </div>
         <div ng-init="initMap()"></div>
     </div>
-</div>
+</div> -->
 </div>
 </div><!--\\\\\\\ container  end \\\\\\-->
 </div>
