@@ -17,12 +17,90 @@
 <link rel="stylesheet" type="text/css" href="assets/css/user/range-Slider.min.css">
 <link rel="stylesheet" type="text/css" href="assets/css/user/search.css">
 <link rel="icon" href="images/icon.png">
+  <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css"  type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 </head>
 <body>
 
 
-
+<style type="text/css">
+  .c-logo {
+        width: 65px;
+    /* height: 25px; */
+    position: absolute;
+    right: -10px;
+    bottom: -2px;
+    text-align: center;
+}
+ .c-logo .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+ .c-logo .agency-hover {
+    display: none;
+    position: absolute;
+    width: 140px;
+    border: 1px solid #EDEDED;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    z-index: 50;
+    right: 0px;
+    top: -140px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.c-logo:hover .agency-hover {
+    display: block;
+}
+.ribbon {
+  position: absolute;
+  left: -5px; top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px; height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 100px;
+  display: block;
+  background: #79A70A;
+  background: linear-gradient(#2989d8 0%, #1e5799 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px; left: -21px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute; left: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid #1e5799;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #1e5799;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute; right: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #1e5799;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #1e5799;
+}
+</style>
  
  
 
@@ -193,10 +271,31 @@
               <div class="image">
                 <a href="#."><img src="assets/images/agentsprofile/3.jpg" alt="latest property" class="img-responsive"></a>
                 <div class="price clearfix"> 
-                  <span class="tag pull-right">40,000 PKR</span>
+                  <span class="tag pull-right" style="background: #3333339e;    padding: 3px 9px;"><i data-toggle="tooltip" title="
+                  Add to favourite" class="fa fa-heart-o" style="    margin-right: 10px; cursor: pointer"></i>
+                    <i class="pe-7s-map-marker" data-toggle="tooltip" title="Map" style="cursor: pointer"></i>
+                  </span>
                 </div>
-                <span class="tag_t">For Sale</span> 
-                <span class="tag_l">Featured</span>
+                <span class="tag_t">For Sale</span>
+                 <div class="ribbon"><span>Featured</span></div>
+                <span style="position: absolute;
+    bottom: 3px;
+    margin-right: 8px;
+    left: 8px;
+    color: #fff;
+    background: #3333339e;padding: 2px 9px;cursor: pointer"><i class="pe-7s-camera upload-button" style="font-size: 25px;
+    vertical-align: sub;"></i>
+    14
+                </span>
+                             <span style="position: absolute;
+    bottom: 3px;
+    margin-right: 8px;
+    left: 78px;
+    color: #fff;
+    background: #3333339e;padding: 2px 9px;cursor: pointer"><i class="pe-7s-video upload-button" style="font-size: 25px;
+    vertical-align: sub;"></i>
+    14
+                </span>
               </div>
               <div class="proerty_content">
                 <div class="proerty_text">
@@ -215,10 +314,8 @@
                 </div>
                 <div class="favroute clearfix">
                   <p class="pull-md-left"><i class="icon-calendar2"></i>&nbsp;5 Days ago </p>
-                  <ul class="pull-right">
-                    <li><a href="#."><i class="icon-like"></i></a></li>
-                    <li><a href="#three" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
-                  </ul>
+                <!-- <img data-toggle="popover" data-placement="top" data-content="Content" class="pull-right" width="65px" src="assets/images/agentsprofile/3.jpg"> -->
+                <div class="c-logo right bottom-spc pull-right"><span class="helper"></span><img width="47px" src="https://images.zameen.com/w100_h90/2/162640_5a71bc26618f2.jpg" alt="UPN (Universal Property Network)" title="UPN (Universal Property Network)"><div class="agency-hover"><div class="agency-hover-img"><img src="https://images.zameen.com/w100_h90/2/162640_5a71bc26618f2.jpg" title="UPN (Universal Property Network)"></div><div class="left regsis_con since">Registered Since: 2015</div><div class="left regsis_con">776 Properties For Sale</div><div class="left regsis_con">0 Property For Rent</div></div></div>
                 </div>
                 <div class="toggle_share collapse" id="three">
                   <ul>
@@ -531,8 +628,8 @@
 <!--Footer End-->
 
 
-<script src="js/jquery-2.1.4.js"></script>
-<script src="js/bootstrap.min.js"></script> 
+ <script src="assets/js/user/jquery-2.1.4.js"></script>
+    <script src="assets/js/user/bootstrap.min.js"></script>
 <script src="js/bootsnav.js"></script>
 <script src="js/jquery.parallax-1.1.3.js"></script>
 <script src="js/jquery.appear.js"></script>
@@ -556,5 +653,14 @@
 <script src="js/jquery.fancybox.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/functions.js"></script>
+ 
+<script>
+    $('[data-toggle="tooltip"]').tooltip();   
+</script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
 </body>
 </html>

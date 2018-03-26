@@ -3945,6 +3945,10 @@ footer .footer_panel .media-body span > i{
 .footer2 .footer_panel .media-body a, .footer2 .footer_panel .media-body span,
 .footer2 ul.getin_touch li, .copyright.index2 p a, .copyright.index2 p span{
 	color:#fff;
+	    font-weight: 300;
+}
+.btn-info{
+	border-radius: 0;
 }
 .copyright.index2 {
   background: #000 url("../images/footer-black.png") no-repeat;
