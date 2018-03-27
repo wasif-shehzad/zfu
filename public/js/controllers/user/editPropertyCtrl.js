@@ -14,7 +14,9 @@ angular.module('app')
                 $state.go("app.user.login");
             }
             $scope.property = sharedDatasvc.getPropertyEditState();
+            debugger;
             $scope.obj={};
+            debugger;
             if($scope.property.type.type=='home')
             {
                 $scope.obj.home="tab-pane ptab12";
@@ -56,6 +58,10 @@ angular.module('app')
             $scope.propertySubType=function (e) {
                 debugger;
               $scope.property.type.subType=e;
+            };
+            $scope.removeImage=function(e){
+                $scope.property.images.splice(e,1);
+
             };
             $scope.saveProperty = function () {
                 debugger;

@@ -26,7 +26,7 @@ angular.module('app')
             };
             $scope.user=sharedDatasvc.getUser();
             if(!$scope.user){
-                $state.go("app.user.login")
+                $state.go("app.user.login");
             }
             $scope.clickToView=function(e){
                 if(e=="logout")
@@ -57,9 +57,11 @@ angular.module('app')
 
             };
             $scope.propertyPurpose=function (e) {
+                debugger;
               $scope.property.purpose=e;
             };
             $scope.propertyType=function (e) {
+                debugger;
               $scope.property.type.type=e;
             };
             $scope.propertySubType=function (e) {

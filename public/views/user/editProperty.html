@@ -314,14 +314,14 @@ visibility: hidden;
                         <li><a data-toggle="tab" href=".ptab3">
                             <div class="btn-group btn-group-vertical" data-toggle="buttons">
                                 <label class="btn">
-                                    <input type="radio" name="radio-content"><i class="fa fa-square-o fa-2x"></i><i
+                                    <input type="radio" ng-checked="(property.purpose=='buy')"  name="radio-content"><i class="fa fa-square-o fa-2x"></i><i
                                         class="fa fa-check-square-o fa-2x"></i> <span>Buy</span>
                                 </label></div>
                         </a></li>
                         <li><a data-toggle="tab" href=".ptab3">
                             <div class="btn-group btn-group-vertical" data-toggle="buttons">
                                 <label class="btn">
-                                    <input type="radio" name="radio-content"><i class="fa fa-square-o fa-2x"></i><i
+                                    <input type="radio" ng-checked="(property.purpose=='rent')" name="radio-content"><i class="fa fa-square-o fa-2x"></i><i
                                         class="fa fa-check-square-o fa-2x"></i> <span>Rent</span>
                                 </label></div>
                         </a></li>
@@ -832,6 +832,9 @@ visibility: hidden;
                     <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(event)"
                            multiple/>
                     <div class="pull-left" ng-repeat="step in property.images">
+                        <button type="button" ng-click="removeImage($index)" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                         <img class="thumb" ng-src="{{step}}" width="150px" height="150px"/>
                     </div>
                 </div>
