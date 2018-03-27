@@ -66,6 +66,10 @@ angular.module('app')
                 debugger;
               $scope.property.type.subType=e;
             };
+            $scope.removeImage=function(e){
+                $scope.property.images.splice(e,1);
+
+            };
             $scope.submitProperty = function () {
                 debugger;
                 $scope.property.addedBy={};

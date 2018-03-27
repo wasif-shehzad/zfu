@@ -852,7 +852,12 @@ visibility: hidden;
                            multiple/>
                            <div>
                     <div class="pull-left" ng-repeat="step in property.images">
+                        <p>
+                            <button type="button" ng-click="removeImage($index)" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         <img class="thumb" ng-src="{{step}}" width="150px" height="150px"/>
+                        </p>
                     </div>
                   </div>
                 </div>
