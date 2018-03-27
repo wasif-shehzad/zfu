@@ -47,6 +47,11 @@ angular.module('app')
                 sharedDatasvc.setPropertyEditState(property);
                 $state.go("app.user.editProperty");
             };
+
+            $scope.showProperty = function (item) {
+                sharedDatasvc.setProperty(item);
+                $state.go("app.user.property");
+            };
             // var employeeCountPromise=globalsvc.GetData("employees/getCount","post",
             //     {"addedBy.UserId":$scope.user.AgentId,"addedBy.type":"agent"});
             // employeeCountPromise.then(function (data) {
