@@ -6,24 +6,23 @@
                 <h2 class="text-uppercase">{{property.town}} </h2>
                 <h2 class="text-uppercase">{{property.title}} </h2>
                 <p class="bottom30">{{property.address}}</p>
-                <div id="property-d-1" class="owl-carousel">
-                    <div class="item"><img src="assets/images/properties/property1.jpg" alt="image"/></div>
-                    <div class="item"><img src="assets/images/properties/property2.jpg" alt="image"/></div>
-                    <div class="item"><img src="assets/images/properties/property3.jpg" alt="image"/></div>
-                    <div class="item"><img src="assets/images/properties/property4.jpg" alt="image"/></div>
-                    <div class="item"><img src="assets/images/properties/property5.jpg" alt="image"/></div>
-                    <div class="item"><img src="assets/images/properties/property6.jpg" alt="image"/></div>
-                    <div class="item"><img src="assets/images/properties/property7.jpg" alt="image"/></div>
+                <div id="property-d-1" class="owl-carousel"  >
+
+
+                <div ng-if="property.images[0]" class="item"><img ng-src="{{property.images[0]}}" alt="image"/></div>
+                <div ng-if="property.images[1]" class="item"><img ng-src="{{property.images[1]}}" alt="image"/></div>
+                <div ng-if="property.images[2]" class="item"><img ng-src="{{property.images[2]}}" alt="image"/></div>
+
+
+
+
+
                 </div>
                 <div id="property-d-1-2" class="owl-carousel" >
                   <!--   <div class="item"><img ng-src="{{img}}" alt="image"/></div> -->
-                      <div class="item"><img src="assets/images/properties/property1.jpg" alt="image"/></div>
-                    <div class="item"><img src="assets/images/properties/property2.jpg" alt="image"/></div>
-                    <div class="item"><img src="assets/images/properties/property3.jpg" alt="image"/></div>
-                    <div class="item"><img src="assets/images/properties/property4.jpg" alt="image"/></div>
-                    <div class="item"><img src="assets/images/properties/property5.jpg" alt="image"/></div>
-                    <div class="item"><img src="assets/images/properties/property6.jpg" alt="image"/></div>
-                    <div class="item"><img src="assets/images/properties/property7.jpg" alt="image"/></div>
+                    <div ng-if="property.images[0]" class="item"><img ng-src="{{property.images[0]}}" alt="image"/></div>
+                    <div ng-if="property.images[1]" class="item"><img ng-src="{{property.images[1]}}" alt="image"/></div>
+                    <div ng-if="property.images[2]" class="item"><img ng-src="{{property.images[2]}}" alt="image"/></div>
                 </div>
                 <div class="property_meta bg-black bottom40">
                     <span><i class="icon-select-an-objecto-tool"></i>{{property.area +" "}}{{property.unit}}</span>
@@ -90,7 +89,7 @@
                             </tr>
                             <tr>
                                 <td><b>Floors</b></td>
-                                <td class="text-right">{{property.features.flooring}}</td>
+                                <td class="text-right">{{property.features.floors}}</td>
                             </tr>
                             <tr>
                                 <td><b>Plumbing</b></td>
