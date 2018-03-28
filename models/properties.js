@@ -11,6 +11,7 @@ var propertySchema = new Schema({
     description: String,
     address: String,
     description: String,
+    location:String,
     title: String,
     unit: String,
     expiresAfter: Date,

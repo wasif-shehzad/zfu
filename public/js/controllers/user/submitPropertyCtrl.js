@@ -73,7 +73,11 @@ angular.module('app')
 
             };
             $scope.submitProperty = function () {
-                debugger;
+               if(!$scope.property.address || !$scope.property.price || !$scope.property.title || !$scope.property.purpose || !$scope.property.type.type){
+                   return;
+               }
+               debugger;
+               $scope.property.address= $('#pac-input')[0].value;
                 $scope.property.addedBy={};
                 $scope.property.addedBy.name=$scope.user.name;
                 $scope.property.addedBy.email=$scope.user.email;
