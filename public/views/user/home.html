@@ -24,8 +24,11 @@
             color: #fff;
             border-bottom: 1px dashed #fff;
         }
+         .carousel.vertical .carousel-inner .item a strong{
+            font-weight: 400;
+         }
         .carousel.vertical .carousel-inner .item a:hover{
-            background: #44920d;
+            background: #5bc0de;
         }
         @media all and (transform-3d), (-webkit-transform-3d) {
             .carousel.vertical .carousel-inner > .item {
@@ -78,14 +81,14 @@
             top: 0;
             bottom: 90%;
             width: 100%;
-            background:#243f4f;
+            background:#08568a;
             opacity:1;
         }
         .carousel.vertical .carousel-control.down {
             top: 90%;
             bottom: 0;
             width: 100%;
-            background:#243f4f;
+            background:#08568a;
             opacity: 1;
         }
         .carousel.vertical .carousel-control .icon-prev, .carousel.vertical .carousel-control .icon-next, .carousel.vertical .carousel-control .glyphicon-chevron-up, .carousel.vertical .carousel-control .glyphicon-chevron-down {
@@ -208,7 +211,7 @@
         }
         div.bhoechie-tab-menu div.list-group>a .glyphicon,
         div.bhoechie-tab-menu div.list-group>a .fa {
-            color:#59b45d;
+             color: #fff;
         }
         div.bhoechie-tab-menu div.list-group>a:first-child{
             border-top-right-radius: 0;
@@ -221,9 +224,9 @@
         div.bhoechie-tab-menu div.list-group>a.active,
         div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
         div.bhoechie-tab-menu div.list-group>a.active .fa{
-            background-color: #59b45d;
+            background-color: #edf3f8;
             background-image: #5A55A3;
-            color: #ffffff;
+            color: #333;
         }
         div.bhoechie-tab-menu div.list-group>a.active:after{
             content: '';
@@ -234,7 +237,7 @@
             border-left: 0;
             border-bottom: 13px solid transparent;
             border-top: 13px solid transparent;
-            border-left: 10px solid #59b45d;
+            border-left: 10px solid #e6eef5;
         }
 
         div.bhoechie-tab-content{
@@ -375,8 +378,9 @@ border-bottom: 1px solid #98e2ff!important;
     cursor: pointer;
     height: 61px;
     padding: 5px 0px 5px 5px;
-    color: #333;
-    border-color: #5bc0de;
+       color: #fff;
+    border-color: #e5edf4;
+    background: #5bc0de;
 
 }
 #myCarousel .list-group-item h4{
@@ -391,7 +395,8 @@ border-bottom: 1px solid #98e2ff!important;
     width: 90px;
 }
 #myCarousel .list-group .active {
-    background-color:#eee;  
+    background-color:#e5edf4; 
+    color: #333; 
 }
 #myCarousel .carousel-inner h4{
     font-size: 20px;
@@ -409,6 +414,19 @@ border-bottom: 1px solid #98e2ff!important;
 @media (max-width: 991px) { 
     .carousel-caption p,
     #myCarousel .list-group {display:none;} 
+}
+    .bhoechie-tab-menu .list-group-item{
+        background-color: #5bc0de;
+    border: 1px solid #176397;
+    color: #fff;
+}
+.list-group-item:hover>.glyphicon{
+    color: #333!important;
+        transition: all .3s ease-in-out .1s!important;
+
+} 
+.group input, .group textarea{
+    color: #fff!important;
 }
     </style>
     <div class="rev_slider_wrapper" ng-controller="homeCtrl">
@@ -511,7 +529,7 @@ border-bottom: 1px solid #98e2ff!important;
     <!--Navigaton Ends-->
     <!--PROPERTY FOR SALE IN PAKISTAN-->
     <div class="tp_overlay">
-        <div class="topbar clearfix" style="background-color: black";>
+        <div class="topbar clearfix" style="background-color: #5bc0de;">
             <ul class="breadcrumb_top">
                 <li><a ng-click="clickToView('saveProperty')"><i class="icon-icons43"></i>Favorite Property</a></li>
                 <li><a ng-click="clickToView('submitProperty')"><i class="icon-icons215"></i>Submit Property</a></li>
@@ -1315,11 +1333,11 @@ border-bottom: 1px solid #98e2ff!important;
         <header style="color: #fff;
     text-align: center;
     font-size: 26px;
-    background:#57b15f;
+        background: #5bc0de;
     padding-left: 10px;
     padding-right: 10px;
     line-height: 45px;">Popular location in Homes</header>
-        <div style="background:#243f4f;width:377px;">
+        <div style="background:#08568a;width:377px;">
             <div>
                 <div id="" class="carousel vertical slide carousel-showsixmoveone carousel-example-vertical" style="height:323px;
 	    overflow: hidden;">
@@ -2395,12 +2413,11 @@ border-bottom: 1px solid #98e2ff!important;
                                 <i class="icon-mail-envelope-open"></i>
                             </a> -->
                              <div class="group">
-                                            <input type="text" required="required" style="color: #fff!important;" />
+                                            <input type="text" required="required" style="color: #333!important;" />
                                              <span style="    position: absolute;
     top: 10px;
     right: 5px;
-    font-size: 20px;
-    color: #fff;"><i class="pe-7s-mail"></i></span>
+    font-size: 20px;"><i class="pe-7s-mail"></i></span>
                                             <span class="highlight"></span><span class="bar"></span>
                                             <label>Enter your Email</label>
                                         </div>
