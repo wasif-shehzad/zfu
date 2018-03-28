@@ -7,10 +7,9 @@ angular.module('app')
                  sharedDatasvc, globalsvc, $location) {
 
             $scope.obj={};
-            debugger;
             $scope.user=sharedDatasvc.getUser();
             if(!$scope.user){
-                $state.go("app.user.login")
+                $state.go("app.user.login");
             }
             $scope.imageUpload = function(event){
                 var files = event.target.files; //FileList object

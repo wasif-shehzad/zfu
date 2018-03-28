@@ -7,7 +7,6 @@ angular.module('app')
                  sharedDatasvc, globalsvc, $location) {
 
         $scope.user=sharedDatasvc.getUser();
-        debugger;
             var allEmployeesGetCallPromise= globalsvc.GetData("employees/getAll","Post",
                 {"addedBy.UserId":$scope.user.AgentId,
                 "addedBy.type":"agent"});
@@ -45,7 +44,6 @@ angular.module('app')
                 $scope.EmployeeFilter["addedBy.type"]="agent";
                 $scope.EmployeeFilter["addedBy.UserId"]=$scope.user.AgentId;
                 var getFilterAgentPromise=globalsvc.GetData("employees/filterEmployees","post",$scope.EmployeeFilter);
-                debugger;
                 getFilterAgentPromise.then(function (data) {
                     $scope.employees=data.data;
                 });

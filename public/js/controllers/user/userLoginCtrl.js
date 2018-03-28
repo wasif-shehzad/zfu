@@ -12,11 +12,9 @@ angular.module('app')
                 $scope.view.sign=e;
             };
             $scope.signIN=function(){
-                debugger;
                 var signINPromise=globalsvc.GetData("users/signin","post",$scope.user);
 
                 signINPromise.then(function (data) {
-                    debugger;
                     sharedDatasvc.setUser(data.data);
                     $state.go("app.user.profile");
                 });

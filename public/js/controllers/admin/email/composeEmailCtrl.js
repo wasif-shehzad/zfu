@@ -12,13 +12,11 @@ angular.module('app')
             $scope.toCC;
 
             $scope.saveAsDraft=function () {
-                debugger;
                 if(!$scope.user.drafts){
                     $scope.user.drafts=[];
                 }
 
                 $scope.draft.name="draft"+$scope.user.drafts.length;
-                debugger;
                 if(!$scope.user.drafts.includes($scope.draft))
                 {
                   $scope.user.drafts.push($scope.draft);
@@ -47,7 +45,6 @@ angular.module('app')
 
         };
         $scope.sendEmail = function () {
-          debugger;
           var data={
                 To:$scope.toUser,
                 CC:$scope.toCC,

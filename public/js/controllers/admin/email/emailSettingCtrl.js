@@ -6,8 +6,6 @@ angular.module('app')
         function($scope, $rootScope, $timeout, $log, $window, $state, localStorageService,
                  sharedDatasvc, globalsvc, $location) {
         $scope.user=sharedDatasvc.getUser();
-        debugger;
-
             $scope.emailSetting={};
             $scope.emailSetting=$scope.user.emailSetting;
 

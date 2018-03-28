@@ -46,7 +46,6 @@ angular.module('app')
                 }
             };
             $scope.selectFeatures =function(){
-                debugger;
               if($scope.property.type.type=="plot")
               {
                   $("#plotModal").modal('show');
@@ -87,7 +86,6 @@ angular.module('app')
                 var strictBounds = document.getElementById('strict-bounds-selector');
 
                 map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
-debugger;
                 var autocomplete = new google.maps.places.Autocomplete(input);
 
                 // Bind the map's bounds (viewport) property to the autocomplete object,

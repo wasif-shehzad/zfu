@@ -13,7 +13,6 @@ angular.module('app')
             var id;
             var url;
             id=$scope.property.addedBy.UserId;
-            debugger;
             if($scope.property.addedBy.type==="agent"){
                 url="agents/agent/";
             }else if($scope.property.addedBy.type ==="user"){
@@ -25,9 +24,7 @@ angular.module('app')
 
             }
             var getUser=globalsvc.GetData(url+id,"get",null);
-            debugger;
             getUser.then(function (data) {
-                debugger;
                    $scope.agent=data.data[0];
                 });
             $scope.clickToView=function(e){

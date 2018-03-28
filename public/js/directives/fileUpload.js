@@ -8,7 +8,6 @@ angular.module('app').directive('ngFileModel', ['$parse', function ($parse) {
             element.bind('change', function () {
                 var values = [];
                 angular.forEach(element[0].files, function (item) {
-                    debugger;
                     var value = {
                         // File Name
                         name: item.name,

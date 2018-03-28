@@ -6,7 +6,6 @@ angular.module('app')
         function($scope, $rootScope, $timeout, $log, $window, $state, localStorageService,
                  sharedDatasvc, globalsvc, $location) {
             $scope.property= sharedDatasvc.getPropertyEditState();
-            debugger;
             $scope.selectPropertyPurpose=function (e) {
                 $scope.property.purpose=e;
             };

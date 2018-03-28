@@ -10,7 +10,6 @@
                 };
 
                 $scope.clickToView=function(e){
-                    debugger;
                     if(e=="login")
                     {
                         $state.go("app.user.login");

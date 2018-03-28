@@ -57,15 +57,12 @@ angular.module('app')
 
             };
             $scope.propertyPurpose=function (e) {
-                debugger;
               $scope.property.purpose=e;
             };
             $scope.propertyType=function (e) {
-                debugger;
               $scope.property.type.type=e;
             };
             $scope.propertySubType=function (e) {
-                debugger;
               $scope.property.type.subType=e;
             };
             $scope.removeImage=function(e){
@@ -76,7 +73,6 @@ angular.module('app')
                if(!$scope.property.address || !$scope.property.price || !$scope.property.title || !$scope.property.purpose || !$scope.property.type.type){
                    return;
                }
-               debugger;
                $scope.property.address= $('#pac-input')[0].value;
                 $scope.property.addedBy={};
                 $scope.property.addedBy.name=$scope.user.name;
@@ -88,7 +84,6 @@ angular.module('app')
                 userSubmitProperty.then(function (data) {
                     sharedDatasvc.setProperty(data.data);
                     $state.go("app.user.property");
-                      debugger;
                     });
             };
 
@@ -120,7 +115,6 @@ angular.module('app')
                 var strictBounds = document.getElementById('strict-bounds-selector');
 
                 map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
-debugger;
                 var autocomplete = new google.maps.places.Autocomplete(input);
 
                 // Bind the map's bounds (viewport) property to the autocomplete object,

@@ -5,7 +5,6 @@ angular.module('app')
         'localStorageService', 'sharedDatasvc', 'globalsvc', '$location',
         function($scope, $rootScope, $timeout, $log, $window, $state, localStorageService,
                  sharedDatasvc, globalsvc, $location) {
-            debugger;
             $scope.property={};
             $scope.property.type={};
             $scope.property.images = [];
@@ -14,9 +13,7 @@ angular.module('app')
                 $state.go("app.user.login");
             }
             $scope.property = sharedDatasvc.getPropertyEditState();
-            debugger;
             $scope.obj={};
-            debugger;
             if($scope.property.type.type=='home')
             {
                 $scope.obj.home="tab-pane ptab12";
@@ -56,7 +53,6 @@ angular.module('app')
               $scope.property.type.type=e;
             };
             $scope.propertySubType=function (e) {
-                debugger;
               $scope.property.type.subType=e;
             };
             $scope.removeImage=function(e){
@@ -64,7 +60,6 @@ angular.module('app')
 
             };
             $scope.saveProperty = function () {
-                debugger;
                 $scope.property.addedBy={};
                 $scope.property.addedBy.name=$scope.user.name;
                 $scope.property.addedBy.email=$scope.user.email;
@@ -75,7 +70,6 @@ angular.module('app')
                 userSaveProperty.then(function (data) {
                     sharedDatasvc.setProperty(data.data);
                     $state.go("app.user.property");
-                      debugger;
                     });
             };
             $scope.imageUpload = function(event){

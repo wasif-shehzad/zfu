@@ -40,7 +40,6 @@ angular.module('app')
                         delete $scope.propertyFilter[a];
                     }
                 }
-                debugger;
                var getFilterPropertyPromise=globalsvc.GetData("properties/filterProperties","post",$scope.propertyFilter);
                 getFilterPropertyPromise.then(function (data) {
                     $scope.properties=data.data;
