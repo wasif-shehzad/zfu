@@ -5,8 +5,14 @@
             'localStorageService', 'sharedDatasvc', 'globalsvc', '$location',
             function($scope, $rootScope, $timeout, $log, $window, $state, localStorageService,
                      sharedDatasvc, globalsvc, $location) {
+            $scope.property={};
                 $scope.routeToAdmin=function(){
                     $state.go("app.adminLogin");
+                };
+
+                $scope.goToSearch = function () {
+                    debugger;
+                    $state.go("app.user.search");
                 };
 
                 $scope.clickToView=function(e){
