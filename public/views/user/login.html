@@ -19,7 +19,7 @@
 <!-- Login -->
 <style>
     .form {
-  background: rgb(1, 74, 128);
+  background: rgb(255, 255, 255);
   padding: 40px;
   max-width: 600px;
   margin: 40px auto;
@@ -56,11 +56,10 @@
   transition: .5s ease;
 }
 .tab-group li a:hover {
-  background: #179b77;
   color: #ffffff;
 }
 .tab-group .active a {
-  background: #1ab188;
+  background:#5bc0de;
   color: #ffffff;
 }
 
@@ -80,16 +79,15 @@ label {
   -webkit-transform: translateY(6px);
           transform: translateY(6px);
   left: 13px;
-  color: rgba(255, 255, 255, 0.5);
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
-  font-size: 22px;
+  font-size: 20px;
 }
 label .req {
   margin: 2px;
-  color: #1ab188;
+  color: #670e06;
 }
 
 label.active {
@@ -97,15 +95,11 @@ label.active {
           transform: translateY(50px);
   left: 2px;
   font-size: 14px;
+  color: #333;
 }
 label.active .req {
   opacity: 0;
 }
-
-label.highlight {
-  color: #ffffff;
-}
-
 input, textarea {
   font-size: 22px;
   display: block;
@@ -114,7 +108,7 @@ input, textarea {
   background: none;
   background-image: none;
   border: 1px solid #a0b3b0;
-  color: #ffffff;
+  color: #333;
   border-radius: 0;
   -webkit-transition: border-color .25s ease, -webkit-box-shadow .25s ease;
   transition: border-color .25s ease, -webkit-box-shadow .25s ease;
@@ -159,16 +153,12 @@ textarea {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #1ab188;
+  background: #5bc0de;
   color: #ffffff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
-.button:hover, .button:focus {
-  background: #179b77;
-}
-
 .button-block {
   display: block;
   width: 100%;
@@ -192,7 +182,7 @@ textarea {
       
       <div class="tab-content">
         <div class="login">   
-          <h1>Welcome Back!</h1>
+          <h1 style="color: #333;">Sign in</h1>
           
           <form>
           

@@ -472,14 +472,14 @@ ul.getin_touch li i {
 }
 .pager li > a{
   background-color: #fff;
-  border: 1px solid #ddd;
+  border:1px solid #5bc0de;
   font-size:16px;
   border-radius: 4px;
   display: inline-block;
   padding:7px 14px;
 }
 .pager li > a:hover, .pager li > a:focus, .pager li.active > a{
-	background-color:#ffd119;
+	background-color:#5bc0de;
 }
 .search {
   border: medium none;
