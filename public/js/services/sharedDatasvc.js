@@ -9,6 +9,7 @@ angular.module('app')
          var agentEditState;
          var employeeEditState;
          var propertyEditState;
+         var searchProperty;
 
         return {
             setProperty:function(item){
@@ -77,12 +78,19 @@ angular.module('app')
                     return propertyEditState;
                 }
                 else if (Object.keys(propertyEditState).length != 0) {
-                    return propertyEditState
+                    return propertyEditState;
                 }
                 else {
                     propertyEditState = localStorageService.get('property');
                     return propertyEditState;
                 }
+            },
+            setDataForPropertySearch:function(data){
+                searchProperty={};
+                searchProperty=data;
+            },
+            getDataForPropertySearch:function(){
+                    return searchProperty;
             }
 
         };

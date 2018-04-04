@@ -8,6 +8,15 @@ angular.module('app')
 
             $scope.obj={};
             $scope.user=sharedDatasvc.getUser();
+            if($scope.user){
+                $scope.loggedIN=true;
+            }else{
+                $scope.loggedIN=false;
+            }
+            $scope.logout = function(){
+                sharedDatasvc.setUser(null);
+                $state.go("app.user.login");
+            };
             $scope.clickToView=function(e){
              if(e=="login")
                 {

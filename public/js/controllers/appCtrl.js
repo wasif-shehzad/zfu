@@ -6,12 +6,23 @@
             function($scope, $rootScope, $timeout, $log, $window, $state, localStorageService,
                      sharedDatasvc, globalsvc, $location) {
             $scope.property={};
+            $scope.property.type={};
+            $scope.property.features={};
                 $scope.routeToAdmin=function(){
                     $state.go("app.adminLogin");
                 };
-
+                if(sharedDatasvc.getUser()){
+                    $scope.loggedIN=true;
+                }else{
+                    $scope.loggedIN=false;
+                }
+                $scope.logout = function(){
+                    sharedDatasvc.setUser(null);
+                    $state.go("app.user.login");
+                };
                 $scope.goToSearch = function () {
                     debugger;
+                    sharedDatasvc.setDataForPropertySearch($scope.property);
                     $state.go("app.user.search");
                 };
 

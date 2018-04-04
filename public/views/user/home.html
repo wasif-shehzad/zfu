@@ -535,7 +535,8 @@ border-bottom: 1px solid #98e2ff!important;
                 <li><a ng-click="clickToView('submitProperty')"><i class="icon-icons215"></i>Submit Property</a></li>
                 <li><a ng-click="clickToView('myProperties')"><i class="icon-icons215"></i>My Property</a></li>
                 <li><a ng-click="clickToView('profile')"><i class="icon-icons230"></i>Profile</a></li>
-                <li><a ng-click="clickToView('login')"><i class="icon-icons179"></i>Login / Register</a></li>
+                <li ng-if="!loggedIN"><a ng-click="clickToView('login')"><i class="icon-icons179"></i>Login / Register</a></li>
+                <li ng-if="loggedIN"><a ng-click="logout()"><i class="icon-icons179"></i>Logout</a></li>
                 <li class="last-icon"><i class="icon-icons215"></i></li>
             </ul>
         </div>
@@ -567,21 +568,40 @@ border-bottom: 1px solid #98e2ff!important;
                                     <div class="col-sm-6">
                                         <!--  <input type="text" class="keyword-input" placeholder="Then Enter Location Here"> -->
                                         <div class="group">
-                                            <input type="text" required="required" style="color: #fff!important;"/><span class="highlight"></span><span class="bar"></span>
+                                            <input type="text" ng-model="property.address" required="required" style="color: #fff!important;"/><span class="highlight"></span><span class="bar"></span>
                                             <label>Enter Location</label>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="single-query bottom15">
                                             <div class="intro">
-                                                <select>
-                                                    <option selected="" value="any">All Homes</option>
-                                                    <option>All areas</option>
-                                                    <option>Bayonne </option>
-                                                    <option>Greenville</option>
-                                                    <option>Manhattan</option>
-                                                    <option>Queens</option>
-                                                    <option>The Heights</option>
+                                                <select ng-model="property['type.subType']">
+                                                    <option  selected="Property Type" >Property Type</option>
+                                                    <optgroup label="home">
+                                                        <option value="house">House</option>
+                                                        <option value="flat">Flat</option>
+                                                        <option value="upper portion">Upper Portion</option>
+                                                        <option value="lower portion">Flat</option>
+                                                        <option value="farm house">Farm House</option>
+                                                        <option value="room">Room</option>
+                                                    </optgroup>
+                                                    <optgroup label="plot">
+                                                        <option value="residential plot">Residential Plot</option>
+                                                        <option value="commercial plot">Commercial Plot</option>
+                                                        <option value="aggricultural plot">Aggricultural Plot</option>
+                                                        <option value="industrial land">Industrial Land</option>
+                                                    </optgroup>
+                                                    <optgroup label="Commercial">
+                                                        <option value="shop">Shop</option>
+                                                        <option value="office">Office</option>
+                                                        <option value="ware house">Ware House</option>
+                                                        <option value="factory">Factory</option>
+                                                        <option value="building">Building</option>
+                                                        <option value="other">Other</option>
+                                                    </optgroup>
+                                                    <optgroup label="any">
+                                                        <option value="any">Any</option>
+                                                    </optgroup>
                                                 </select>
                                             </div>
                                         </div>
@@ -591,12 +611,9 @@ border-bottom: 1px solid #98e2ff!important;
                                             <div class="intro">
                                                 <select>
                                                     <option class="active">Select City</option>
-                                                    <option>All areas</option>
-                                                    <option>Bayonne </option>
-                                                    <option>Greenville</option>
-                                                    <option>Manhattan</option>
-                                                    <option>Queens</option>
-                                                    <option>The Heights</option>
+                                                    <option>Lahore</option>
+                                                    <option>Islamabad </option>
+                                                    <option>Faisalabad</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -620,7 +637,7 @@ border-bottom: 1px solid #98e2ff!important;
                                         <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="single-query bottom15">
                                                 <div class="intro">
-                                                    <select>
+                                                    <select ng-model="property.features.rooms">
                                                         <option class="active">Min Beds</option>
                                                         <option>1</option>
                                                         <option>2</option>
@@ -635,7 +652,7 @@ border-bottom: 1px solid #98e2ff!important;
                                         <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="single-query bottom15">
                                                 <div class="intro">
-                                                    <select>
+                                                    <select ng-model="property.features.bathrooms">
                                                         <option class="active">Min Baths</option>
                                                         <option>1</option>
                                                         <option>2</option>
@@ -653,7 +670,7 @@ border-bottom: 1px solid #98e2ff!important;
                                            <input type="text" class="keyword-input" placeholder="Min Area (sq ft)">
                                          </div> -->
                                         <div class="group">
-                                            <input type="text" required="required" style="color: #fff!important;"/><span class="highlight"></span><span class="bar"></span>
+                                            <input type="text" ng-model="property.area" required="required" style="color: #fff!important;"/><span class="highlight"></span><span class="bar"></span>
                                             <label>Min Area</label>
                                         </div>
                                     </div>
@@ -753,7 +770,7 @@ border-bottom: 1px solid #98e2ff!important;
                                     <div class="col-sm-6">
                                         <!--  <input type="text" class="keyword-input" placeholder="Then Enter Location Here"> -->
                                         <div class="group">
-                                            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                                            <input type="text" ng-model="property.address" required="required"/><span class="highlight"></span><span class="bar"></span>
                                             <label>Enter Location</label>
                                         </div>
                                     </div>
@@ -761,12 +778,12 @@ border-bottom: 1px solid #98e2ff!important;
                                         <div class="single-query bottom15">
                                             <div class="intro">
                                                 <select>
-                                                    <option selected="" value="any">All Homes</option>
-                                                    <option>All areas</option>
-                                                    <option>Bayonne </option>
-                                                    <option>Greenville</option>
-                                                    <option>Manhattan</option>
-                                                    <option>Queens</option>
+                                                    <option  selected="house" value="house">House</option>
+                                                    <option value="flat">Flat</option>
+                                                    <option value="upper portion">Upper Portion</option>
+                                                    <option value="lower portion">Flat</option>
+                                                    <option value="farm house">Farm House</option>
+                                                    <option value="room">Room</option>
                                                     <option>The Heights</option>
                                                 </select>
                                             </div>
@@ -777,12 +794,9 @@ border-bottom: 1px solid #98e2ff!important;
                                             <div class="intro">
                                                 <select>
                                                     <option class="active">Select City</option>
-                                                    <option>All areas</option>
-                                                    <option>Bayonne </option>
-                                                    <option>Greenville</option>
-                                                    <option>Manhattan</option>
-                                                    <option>Queens</option>
-                                                    <option>The Heights</option>
+                                                    <option>Lahore</option>
+                                                    <option>Islamabad </option>
+                                                    <option>Faisalabad</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -806,7 +820,7 @@ border-bottom: 1px solid #98e2ff!important;
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="single-query bottom15">
                                                 <div class="intro">
-                                                    <select>
+                                                    <select ng-model="property.features.rooms">
                                                         <option class="active">Min Beds</option>
                                                         <option>1</option>
                                                         <option>2</option>

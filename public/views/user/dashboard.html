@@ -12,7 +12,8 @@
                         <li><a ng-click="clickToView('submitProperty')"><i class="icon-icons215"></i>Submit Property</a></li>
                         <li><a ng-click="clickToView('myProperties')"><i class="icon-icons215"></i>My Property</a></li>
                         <li><a  ng-click="clickToView('profile')"><i class="icon-icons230"></i>Profile</a></li>
-                        <li><a ng-click="clickToView('login')"><i class="icon-icons179"></i>Login / Register</a></li>
+                        <li ng-if="!loggedIN"><a ng-click="clickToView('login')"><i class="icon-icons179"></i>Login / Register </a></li>
+                        <li ng-if="loggedIN"><a ng-click="logout()"><i class="icon-icons179"></i>Logout </a></li>
                     </ul>
                 </div>
             </div>
