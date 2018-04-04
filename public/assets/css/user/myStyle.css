@@ -970,7 +970,7 @@ header nav.navbar.bootsnav ul.nav > li.active > a::before {
 	margin-right:0;
 }
 .attr-nav > ul > li > a {
-  padding: 0;
+  padding: 7px 0px;;
 }
 .attr-nav .social_share{
   margin-right: 0;
