@@ -21,7 +21,8 @@ angular.module('app')
             $scope.deleteEmployee=function (employee) {
                 var deleteEmployeePromise=globalsvc.GetData("employees/deleteEmployee","Delete",employee);
                 deleteEmployeePromise.then(function (data) {
-                    var allEmployeesGetCallPromise= globalsvc.GetData("employees/getAll","Post",{addedBy:{AgentId:$scope.user.AgentId}});
+                    debugger;
+                    var allEmployeesGetCallPromise= globalsvc.GetData("employees/getAll","Post",{addedBy:{UserId:$scope.user.UserId}});
                     allEmployeesGetCallPromise.then(function (data) {
                         $scope.employees=data.data;
                     });

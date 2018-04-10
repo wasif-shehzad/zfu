@@ -13,6 +13,7 @@ angular.module('app')
             });
 
             $scope.deleteProperty=function (property) {
+                debugger;
                 var deletePropertyPromise=globalsvc.GetData("properties/deleteProperty","Delete",property);
                 deletePropertyPromise.then(function (data) {
                     var  updateAllPropertiesGetCallPromise= globalsvc.GetData("properties/getAll","Get",null);
