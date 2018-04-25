@@ -29,7 +29,7 @@ var Agents =require('../libs/agents.js');
         Agents.signIn(data).then(function (data) {
             res.status(200).json(data);
         }).catch(function (err) {
-            res.status(400).json(err)
+            res.status(400).json(err);
         });
     });
     router.get("/getAll",function (req,res) {

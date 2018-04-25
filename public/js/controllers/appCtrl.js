@@ -20,10 +20,19 @@
                     sharedDatasvc.setUser(null);
                     $state.go("app.user.login");
                 };
-                $scope.goToSearch = function () {
+                $scope.selectRange = function(e){
+                  debugger;
+                };
+                $scope.goToSearch = function (e) {
                     debugger;
+                    $scope.property.price=+$('.leftLabel')[e].innerText;
+                    $scope.property.maxPrice=+$('.rightLabel')[e].innerText;
                     sharedDatasvc.setDataForPropertySearch($scope.property);
-                    $state.go("app.user.search");
+    //                $state.go("app.user.search");
+                };
+                $scope.selectBaths = function (e) {
+                    debugger;
+                    $scope.property.features.bathrooms=4;
                 };
 
                 $scope.clickToView=function(e){
